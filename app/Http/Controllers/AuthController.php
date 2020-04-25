@@ -21,9 +21,9 @@ class AuthController extends Controller
             $request->all(),
             [
                 'name' => ['required'],
-                'email' => ['required', 'email'],
+                'email' => ['required', 'email', 'unique:user'],
                 'password' => ['required', 'min:8'],
-                'phone' => ['required', 'numeric'],
+                'phone' => ['required', 'numeric', 'unique:user'],
                 'agreement' => ['accepted'],
             ],
             $messages
