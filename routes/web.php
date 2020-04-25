@@ -11,10 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-    return view('login');
+Route::group(['middleware' => ['guest']], function () {
+    Route::get('/', function () {
+        return view('login');
+    });
+    Route::post('/login', 'AuthController@login');
+    Route::get('/register', function () {
+        return view('register');
+    });
+    Route::post('/register', 'AuthController@register');
 });
-Route::get('/register', function () {
-    return view('register');
+
+Route::group(['middleware' => ['isSignIn']], function () {
+    Route::get('/home', function () {
+        return view('user/home');
+    });
+    Route::get('/partner', function () {
+        return view('user/partner');
+    });
 });
-Route::post('/register', 'AuthController@register');
+
+Route::get('/logout', 'AuthController@logout');

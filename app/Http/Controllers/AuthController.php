@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use App\User;
 
 class AuthController extends Controller
@@ -38,16 +39,34 @@ class AuthController extends Controller
         $user = new User;
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = $request->password;
+        $user->password = Hash::make($request->password);
         $user->phone = $request->phone;
         $user->save();
 
         return response()->json(
             [
                 'error' => false,
-                'request' => $request->all()
             ],
             200
         );
+    }
+
+    public function login(Request $request)
+    {
+        if (Auth::attempt($request->only('email', 'password'), $remember = $request->remember)) {
+            return response()->json([
+                'error' => false,
+            ], 200);
+        } else {
+            return response()->json([
+                'error' => true,
+            ], 404);
+        }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/');
     }
 }

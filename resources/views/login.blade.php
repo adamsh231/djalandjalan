@@ -4,7 +4,10 @@
 <head>
 	<title>Masuk | djalandjalan.com</title>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 	<!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="{{asset('template/images/icons/favicon.ico')}}" />
 	<!--===============================================================================================-->
@@ -39,34 +42,34 @@
 								<br /><span>Berpergian dengan teman baru?</span>
 								<br /><span> Siapa Takut!</span>
 							</div>
-							<form class="form-signin">
+							<form class="form-signin" id="form_login">
 								<div class="form-label-group">
-									<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-									<label for="inputEmail">Email</label>
+									<input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
+                                    <label for="inputEmail">Email</label>
 								</div>
 
 								<div class="form-label-group">
-									<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-									<label for="inputPassword">Password</label>
+									<input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+                                    <label for="inputPassword">Password</label>
 								</div>
 
 								<div class="custom-control custom-checkbox mb-3">
-									<input type="checkbox" class="custom-control-input" id="customCheck1">
+									<input type="checkbox" name="remember" class="custom-control-input" id="customCheck1">
 									<label class="custom-control-label" for="customCheck1">Ingat saya</label>
 								</div>
-								<button class="btn btn-lg btn-block text-uppercase btn-login" type="submit" onclick="window.location.href = 'home.html';">Masuk</button>
-								<div class="text-center" style="padding: 10px 0 10px 0">
-									<span class="txt1">
-										Atau masuk dengan
-									</span>
-								</div>
 							</form>
+                            <button class="btn btn-lg btn-block text-uppercase btn-login" type="submit" onclick="submit()">Masuk</button>
+                            <div class="text-center" style="padding: 10px 0 10px 0">
+                                <span class="txt1">
+                                    Atau masuk dengan
+                                </span>
+                            </div>
 							<button class="btn btn-lg btn-google btn-block" type="submit"><i class="fa fa-google mr-2"></i>Google</button>
 							<div class="text-center w-full p-t-25">
 								<span class="txt1">
 									Belum punya akun?
 								</span>
-								<a class="txt1 bo1 hov1" href="daftar.html">
+								<a class="txt1 bo1 hov1" href="{{url('/register')}}">
 									Daftar
 								</a>
 							</div>
@@ -147,7 +150,10 @@
 	<!--===============================================================================================-->
 	<script src="{{asset('template/vendor/select2/select2.min.js')}}"></script>
 	<!--===============================================================================================-->
-	<script src="{{asset('template/js/main.js')}}"></script>
+    <script src="{{asset('template/js/main.js')}}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="{{asset('assets/js/login.js')}}"></script>
 </body>
 
 </html>
