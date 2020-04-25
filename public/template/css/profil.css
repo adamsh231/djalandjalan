@@ -1,0 +1,121 @@
+html {
+  width: 100%;
+}
+
+.avatarProfil {
+  vertical-align: middle;
+  position: relative;
+}
+
+.avatarProfil img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: black;
+  margin-top: -15%;
+}
+
+.avatarProfil span {
+  position: absolute;
+}
+.modal-title {
+  text-align: center;
+}
+.modal-body {
+  max-height: calc(70vh - 200px);
+  overflow-y: auto;
+  background-color: rgb(245, 239, 239);
+}
+.riwayatPerjalanan img {
+  width: 100px;
+  border-radius: 5px;
+}
+
+.isi-riwayatPerjalanan {
+  padding: 10px;
+  border: 0.5px;
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.isi-riwayatPerjalanan h5 {
+  font-size: 15px;
+}
+.isi-riwayatPerjalanan p {
+  font-size: 10px;
+}
+.penilaian {
+  padding: 10px;
+  border: 0.5px;
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.penilaian img {
+  width: 40px;
+  border-radius: 50%;
+}
+.isi-penilaian h5 {
+  font-size: 15px;
+}
+.isi-penilaian p {
+  font-size: 10px;
+}
+
+.checked {
+  color: orange;
+}
+
+.box {
+  box-shadow: 0 3px 6px 0 hsla(0, 0%, 69%, 0.16);
+  margin-bottom: 50px;
+  background: white;
+  border-radius: 15px;
+  position: relative;
+  text-align: center;
+  padding: 5px;
+  width: 60%;
+  margin: 0 auto;
+  height: 100%;
+  margin-top: -20%;
+}
+
+.deskripsi-profil {
+  color: rgb(56, 55, 55);
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.text-profil p {
+  color: rgb(126, 126, 126);
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text-profil span {
+  font-weight: bold;
+  font-size: 25px;
+  color: brown;
+}
+
+.tab-pane{
+  padding: 10px;
+}
+
+.minat-profil{
+  margin-top: 50px;
+   margin-bottom: 50px
+}
+.minat-profil h5{
+  font-size: 20px;
+}
+.teman-profil{
+border-radius: 50%;
+width: 75px;
+margin-left: 10px;
+}
+@font-face {
+  font-family: Baloo;
+  src: url(../../fonts/Baloo-Regular.ttf);
+}

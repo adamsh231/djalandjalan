@@ -1,0 +1,232 @@
+a {
+  text-decoration: none !important;
+  color: #35405a;
+}
+body {
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.navbar{
+  background-color: #FAF5E7;
+}
+.search input[type=search]{
+  display: block;
+  text-align: center;
+  width:100%;
+  font-size: 12px;
+}
+.search{
+  position: relative;
+  width: 75%;
+}
+.search i{
+  position: absolute;
+  right:0;
+  top:0;
+  padding: 10px;
+  color:#aaa
+}
+.navbar .dropdown-item i {
+  font-size: 16px;
+  min-width: 22px;
+}
+.navbar .dropdown-item .material-icons {
+    font-size: 21px;
+    line-height: 16px;
+    vertical-align: middle;
+    margin-top: -2px;
+}
+.navbar .nav-item.open > a, .navbar .nav-item.open > a:hover, .navbar .nav-item.open > a:focus {
+  color: #fff;
+  background: none !important;
+}
+.navbar .dropdown-menu {
+  border-radius: 1px;
+  border-color: #e5e5e5;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+.navbar .dropdown-menu li a {
+  color: #777 !important;
+  padding: 8px 20px;
+  line-height: normal;
+}
+.navbar .dropdown-menu li a:hover, .navbar .dropdown-menu li a:focus {
+  color: #333 !important;
+  background: transparent !important;
+}
+.navbar .nav .active a, .navbar .nav .active a:hover, .navbar .nav .active a:focus {
+  color: #fff;
+  text-shadow: 0 0 4px rgba(255,255,255,0.2);
+  background: transparent !important;
+}
+.navbar .nav .user-action {
+  padding: 9px 15px;
+}
+
+.notif{
+	position: absolute; top: -5px; right: -5px; width: auto; margin-top: 0; padding: 3px 5px;
+	background: #da311b; 
+	font-family: 'Roboto', sans-serif; font-size: 10px; color: #fff; font-weight: 300;
+	-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+}
+
+.avatar{
+  vertical-align: middle;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+/* */
+.openingText{
+  line-height: 50px;
+  position: absolute;
+  margin-top: 100px;
+}
+.landing-text{
+  font-family: Baloo;
+  font-size: 60px;
+  color: #7e544d;
+}
+.landing{
+  position: relative;
+  margin-top: 50px;
+}
+.landing img{
+  max-width: 750px;
+  float: right;
+}
+.heading-partners button{
+  background-color: #2ed1a2;
+  color: white;
+  position: absolute; 
+  bottom: 0;
+  margin-bottom: 2%; 
+  right: 0; 
+  margin-right: 15px
+}
+.heading-partners h3{
+  color:brown;
+}
+
+/* */
+.make-post{
+  padding-top: 100px;
+}
+.make-post input{
+  margin-bottom: 5px;
+}
+/* Card Partners */
+.card-body{
+  line-height: 8px; 
+  padding: 10px
+}
+.card-partners h6 {
+  color: #35405a;
+  font-family: OpenSans-SemiBold;
+}
+.card-partners h5 {
+  color: #2ED1A2;
+  font-family: OpenSans-SemiBold;
+}
+.card-partners p{
+  font-size: 12px;
+}
+.img-hover-zoom {
+  height: auto; /* [1.1] Set it as per your need */
+  overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+
+.img-hover-zoom img {
+  transition: transform .5s ease;
+}
+
+.card-partners:hover .img-hover-zoom img {
+  transform: scale(1.5);
+}
+
+.display-profil{
+  right: 0;
+  margin-top: -35px;
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+  margin-right: 10px;
+}
+
+/* BOX EXPLORE MALANG */
+.overlay-bg{
+  position: absolute;
+  top: 0;
+  bottom : 0 ;
+  right: 0;
+  left:0;
+  rgba:(0,0,0,.5);
+  color:#fff;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  border-radius: 5px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+}
+.overlay-bg p{
+  font-family: Baloo;
+  font-size: 25px;
+}
+.grid-explore{
+  margin-bottom: 10px;
+}
+
+.grid-explore:hover .img-hover-zoom img {
+  transform: scale(1.5);
+}
+
+/* About Us */
+.about{
+  margin-top: 5%; 
+  margin-bottom: 5%;
+  padding:0 100px 0 100px;
+}
+
+
+
+@font-face {
+  font-family: Baloo;
+  src: url(../fonts/Baloo-Regular.ttf);
+}
+@font-face {
+  font-family: OpenSans-Reguler;
+  src: url(../fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: OpenSans-SemiBold;
+  src: url(../fonts/OpenSans-Semibold.ttf);
+}
+
+@media(max-width:1000px){
+  .user-action span{
+    display: none;
+  } 
+}
+
+@media(max-width:670px){
+ .user-action span{
+    display: none;
+  }
+  #home-logo{
+    width: 120px;
+  }
+  .img-fluid{
+    width: 100px;
+  }
+}

@@ -1,0 +1,112 @@
+body{
+    background-color: white;
+    margin:0;
+    font-family: OpenSans-Reguler !important;
+
+}
+li {
+    list-style:none;
+}
+
+.container-1300 {
+    width: 100%;
+    max-width: 1300px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+  }
+
+.navbar {
+    background-color: #FAF5E7;
+}
+.kategori {
+    padding-left: 20px;
+}
+.kategori li,a{
+    font-size: 12px;
+    color: black;
+}
+
+.navbar-right a{
+    font-size: 15px;
+    color: black;
+}
+
+.navbar-right button{
+    background-color: #2ed1a2;
+    color: white;
+  }
+
+
+
+
+
+
+
+.top-wrapper {
+    /* background-size: cover; */
+    height: 700px;
+    width: 100%;
+    /* background-position: top; */
+    /* background-image: url("../assets/img/journey.png"); */
+    /* position: relative; */
+    /* background-repeat: no-repeat; */
+  }
+
+  .fontBaloo {
+    font-family: Baloo;
+    font-size: 60px;
+    color: #7e544d;
+  }
+  .medsos {
+    float: left;
+    margin-right: 30px;
+    margin-top: 75px;
+    width: 25;
+    height: 25;
+  }
+
+  @font-face {
+    font-family: Baloo;
+    src: url(../fonts/Baloo-Regular.ttf);
+  }
+  @font-face {
+    font-family: OpenSans-Reguler;
+    src: url(../fonts/OpenSans-Regular.ttf);
+  }
+  @font-face {
+    font-family: OpenSans-SemiBold;
+    src: url(../fonts/OpenSans-Semibold.ttf);
+  }
+ 
+  .search input[type=search]{
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+  .search{
+    position: relative;
+    width: 50%;
+  }
+  .search i{
+    position: absolute;
+    right:0;
+    top:0;
+    padding: 10px;
+    color:#aaa
+  }
+  
+
+  @media(max-width:1000px){
+      .search{
+          width: 50%;
+      }
+  }
+  @media(max-width:670px){
+    .search{
+        width: 35%;
+    }
+    .kategori {
+        padding-left: 5px;
+    }
+}
