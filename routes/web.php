@@ -26,8 +26,8 @@ Route::group(['middleware' => ['isSignIn']], function () {
     Route::get('/home', function () {
         return view('user/home');
     });
-    Route::get('/partner', function () {
-        return view('user/partner');
+    Route::get('/profile', function () {
+        return view('user/profile');
     });
 });
 

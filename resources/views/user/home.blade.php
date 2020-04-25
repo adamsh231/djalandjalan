@@ -8,18 +8,19 @@
     <meta name="author" content="">
     <title>Djalandjalan.com</title>
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('template/vendor/bootstrap/css/bootstrap.min.css')}}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('template/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
     <!-- Custom styles for this template -->
-    <link href="css/home.css" rel="stylesheet">
+    <link href="{{asset('template/css/home.css')}}" rel="stylesheet">
 </head>
 
 <body>
+
     <nav class="navbar navbar-expand navbar-light justify-content-center fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="home.html"> <img id="home-logo" src="assets/img/djalandjalanlogo.png" width="150" height="auto" alt="" style="position: relative"></a>
+            <a class="navbar-brand" href="{{ url('/') }}"> <img id="home-logo" src="{{asset('template/assets/img/djalandjalanlogo.png')}}" width="150" height="auto" alt="" style="position: relative"></a>
             <div class="search">
                 <input type="search" class="form-control" placeholder="Cari Destinasi Keinginanmu. Contoh: Bromo">
                 <i class="fa fa-search"></i>
@@ -52,24 +53,25 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="assets/img/profil.jpg" class="avatar" alt="Avatar"><span> Bambang</span></a>
+                    <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="{{asset('template/assets/img/profil.jpg')}}" class="avatar" alt="Avatar"><span> {{Auth::user()->name}}</span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="profil.html" class="dropdown-item"><i class="fa fa-user-o"></i> Profil</a></li>
+                        <li><a href="{{ url('/profile') }}" class="dropdown-item"><i class="fa fa-user-o"></i> Profil</a></li>
                         <li><a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Pengaturan</a></li>
                         <li class="divider dropdown-divider"></li>
-                        <li><a href="index.html" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a></li>
+                        <li><a href="{{ url('/logout') }}" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
     </nav>
+
     <div class="container">
 
         <div class="top-wrap" style="height: 400px; margin-top:100px;">
             <div class="landing">
-                <img class="landing-slide" src="assets/img/journey.png">
-                <img class="landing-slide" width="500" src="assets/img/traveling1.png">
-                <img class="landing-slide" src="assets/img/traveling2.png">
+                <img class="landing-slide" src="{{asset('template/assets/img/journey.png')}}">
+                <img class="landing-slide" width="500" src="{{asset('template/assets/img/traveling1.png')}}">
+                <img class="landing-slide" src="{{asset('template/assets/img/traveling2.png')}}">
             </div>
             <div class="openingText">
                 <div class="landing-text">
@@ -145,35 +147,35 @@
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="strat">
                         <a href="#">
-                            <img src="assets/img/gunung.png" class="img-fluid">
+                            <img src="{{asset('template/assets/img/gunung.png')}}" class="img-fluid">
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="strat">
                         <a href="#">
-                            <img src="assets/img/pantai.png" class="img-fluid">
+                            <img src="{{asset('template/assets/img/pantai.png')}}" class="img-fluid">
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="strat">
                         <a href="#">
-                            <img src="assets/img/airterjun.png" class="img-fluid">
+                            <img src="{{asset('template/assets/img/airterjun.png')}}" class="img-fluid">
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="strat">
                         <a href="#">
-                            <img src="assets/img/roadtrip.png" class="img-fluid">
+                            <img src="{{asset('template/assets/img/roadtrip.png')}}" class="img-fluid">
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="strat">
                         <a href="#">
-                            <img src="assets/img/airterjun.png" class="img-fluid">
+                            <img src="{{asset('template/assets/img/airterjun.png')}}" class="img-fluid">
                         </a>
                     </div>
                 </div>
@@ -204,10 +206,10 @@
                         <a href="#">
                             <div class="card card-partners">
                                 <div class="img-hover-zoom">
-                                    <img src="assets/img/bromo.jpg" class="card-img-top" alt="...">
+                                    <img src="{{asset('template/assets/img/bromo.jpg')}}" class="card-img-top" alt="...">
                                 </div>
                                 <div class="card-body">
-                                    <img src="assets/img/profil.jpg" class="display-profil" alt="Avatar">
+                                    <img src="{{asset('template/assets/img/profil.jpg')}}" class="display-profil" alt="Avatar">
                                     <h5 class="card-title">Gunung Bromo</h5>
                                     <h6 class="card-title">Ryan / Malang</h6>
                                     <p class="card-text">Tgl: <span>25 Agustus 2020 - 26 Agustus 2020</span></p>
@@ -224,10 +226,10 @@
                         <a href="#">
                             <div class="card card-partners">
                                 <div class="img-hover-zoom">
-                                    <img src="assets/img/bromo.jpg" class="card-img-top" alt="...">
+                                    <img src="{{asset('template/assets/img/bromo.jpg')}}" class="card-img-top" alt="...">
                                 </div>
                                 <div class="card-body">
-                                    <img src="assets/img/profil.jpg" class="display-profil" alt="Avatar">
+                                    <img src="{{asset('template/assets/img/profil.jpg')}}" class="display-profil" alt="Avatar">
                                     <h5 class="card-title">Gunung Bromo</h5>
                                     <h6 class="card-title">Ryan / Malang</h6>
                                     <p class="card-text">Tgl: <span>25 Agustus 2020 - 26 Agustus 2020</span></p>
@@ -244,10 +246,10 @@
                         <a href="#">
                             <div class="card card-partners">
                                 <div class="img-hover-zoom">
-                                    <img src="assets/img/bromo.jpg" class="card-img-top" alt="...">
+                                    <img src="{{asset('template/assets/img/bromo.jpg')}}" class="card-img-top" alt="...">
                                 </div>
                                 <div class="card-body">
-                                    <img src="assets/img/profil.jpg" class="display-profil" alt="Avatar">
+                                    <img src="{{asset('template/assets/img/profil.jpg')}}" class="display-profil" alt="Avatar">
                                     <h5 class="card-title">Gunung Bromo</h5>
                                     <h6 class="card-title">Ryan / Malang</h6>
                                     <p class="card-text">Tgl: <span>25 Agustus 2020 - 26 Agustus 2020</span></p>
@@ -264,10 +266,10 @@
                         <a href="#">
                             <div class="card card-partners">
                                 <div class="img-hover-zoom">
-                                    <img src="assets/img/bromo.jpg" class="card-img-top" alt="...">
+                                    <img src="{{asset('template/assets/img/bromo.jpg')}}" class="card-img-top" alt="...">
                                 </div>
                                 <div class="card-body">
-                                    <img src="assets/img/profil.jpg" class="display-profil" alt="Avatar">
+                                    <img src="{{asset('template/assets/img/profil.jpg')}}" class="display-profil" alt="Avatar">
                                     <h5 class="card-title">Gunung Bromo</h5>
                                     <h6 class="card-title">Ryan / Malang</h6>
                                     <p class="card-text">Tgl: <span>25 Agustus 2020 - 26 Agustus 2020</span></p>
@@ -284,10 +286,10 @@
                         <a href="#">
                             <div class="card card-partners">
                                 <div class="img-hover-zoom">
-                                    <img src="assets/img/bromo.jpg" class="card-img-top" alt="...">
+                                    <img src="{{asset('template/assets/img/bromo.jpg')}}" class="card-img-top" alt="...">
                                 </div>
                                 <div class="card-body">
-                                    <img src="assets/img/profil.jpg" class="display-profil" alt="Avatar">
+                                    <img src="{{asset('template/assets/img/profil.jpg')}}" class="display-profil" alt="Avatar">
                                     <h5 class="card-title">Gunung Bromo</h5>
                                     <h6 class="card-title">Ryan / Malang</h6>
                                     <p class="card-text">Tgl: <span>25 Agustus 2020 - 26 Agustus 2020</span></p>
@@ -308,7 +310,7 @@
                 <div class="col-md-4 grid-explore">
                     <a href="#">
                         <div class="img-hover-zoom">
-                            <img src="assets/img/grid1.png" style="width:100%">
+                            <img src="{{asset('template/assets/img/grid1.png')}}" style="width:100%">
                         </div>
                         <div class="overlay-bg">
                             <p>Gunung Bromo</p>
@@ -318,7 +320,7 @@
                 <div class="col-md-4 grid-explore">
                     <a href="#">
                         <div class="img-hover-zoom">
-                            <img src="assets/img/grid2.png" style="width:100%">
+                            <img src="{{asset('template/assets/img/grid2.png')}}" style="width:100%">
                         </div>
                         <div class="overlay-bg">
                             <p>Ranu Kumbolo<p>
@@ -328,7 +330,7 @@
                 <div class="col-md-4 grid-explore">
                     <a href="#">
                         <div class="img-hover-zoom">
-                            <img src="assets/img/grid3.png" style="width:100%">
+                            <img src="{{asset('template/assets/img/grid3.png')}}" style="width:100%">
                         </div>
                         <div class="overlay-bg">
                             <p>Pantai Tiga Warna</p>
@@ -338,7 +340,7 @@
                 <div class="col-md-4 grid-explore">
                     <a href="#">
                         <div class="img-hover-zoom">
-                            <img src="assets/img/grid4.png" style="width:100%">
+                            <img src="{{asset('template/assets/img/grid4.png')}}" style="width:100%">
                         </div>
                         <div class="overlay-bg">
                             <p>Air Terjun Sumber Pitu</p>
@@ -348,7 +350,7 @@
                 <div class="col-md-4 grid-explore">
                     <a href="#">
                         <div class="img-hover-zoom">
-                            <img src="assets/img/grid5.png" style="width:100%">
+                            <img src="{{asset('template/assets/img/grid5.png')}}" style="width:100%">
                         </div>
                         <div class="overlay-bg">
                             <p>Gunung Semeru</p>
@@ -358,7 +360,7 @@
                 <div class="col-md-4 grid-explore">
                     <a href="#">
                         <div class="img-hover-zoom">
-                            <img src="assets/img/grid6.png" style="width:100%">
+                            <img src="{{asset('template/assets/img/grid6.png')}}" style="width:100%">
                         </div>
                         <div class="overlay-bg">
                             <p>Sumber Air Jenong</p>
@@ -378,12 +380,12 @@
                         anggota? semua bisa diatur!. Iya, semudah itu kamu bisa djalandjalan sesukamu dengan Djalandjalan.com </p>
                 </div>
                 <div class="col-md-6">
-                    <img src="assets/img/no-money.png" style="height: 200px; object-fit: cover">
+                    <img src="{{asset('template/assets/img/no-money.png')}}" style="height: 200px; object-fit: cover">
                 </div>
             </div>
             <div class="row" style="margin-top: 4%">
                 <div class="col-md-6 text-right">
-                    <img src="assets/img/calendar.png" style="height: 200px; object-fit: cover">
+                    <img src="{{asset('template/assets/img/calendar.png')}}" style="height: 200px; object-fit: cover">
                 </div>
                 <div class="col-md-6">
                     <h5>Atur jadwalmu sendiri sesuai keinginanmu!</h5><br>
@@ -400,12 +402,12 @@
                         anggota? semua bisa diatur!. Iya, semudah itu kamu bisa djalandjalan sesukamu dengan Djalandjalan.com </p>
                 </div>
                 <div class="col-md-6">
-                    <img src="assets/img/safe.png" style="height: 200px; object-fit: cover">
+                    <img src="{{asset('template/assets/img/safe.png')}}" style="height: 200px; object-fit: cover">
                 </div>
             </div>
             <div class="row" style="margin-top: 4%">
                 <div class="col-md-6 text-right">
-                    <img src="assets/img/trust.png" style="height: 200px; object-fit: cover">
+                    <img src="{{asset('template/assets/img/trust.png')}}" style="height: 200px; object-fit: cover">
                 </div>
                 <div class="col-md-6">
                     <h5>Temukan relasi baru dari teman barumu!</h5><br>
@@ -422,7 +424,7 @@
         <div class="container pt-5 border-bottom">
             <div class="row">
                 <div class="col-md-3 col-sm-12 mb-3 text-center">
-                    <img id="home-logo" src="assets/img/djalandjalanlogo.png" width="100%" height="auto" alt="" style="position: relative">
+                    <img id="home-logo" src="{{asset('template/assets/img/djalandjalanlogo.png')}}" width="100%" height="auto" alt="" style="position: relative">
                 </div>
                 <div class="col-md-9 col-sm-12">
                     <div class="col-md-3 col-sm-6 col-6 p-0 float-left">
@@ -457,9 +459,9 @@
                         <h5 class="mb-4 font-weight-bold text-uppercase">Temukan Kami</h5>
                         <ul class="list-group">
                             <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                                <a href="#"><img src="assets/img/twitter1.png"></a>
-                                <a href="#"><img src="assets/img/path1.png"></a>
-                                <a href="#"><img src="assets/img/ig1.png"></a>
+                                <a href="#"><img src="{{asset('template/assets/img/twitter1.png')}}"></a>
+                                <a href="#"><img src="{{asset('template/assets/img/path1.png')}}"></a>
+                                <a href="#"><img src="{{asset('template/assets/img/ig1.png')}}"></a>
                             </li>
                         </ul>
                     </div>
@@ -477,11 +479,11 @@
 
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('template/vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('template/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
-    <script src="js/slick.js"></script>
+    <script src="{{asset('template/js/slick.js')}}"></script>
 
     <script>
         var myIndex = 0;
@@ -503,9 +505,9 @@
 
         $("#tambahTrip").click(function() {
             $('html,body').animate({
-                    scrollTop: $("#makePost").offset().top
-                },
-                'slow');
+                scrollTop: $("#makePost").offset().top
+            },
+            'slow');
         });
     </script>
 </body>

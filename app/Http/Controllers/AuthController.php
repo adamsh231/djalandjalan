@@ -53,7 +53,11 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        if (Auth::attempt($request->only('email', 'password'), $remember = $request->remember)) {
+        $isRemember = false;
+        if($request->remember == "true"){
+            $isRemember = true;
+        }
+        if (Auth::attempt($request->only('email', 'password'), $remember = $isRemember)) {
             return response()->json([
                 'error' => false,
             ], 200);
