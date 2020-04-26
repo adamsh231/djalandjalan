@@ -13,6 +13,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{{asset('template/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
     <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" media="all" href="{{ url('template/css/animate.css') }}">
     <link href="{{asset('template/css/home.css')}}" rel="stylesheet">
 </head>
 
@@ -78,7 +79,7 @@
                     Pengen liburan<br>
                     bingung dengan<span style="color: #2ED1A2"> siapa?</span><br>
                 </div>
-                <div class="">
+                <div class="sub-landing-text">
                     Yuk cari teman travelling yang cocok dengan kamu dengan disini !
                 </div>
             </div>
@@ -485,7 +486,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
     <script src="{{asset('template/js/slick.js')}}"></script>
 
-    <script>
+    <script type="text/javascript">
         var myIndex = 0;
         carousel();
 
@@ -509,6 +510,14 @@
             },
             'slow');
         });
+
+
+        $(function() {
+            $('.landing-text').addClass('animated fadeInUp');
+        });
+        $(function() { // animate logo tagline
+            $('.sub-landing-text').addClass('animated fadeInUp');
+        }, 500);
     </script>
 </body>
 
