@@ -29,6 +29,9 @@ Route::group(['middleware' => ['isSignIn']], function () {
     Route::get('/profile', function () {
         return view('user/profile');
     });
+    Route::get('/partner', function () {
+        return view('user/partner');
+    });
 });
 
 Route::get('/logout', 'AuthController@logout');

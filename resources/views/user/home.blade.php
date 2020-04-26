@@ -193,7 +193,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <button class="btn" type="button" onclick="window.location.href = 'partner.html';">
+                        <button class="btn" type="button" onclick="window.location.href = '{{ url('/partner') }}';">
                             Tampilkan Semua
                         </button>
 
@@ -203,10 +203,7 @@
 
             <div class="row as2 partners-thread">
 
-                @php
-                $x = 0;
-                @endphp
-                @while ($x++ < 4)
+                @foreach ($collection = array_fill(0, 4, array_fill(0, 10, 0)) as $item)
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="strat">
                         <a href="#">
@@ -226,7 +223,7 @@
                         </a>
                     </div>
                 </div>
-                @endwhile
+                @endforeach
 
             </div>
         </div>
