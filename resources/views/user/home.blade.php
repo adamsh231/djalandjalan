@@ -206,7 +206,7 @@
                 @foreach ($collection = array_fill(0, 4, array_fill(0, 10, 0)) as $item)
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="strat">
-                        <a href="#">
+                        <a href="{{ url('/thread') }}">
                             <div class="card card-partners">
                                 <div class="img-hover-zoom">
                                     <img src="{{asset('template/assets/img/bromo.jpg')}}" class="card-img-top" alt="...">

@@ -32,6 +32,9 @@ Route::group(['middleware' => ['isSignIn']], function () {
     Route::get('/partner', function () {
         return view('user/partner');
     });
+    Route::get('/thread', function () {
+        return view('user/thread');
+    });
 });
 
 Route::get('/logout', 'AuthController@logout');
