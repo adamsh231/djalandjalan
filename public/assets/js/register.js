@@ -30,7 +30,7 @@ function submit(url) {
                     Swal.showLoading();
                 }
             });
-            arr_err = ['name', 'jabatan', 'address', 'birth', 'phone', 'gender', 'start_work'];
+            arr_err = ['name', 'email', 'password', 'phone', 'agreement'];
             for (let index = 0; index < arr_err.length; index++) {
                 $('#form_register small[name=' + arr_err[index] + ']').removeClass('d-block').addClass('d-none');
             }
