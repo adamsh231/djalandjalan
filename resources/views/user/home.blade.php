@@ -202,26 +202,11 @@
             </div>
 
             <div class="row as2 partners-thread">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="strat">
-                        <a href="#">
-                            <div class="card card-partners">
-                                <div class="img-hover-zoom">
-                                    <img src="{{asset('template/assets/img/bromo.jpg')}}" class="card-img-top" alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <img src="{{asset('template/assets/img/profil.jpg')}}" class="display-profil" alt="Avatar">
-                                    <h5 class="card-title">Gunung Bromo</h5>
-                                    <h6 class="card-title">Ryan / Malang</h6>
-                                    <p class="card-text">Tgl: <span>25 Agustus 2020 - 26 Agustus 2020</span></p>
-                                    <p class="card-text">Titik Kumpul: <span>Stasiun Malang</span></p>
-                                    <p class="card-text" style="float: right;">Butuh: <span style="font-weight: bold">4 orang lagi</span></p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
 
+                @php
+                $x = 0;
+                @endphp
+                @while ($x++ < 4)
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="strat">
                         <a href="#">
@@ -241,66 +226,8 @@
                         </a>
                     </div>
                 </div>
+                @endwhile
 
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="strat">
-                        <a href="#">
-                            <div class="card card-partners">
-                                <div class="img-hover-zoom">
-                                    <img src="{{asset('template/assets/img/bromo.jpg')}}" class="card-img-top" alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <img src="{{asset('template/assets/img/profil.jpg')}}" class="display-profil" alt="Avatar">
-                                    <h5 class="card-title">Gunung Bromo</h5>
-                                    <h6 class="card-title">Ryan / Malang</h6>
-                                    <p class="card-text">Tgl: <span>25 Agustus 2020 - 26 Agustus 2020</span></p>
-                                    <p class="card-text">Titik Kumpul: <span>Stasiun Malang</span></p>
-                                    <p class="card-text" style="float: right;">Butuh: <span style="font-weight: bold">4 orang lagi</span></p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="strat">
-                        <a href="#">
-                            <div class="card card-partners">
-                                <div class="img-hover-zoom">
-                                    <img src="{{asset('template/assets/img/bromo.jpg')}}" class="card-img-top" alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <img src="{{asset('template/assets/img/profil.jpg')}}" class="display-profil" alt="Avatar">
-                                    <h5 class="card-title">Gunung Bromo</h5>
-                                    <h6 class="card-title">Ryan / Malang</h6>
-                                    <p class="card-text">Tgl: <span>25 Agustus 2020 - 26 Agustus 2020</span></p>
-                                    <p class="card-text">Titik Kumpul: <span>Stasiun Malang</span></p>
-                                    <p class="card-text" style="float: right;">Butuh: <span style="font-weight: bold">4 orang lagi</span></p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="strat">
-                        <a href="#">
-                            <div class="card card-partners">
-                                <div class="img-hover-zoom">
-                                    <img src="{{asset('template/assets/img/bromo.jpg')}}" class="card-img-top" alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <img src="{{asset('template/assets/img/profil.jpg')}}" class="display-profil" alt="Avatar">
-                                    <h5 class="card-title">Gunung Bromo</h5>
-                                    <h6 class="card-title">Ryan / Malang</h6>
-                                    <p class="card-text">Tgl: <span>25 Agustus 2020 - 26 Agustus 2020</span></p>
-                                    <p class="card-text">Titik Kumpul: <span>Stasiun Malang</span></p>
-                                    <p class="card-text" style="float: right;">Butuh: <span style="font-weight: bold">4 orang lagi</span></p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -419,8 +346,8 @@
             </div>
         </div>
 
-
     </div>
+
     <footer id="footer" style="background-color: white">
         <div class="container pt-5 border-bottom">
             <div class="row">
@@ -478,7 +405,6 @@
         </div>
     </footer>
 
-
     <!-- Bootstrap core JavaScript -->
     <script src="{{asset('template/vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('template/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
@@ -519,6 +445,7 @@
             $('.sub-landing-text').addClass('animated fadeInUp');
         }, 500);
     </script>
+
 </body>
 
 </html>
