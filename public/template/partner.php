@@ -21,7 +21,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand navbar-light justify-content-center fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="home.html"> <img id="home-logo" src="assets/img/djalandjalanlogo.png" width="150" height="auto" alt="" style="position: relative"></a>
+            <a class="navbar-brand" href="home.php"> <img id="home-logo" src="assets/img/djalandjalanlogo.png" width="150" height="auto" alt="" style="position: relative"></a>
             <div class="search">
                 <input type="search" class="form-control" placeholder="Cari Destinasi Keinginanmu. Contoh: Bromo">
                 <i class="fa fa-search"></i>
@@ -56,10 +56,10 @@
                 <li class="nav-item dropdown">
                     <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="assets/img/profil.jpg" class="avatar" alt="Avatar"><span> Bambang</span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="profil.html" class="dropdown-item"><i class="fa fa-user-o"></i> Profil</a></li>
+                        <li><a href="profil.php" class="dropdown-item"><i class="fa fa-user-o"></i> Profil</a></li>
                         <li><a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Pengaturan</a></li>
                         <li class="divider dropdown-divider"></li>
-                        <li><a href="index.html" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a></li>
+                        <li><a href="index.php" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -134,7 +134,7 @@
                 <div class="col-8">
                     <div class="row partners-thread">
                         <div class="col-6 col-md-4 partners-thread-card">
-                            <a href="thread.html">
+                            <a href="thread.php">
                                 <div class="card card-partners">
                                     <div class="img-hover-zoom">
                                         <img src="assets/img/bromo.jpg" class="card-img-top" alt="...">

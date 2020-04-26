@@ -12,14 +12,16 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" media="all" href="css/animate.css">
     <link href="css/home.css" rel="stylesheet">
 </head>
 
 <body>
     <nav class="navbar navbar-expand navbar-light justify-content-center fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="home.html"> <img id="home-logo" src="assets/img/djalandjalanlogo.png" width="150" height="auto" alt="" style="position: relative"></a>
+            <a class="navbar-brand" href="home.php"> <img id="home-logo" src="assets/img/djalandjalanlogo.png" width="150" height="auto" alt="" style="position: relative"></a>
             <div class="search">
                 <input type="search" class="form-control" placeholder="Cari Destinasi Keinginanmu. Contoh: Bromo">
                 <i class="fa fa-search"></i>
@@ -54,10 +56,10 @@
                 <li class="nav-item dropdown">
                     <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="assets/img/profil.jpg" class="avatar" alt="Avatar"><span> Bambang</span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="profil.html" class="dropdown-item"><i class="fa fa-user-o"></i> Profil</a></li>
+                        <li><a href="profil.php" class="dropdown-item"><i class="fa fa-user-o"></i> Profil</a></li>
                         <li><a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Pengaturan</a></li>
                         <li class="divider dropdown-divider"></li>
-                        <li><a href="index.html" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a></li>
+                        <li><a href="index.php" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -76,7 +78,7 @@
                     Pengen liburan<br>
                     bingung dengan<span style="color: #2ED1A2"> siapa?</span><br>
                 </div>
-                <div class="">
+                <div class="sub-landing-text">
                     Yuk cari teman travelling yang cocok dengan kamu dengan disini !
                 </div>
             </div>
@@ -127,7 +129,7 @@
                                         <div>
                                             <!-- <label>Jumlah Rombongan:</label> -->
                                             <input class="form-control" type="number" placeholder="Jumlah Rombongan">
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -190,7 +192,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <button class="btn" type="button" onclick="window.location.href = 'partner.html';">
+                        <button class="btn" type="button" onclick="window.location.href = 'partner.php';">
                             Tampilkan Semua
                         </button>
 
@@ -201,7 +203,7 @@
             <div class="row as2 partners-thread">
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="strat">
-                        <a href="#">
+                        <a href="thread.php">
                             <div class="card card-partners">
                                 <div class="img-hover-zoom">
                                     <img src="assets/img/bromo.jpg" class="card-img-top" alt="...">
@@ -221,7 +223,7 @@
 
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="strat">
-                        <a href="#">
+                        <a href="thread.php">
                             <div class="card card-partners">
                                 <div class="img-hover-zoom">
                                     <img src="assets/img/bromo.jpg" class="card-img-top" alt="...">
@@ -241,7 +243,7 @@
 
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="strat">
-                        <a href="#">
+                        <a href="thread.php">
                             <div class="card card-partners">
                                 <div class="img-hover-zoom">
                                     <img src="assets/img/bromo.jpg" class="card-img-top" alt="...">
@@ -261,7 +263,7 @@
 
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="strat">
-                        <a href="#">
+                        <a href="thread.php">
                             <div class="card card-partners">
                                 <div class="img-hover-zoom">
                                     <img src="assets/img/bromo.jpg" class="card-img-top" alt="...">
@@ -281,7 +283,7 @@
 
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="strat">
-                        <a href="#">
+                        <a href="thread.php">
                             <div class="card card-partners">
                                 <div class="img-hover-zoom">
                                     <img src="assets/img/bromo.jpg" class="card-img-top" alt="...">
@@ -486,7 +488,7 @@
 
 
 
-    <script>
+    <script type="text/javascript">
         var myIndex = 0;
         carousel();
 
@@ -510,6 +512,13 @@
                 },
                 'slow');
         });
+
+        $(function() {
+            $('.landing-text').addClass('animated fadeInUp');
+        });
+        $(function() { // animate logo tagline
+            $('.sub-landing-text').addClass('animated fadeInUp');
+        }, 500);
     </script>
 </body>
 

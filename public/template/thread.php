@@ -14,27 +14,26 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-
-    <!-- Custom styles for this template -->
-    <link href="css/home.css" rel="stylesheet">
     <link href="css/profil.css" rel="stylesheet">
+    <link href="css/thread.css" rel="stylesheet">
+
 </head>
 
-<body>
-    <div class="bg-profil">
-        <img src="assets/img/profilBackground.jpg" style="width: 100%;">
-    </div>
+
+
+<body style="background-color: white">
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand navbar-light justify-content-center fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="home.html"> <img id="home-logo" src="assets/img/djalandjalanlogo.png" width="150" height="auto" alt="" style="position: relative"></a>
+            <a class="navbar-brand" href="home.php"> <img id="home-logo" src="assets/img/djalandjalanlogo.png" width="150" height="auto" alt="" style="position: relative"></a>
             <div class="search">
                 <input type="search" class="form-control" placeholder="Cari Destinasi Keinginanmu. Contoh: Bromo">
                 <i class="fa fa-search"></i>
             </div>
             <ul class="navbar-nav nav-justified text-center">
                 <li class="nav-item">
-                    <a href="home.html#makePost" class="nav-link d-flex flex-column">
+                    <a href="#makePost" id="tambahTrip" class="nav-link d-flex flex-column">
                         <i class="fa fa-plus-circle fa-lg"></i>
                         <span class="d-none d-sm-inline">Tambah</span>
                     </a>
@@ -62,140 +61,196 @@
                 <li class="nav-item dropdown">
                     <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="assets/img/profil.jpg" class="avatar" alt="Avatar"><span> Bambang</span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="profil.html" class="dropdown-item"><i class="fa fa-user-o"></i> Profil</a></li>
+                        <li><a href="profil.php" class="dropdown-item"><i class="fa fa-user-o"></i> Profil</a></li>
                         <li><a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Pengaturan</a></li>
                         <li class="divider dropdown-divider"></li>
-                        <li><a href="index.com" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a></li>
+                        <li><a href="index.php" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
     </nav>
+    <!-- Page Content -->
 
-    <div class="box form-control" style="margin-bottom: 20px; margin-top:-300px">
-        <div class="row" style="margin-top: 2%">
-            <div class="col">
-                <div class="row justify-content-md-center text-profil">
-                    <div class="col col-lg-2 ">
-                        <span>12</span>
-                        <p>Trip</p>
+
+    <div class="container" style="margin-top: 100px">
+        <div class="heading-thread">
+            <h2><span>Trip ke Bromo</span></h2>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <img class="img-fluid" src="assets/img/bromo.jpg" style="width:100%; border-radius:5px">
+            </div>
+            <div class="col-sm">
+                <div class="informasi">
+                    <div class="heading-information">
+                        <h5>Informasi Trip</h5>
+                        <!-- <span>9 Agustus 2019</span> -->
                     </div>
-                    <div class="col-md-auto">
-                        <span>12</span>
-                        <p>Partners</p>
+
+                    <div class="information-trip">
+                        <i class="fa fa-calendar fa-fw"></i>&nbsp;<label>Tanggal</label>
+                        <span>25 Agustus 2020</span>
                     </div>
-                    <div class="col col-lg-2">
-                        <span>12</span>
-                        <p>Rating</p>
+                    <div class="information-trip">
+                        <i class="fa fa-calendar fa-fw"></i>&nbsp;<label>Hingga</label>
+                        <span>27 Agustus 2020</span>
+                    </div>
+                    <div class="information-trip">
+                        <i class="fa fa-clock-o fa-fw"></i>&nbsp;<label>Durasi</label>
+                        <span>2 Hari 1 Malam</span>
+                    </div>
+                    <div class="information-trip">
+                        <i class="fa fa-users fa-fw"></i>&nbsp;<label>Jumlah Anggota</label>
+                        <span>6 Orang (<b>Butuh 2 lagi</b>)</span>
+                    </div>
+                    <div class="information-trip">
+                        <i class="fa fa-map-marker fa-fw"></i>&nbsp;<label>Titik Kumpul</label>
+                        <span>Stasiun Malang</span>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn">Gabung</button>
+                    </div>
+                </div>
+                <div class="diskusi-trip">
+                    <i class="fa fa-question-circle-o fa-lg fa-fw"></i>&nbsp;<label>Ada pertanyaan? Diskusikan saja dengan Partners</label>
+                    <button class="btn btn-sm">Mulai Diskusi</button>
+                </div>
+            </div>
+        </div>
+        <div class="deskripsi">
+            <div class="heading-deskripsi">
+                <h4>Deskripsi Trip</h4>
+            </div>
+            <div class="deskripsi-thread">
+                <p> Dicari teman trip ke bromo sejumlah 10 orang titik point di stasiun malang motoran diharapkan ada motor sendiri
+                    Dicari teman trip ke bromo sejumlah 10 orang titik point di stasiun malang motoran diharapkan ada motor sendiri
+                    Dicari teman trip ke bromo sejumlah 10 orang titik point di stasiun malang motoran diharapkan ada motor sendiri
+                    Dicari teman trip ke bromo sejumlah 10 orang titik point di stasiun malang motoran diharapkan ada motor sendiri
+                </p>
+            </div>
+        </div>
+
+
+        <div class="box form-control" style="margin-bottom: 20px; margin-top:50px">
+            <div class="row" style="margin-top: 2%">
+                <div class="col">
+                    <div class="row justify-content-md-center text-profil">
+                        <div class="col col-lg-2 ">
+                            <span>12</span>
+                            <p>Trip</p>
+                        </div>
+                        <div class="col-md-auto">
+                            <span>12</span>
+                            <p>Partners</p>
+                        </div>
+                        <div class="col col-lg-2">
+                            <span>12</span>
+                            <p>Rating</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="avatarProfil"><a href="#"><img src="assets/img/profil.jpg"> </a></div>
+                    <div style="margin-bottom: 25px"><img src="assets/img/check.png" width="15">Terverifikasi</div>
+                    <h3><b>Bambang</b>, <span>22</span></h3>
+                    <h6>Malang, Jawa Timur</h6>
+                    <h5>Mahasiswa</h5>
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col" style="text-align: right"><button class="btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="#modalRiwayat">Riwayat</button></div>
+                        <div class="col" style="text-align: left"><button class="btn btn-success btn-sm" type="button" data-toggle="modal" data-target="#modalPenilaian">Penilaian</button></div>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="avatarProfil"><a href="#"><img src="assets/img/profil.jpg"> </a></div>
-                <div style="margin-bottom: 25px"><img src="assets/img/check.png" width="15">Terverifikasi</div>
-                <h3><b>Bambang</b>, <span>22</span></h3>
-                <h6>Malang, Jawa Timur</h6>
-                <h5>Mahasiswa</h5>
+            <br>
+            <hr class="mt-2 mb-5">
+            <div class="deskripsi-profil">
+                <p>Saya seorang yang hobi naik gunung, hampir seluruh gunung dijawa timur sudah saya daki, namun semua berubah sejak corona menyerang</p>
             </div>
-            <div class="col">
-                <div class="row">
-                    <div class="col" style="text-align: right"><button class="btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="#modalRiwayat">Riwayat</button></div>
-                    <div class="col" style="text-align: left"><button class="btn btn-success btn-sm" type="button" data-toggle="modal" data-target="#modalPenilaian">Penilaian</button></div>
+            <div class="minat-profil">
+                <h5>Minat & Hobi :</h5>
+                <span class="badge badge-light">Fotografi</span>
+                <span class="badge badge-light">Videografi</span>
+                <span class="badge badge-light">Traveling Murah</span>
+                <span class="badge badge-light">Backpacker</span>
+                <span class="badge badge-light">Camping</span>
+                <span class="badge badge-light">Gunung</span>
+                <span class="badge badge-light">Pantai</span>
+                <span class="badge badge-light">Diving</span>
+                <span class="badge badge-light">Penikmat senja</span>
+                <span class="badge badge-light">Movie Bioskop</span>
+            </div>
+        </div>
+
+        <div class="box" style="margin-top: 10px;">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="nav-profil-galeri" data-toggle="tab" href="#nav-galeri" role="tab" aria-controls="nav-galeri" aria-selected="true">Galeri <span class="badge badge-primary">8</span></a>
+                    <a class="nav-item nav-link" id="nav-profile-rekomendasi" data-toggle="tab" href="#nav-rekomendasi" role="tab" aria-controls="nav-rekomendasi" aria-selected="false">Rekomendasi <span class="badge badge-primary">4</span></a>
+                    <a class="nav-item nav-link" id="nav-contact-teman" data-toggle="tab" href="#nav-teman" role="tab" aria-controls="nav-teman" aria-selected="false">Teman <span class="badge badge-primary">4</span></a>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-galeri" role="tabpanel" aria-labelledby="nav-profil-galeri">
+                    <div class="row text-center text-lg-left">
+
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <a href="#" class="d-block mb-4 h-100">
+                                <img class="img-fluid img-thumbnail" src="assets/img/adam.png" alt="">
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <a href="#" class="d-block mb-4 h-100">
+                                <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/aob0ukAYfuI/400x300" alt="">
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <a href="#" class="d-block mb-4 h-100">
+                                <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/EUfxH-pze7s/400x300" alt="">
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <a href="#" class="d-block mb-4 h-100">
+                                <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/M185_qYH8vg/400x300" alt="">
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <a href="#" class="d-block mb-4 h-100">
+                                <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/sesveuG_rNo/400x300" alt="">
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <a href="#" class="d-block mb-4 h-100">
+                                <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/AvhMzHwiE_0/400x300" alt="">
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <a href="#" class="d-block mb-4 h-100">
+                                <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/2gYsZUmockw/400x300" alt="">
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <a href="#" class="d-block mb-4 h-100">
+                                <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/EMSDtjVHdQ8/400x300" alt="">
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-rekomendasi" role="tabpanel" aria-labelledby="nav-profil-rekomendasi">No Entry2</div>
+                <div class="tab-pane fade" id="nav-teman" role="tabpanel" aria-labelledby="nav-profil-teman">
+                    <div class="row text-center text-lg-left">
+                        <img class="teman-profil" src="assets/img/adam2.png">
+                        <img class="teman-profil" src="assets/img/adam2.png">
+                        <img class="teman-profil" src="assets/img/adam2.png">
+                        <img class="teman-profil" src="assets/img/adam2.png">
+                    </div>
                 </div>
             </div>
         </div>
-        <br>
-        <hr class="mt-2 mb-5">
-        <div class="deskripsi-profil">
-            <p>Saya seorang yang hobi naik gunung, hampir seluruh gunung dijawa timur sudah saya daki, namun semua berubah sejak corona menyerang</p>
-        </div>
-        <div class="minat-profil">
-            <h5>Minat & Hobi :</h5>
-            <span class="badge badge-light">Fotografi</span>
-            <span class="badge badge-light">Videografi</span>
-            <span class="badge badge-light">Traveling Murah</span>
-            <span class="badge badge-light">Backpacker</span>
-            <span class="badge badge-light">Camping</span>
-            <span class="badge badge-light">Gunung</span>
-            <span class="badge badge-light">Pantai</span>
-            <span class="badge badge-light">Diving</span>
-            <span class="badge badge-light">Penikmat senja</span>
-        </div>
-
-
-
-
-
-
     </div>
-
-    <div class="box" style="margin-top: 10px;">
-        <nav>
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <a class="nav-item nav-link active" id="nav-profil-galeri" data-toggle="tab" href="#nav-galeri" role="tab" aria-controls="nav-galeri" aria-selected="true">Galeri <span class="badge badge-primary">8</span></a>
-                <a class="nav-item nav-link" id="nav-profile-rekomendasi" data-toggle="tab" href="#nav-rekomendasi" role="tab" aria-controls="nav-rekomendasi" aria-selected="false">Rekomendasi <span class="badge badge-primary">4</span></a>
-                <a class="nav-item nav-link" id="nav-contact-teman" data-toggle="tab" href="#nav-teman" role="tab" aria-controls="nav-teman" aria-selected="false">Teman <span class="badge badge-primary">4</span></a>
-            </div>
-        </nav>
-        <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="nav-galeri" role="tabpanel" aria-labelledby="nav-profil-galeri">
-                <div class="row text-center text-lg-left">
-
-                    <div class="col-lg-3 col-md-4 col-6">
-                        <a href="#" class="d-block mb-4 h-100">
-                            <img class="img-fluid img-thumbnail" src="assets/img/adam.png" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6">
-                        <a href="#" class="d-block mb-4 h-100">
-                            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/aob0ukAYfuI/400x300" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6">
-                        <a href="#" class="d-block mb-4 h-100">
-                            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/EUfxH-pze7s/400x300" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6">
-                        <a href="#" class="d-block mb-4 h-100">
-                            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/M185_qYH8vg/400x300" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6">
-                        <a href="#" class="d-block mb-4 h-100">
-                            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/sesveuG_rNo/400x300" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6">
-                        <a href="#" class="d-block mb-4 h-100">
-                            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/AvhMzHwiE_0/400x300" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6">
-                        <a href="#" class="d-block mb-4 h-100">
-                            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/2gYsZUmockw/400x300" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6">
-                        <a href="#" class="d-block mb-4 h-100">
-                            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/EMSDtjVHdQ8/400x300" alt="">
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-            <div class="tab-pane fade" id="nav-rekomendasi" role="tabpanel" aria-labelledby="nav-profil-rekomendasi">No Entry2</div>
-            <div class="tab-pane fade" id="nav-teman" role="tabpanel" aria-labelledby="nav-profil-teman">
-                <div class="row text-center text-lg-left">
-                    <img class="teman-profil" src="assets/img/adam2.png">
-                    <img class="teman-profil" src="assets/img/adam2.png">
-                    <img class="teman-profil" src="assets/img/adam2.png">
-                    <img class="teman-profil" src="assets/img/adam2.png">
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer id="footer" style="background-color: white">
         <div class="container pt-5 border-bottom">
@@ -455,6 +510,27 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="border-style: none;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center">
+                        <h3>Konfirmasi Gabung Trip</h3>
+                        <p>Kamu menyetujui semua syarat dan ketentuan yang berlaku</p>
+                        <button class="btn btn-ijo nav-text" type="button" onclick="">
+                            Gabung
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -462,9 +538,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script> -->
     <script src="js/slick.js"></script>
-
-
-
 
 </body>
 

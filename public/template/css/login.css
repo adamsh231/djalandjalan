@@ -152,11 +152,10 @@ body {
 .feature-icon img {
   width: 100px;
 }
+footer{
+margin-top: 100px;
+position: fixed;
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 30px;
 }
 
 .footer a {

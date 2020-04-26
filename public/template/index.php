@@ -27,66 +27,99 @@
 <body>
 	<div class="container">
 		<div class="signup clearfix">
-			<button class="btn btn-daftar" onclick="window.location.href = 'index.html';">Masuk</button>
+			<button class="btn btn-daftar" onclick="window.location.href = 'daftar.php';" >Daftar</button>
+		</div>
+		<div class="row" style="margin-top:50px;">
+			<div class="col-lg-4">
+				<div class="form-login">
+					<div class="card card-signin">
+						<div class="card-body">
+							<div class="header text-center">
+								<a href="index.php" class="logo"><img src="assets/img/djalandjalanlogo.png"></a>
+								<br /><span>Berpergian dengan teman baru?</span>
+								<br /><span> Siapa Takut!</span>
+							</div>
+							<form class="form-signin">
+								<div class="form-label-group">
+									<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+									<label for="inputEmail">Email</label>
+								</div>
+
+								<div class="form-label-group">
+									<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+									<label for="inputPassword">Password</label>
+								</div>
+
+								<div class="custom-control custom-checkbox mb-3">
+									<input type="checkbox" class="custom-control-input" id="customCheck1">
+									<label class="custom-control-label" for="customCheck1">Ingat saya</label>
+								</div>
+								<button class="btn btn-lg btn-block text-uppercase btn-login" type="submit" onclick="window.location.href = 'home.php';">Masuk</button>
+								<div class="text-center" style="padding: 10px 0 10px 0">
+									<span class="txt1">
+										Atau masuk dengan
+									</span>
+								</div>
+							</form>
+							<button class="btn btn-lg btn-google btn-block" type="submit"><i class="fa fa-google mr-2"></i>Google</button>
+							<div class="text-center w-full p-t-25">
+								<span class="txt1">
+									Belum punya akun?
+								</span>
+								<a class="txt1 bo1 hov1" href="daftar.php">
+									Daftar
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-8">
+				<div class="bg-login">
+					<img src="assets/img/journey.png">
+				</div>
+			</div>
 		</div>
 
-		<div class="row" style="margin-top:50px;">
-
-			<div class="form-login" style="margin:0 auto;">
-				<div class="card card-signin">
-					<div class="card-body">
-						<div class="header text-center">
-							<a href="index.html" class="logo"><img src="assets/img/djalandjalanlogo.png"></a>
-							<br /><span>Gabung dengan kami untuk menemukan</span>
-							<br /><span>teman travelingmu yang cocok!</span>
+		<div class="features">
+			<div class="row">
+				<div class="col">
+					<div class="feature text-center">
+						<div class="feature-icon">
+							<img src="assets/img/no-money.png">
 						</div>
-						<form class="form-signin">
-							<div class="form-label-group">
-								<input type="text" id="inputName" class="form-control" placeholder="Nama Lengkap" required autofocus>
-								<label for="inputEmail">Nama Lengkap</label>
-							</div>
+						<p class="feature-text ">Tanpa biaya sepersen pun! </p>
+					</div>
+				</div>
 
-							<div class="form-label-group">
-								<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-								<label for="inputEmail">Email</label>
-							</div>
-
-							<div class="form-label-group">
-								<input type="email" id="inputEmail" class="form-control" placeholder="No. Handphone" required autofocus>
-								<label for="inputEmail">No. Handphone</label>
-							</div>
-
-							<div class="form-label-group">
-								<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-								<label for="inputPassword">Password</label>
-							</div>
-
-							<div class="custom-control custom-checkbox mb-3">
-								<input type="checkbox" class="custom-control-input" id="customCheck1">
-								<label class="custom-control-label" for="customCheck1">Saya menyetujui syarat & ketentuan yang berlaku</label>
-							</div>
-							<button class="btn btn-lg btn-block text-uppercase btn-login" type="submit" onclick="window.location.href = 'index.html';">Daftar</button>
-							<div class="text-center" style="padding: 10px 0 10px 0">
-								<span class="txt1">
-									Atau daftar dengan
-								</span>
-							</div>
-						</form>
-						<button class="btn btn-lg btn-google btn-block" type="submit"><i class="fa fa-google mr-2"></i>Google</button>
-						<div class="text-center w-full p-t-25">
-							<span class="txt1">
-								Sudah punya akun?
-							</span>
-							<a class="txt1 bo1 hov1" href="index.html">
-								Login
-							</a>
+				<div class="col">
+					<div class="feature text-center">
+						<div class="feature-icon">
+							<img src="assets/img/calendar.png">
 						</div>
+						<p class="feature-text ">Atur tripmu sesuai seleramu! </p>
+					</div>
+				</div>
+				<div class="col">
+					<div class="feature text-center">
+						<div class="feature-icon">
+							<img src="assets/img/safe.png">
+						</div>
+						<p class="feature-text ">Aman dan dapat dipercaya! </p>
+					</div>
+				</div>
+				<div class="col">
+					<div class="feature text-center">
+						<div class="feature-icon">
+							<img src="assets/img/trust.png">
+						</div>
+						<p class="feature-text ">Bertemu teman baru! </p>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="footer container">
+		<footer class="container footer">
 			<div class="row">
 				<div class="col-8">
 					<div class="row">
@@ -102,8 +135,9 @@
 					<a href="#"><img src="assets/img/path1.png"></a>
 					<a href="#"><img src="assets/img/ig1.png"></a>
 				</div>
+				
 			</div>
-		</div>
+		</footer>
 	</div>
 
 	<!--===============================================================================================-->

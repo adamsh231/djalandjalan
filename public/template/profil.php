@@ -14,26 +14,27 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link href="css/profil.css" rel="stylesheet">
-    <link href="css/thread.css" rel="stylesheet">
 
+    <!-- Custom styles for this template -->
+    <link href="css/home.css" rel="stylesheet">
+    <link href="css/profil.css" rel="stylesheet">
 </head>
 
-
-
-<body style="background-color: white">
-
+<body>
+    <div class="bg-profil">
+        <img src="assets/img/profilBackground.jpg" style="width: 100%;">
+    </div>
     <!-- Navigation -->
     <nav class="navbar navbar-expand navbar-light justify-content-center fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="home.html"> <img id="home-logo" src="assets/img/djalandjalanlogo.png" width="150" height="auto" alt="" style="position: relative"></a>
+            <a class="navbar-brand" href="home.php"> <img id="home-logo" src="assets/img/djalandjalanlogo.png" width="150" height="auto" alt="" style="position: relative"></a>
             <div class="search">
                 <input type="search" class="form-control" placeholder="Cari Destinasi Keinginanmu. Contoh: Bromo">
                 <i class="fa fa-search"></i>
             </div>
             <ul class="navbar-nav nav-justified text-center">
                 <li class="nav-item">
-                    <a href="#makePost" id="tambahTrip" class="nav-link d-flex flex-column">
+                    <a href="home.php#makePost" class="nav-link d-flex flex-column">
                         <i class="fa fa-plus-circle fa-lg"></i>
                         <span class="d-none d-sm-inline">Tambah</span>
                     </a>
@@ -61,103 +62,17 @@
                 <li class="nav-item dropdown">
                     <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="assets/img/profil.jpg" class="avatar" alt="Avatar"><span> Bambang</span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="profil.html" class="dropdown-item"><i class="fa fa-user-o"></i> Profil</a></li>
+                        <li><a href="profil.php" class="dropdown-item"><i class="fa fa-user-o"></i> Profil</a></li>
                         <li><a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Pengaturan</a></li>
                         <li class="divider dropdown-divider"></li>
-                        <li><a href="index.html" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a></li>
+                        <li><a href="index.com" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
     </nav>
-    <!-- Page Content -->
 
-
-    <div class="container" style="margin-top: 100px" >
-        <div class="fontBaloo">
-            Gunung Bromo - Jawa Timur
-        </div>
-        <div class="row">
-            <div class="col">
-                <img class="img-fluid" src="assets/img/bromo.jpg" style="width:100%; border-radius:5px">
-            </div>
-            <div class="col">
-                <div class="thread-profile" style="border: 1px solid black; border-radius: 5px; padding: 15px">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <a href="#"><img src="assets/img/profil.jpg" style="width: 75px;height: 75px; border-radius: 50%;" class=""></a>
-                        </div>
-                        <div class="col-sm-9">
-                            <b>Bambang</b><br>
-                            <span>20 Tahun</span><br>
-                            <span>Mahasiswa</span><br>
-                            <div class="notelp">
-                                <i class="fa fa-phone fa-lg"></i>
-                                <button type="button" onclick="showNoTelp()" id="no-telp">Tampilkan No. Telp</button>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="btn btn-white" type="button"><img src="assets/img/whatsapp.png" height="25" />Hubungi Partner</button>
-                </div> <br>
-                <div class="thread-form" style="padding: 0px 15px;">
-                    <input type="checkbox" id="checkGabung"><span style="font-size: 12px">Saya Menyetujui Syarat dan Ketentuan Yang Berlaku</span>
-                    <button class="btn btn-ijo" type="button" data-toggle="modal" data-target="#exampleModal" style="width: 100%; font-weight: bold">Gabung</button>
-                </div>
-            </div>
-        </div>
-        <p class="judulSegment">Informasi Trip</p>
-        <div class="informasi-thread" style="border: 1px solid black; border-radius: 5px; padding: 10px; font-size:10px">
-            <table>
-                <tr>
-                    <th>Tanggal Berangkat</th>
-                    <td>28 Juni - 29 Juni 2020</td>
-                    <th>Tanggal Berangkat</th>
-                    <td>28 Juni - 29 Juni 2020</td>
-                    <th>Tanggal Berangkat</th>
-                    <td>28 Juni - 29 Juni 2020</td>
-                </tr>
-                <tr>
-                    <th>Tanggal Pulang</th>
-                    <td>28 Juni - 29 Juni 2020</td>
-                    <th>Tanggal Berangkat</th>
-                    <td>28 Juni - 29 Juni 2020</td>
-                </tr>
-            </table>
-        </div>
-
-        <p class="judulSegment">Deskripsi Trip</p>
-        <div class="informasi-thread" style="border: 1px solid black; border-radius: 5px; padding: 10px; font-size:10px">
-            <p> Dicari teman trip ke bromo sejumlah 10 orang titik point di stasiun malang motoran diharapkan ada motor sendiri
-                Dicari teman trip ke bromo sejumlah 10 orang titik point di stasiun malang motoran diharapkan ada motor sendiri
-                Dicari teman trip ke bromo sejumlah 10 orang titik point di stasiun malang motoran diharapkan ada motor sendiri
-                Dicari teman trip ke bromo sejumlah 10 orang titik point di stasiun malang motoran diharapkan ada motor sendiri
-            </p>
-        </div>
-    </div>
-
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="border-style: none;">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div style="text-align: center">
-                        <h3>Konfirmasi Gabung Trip</h3>
-                        <p>Kamu menyetujui semua syarat dan ketentuan yang berlaku</p>
-                        <button class="btn btn-ijo nav-text" type="button" onclick="">
-                            Gabung
-                        </button>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="box form-control" style="margin-bottom: 20px; margin-top:100px">
+    <div class="box form-control" style="margin-bottom: 20px; margin-top:-300px">
         <div class="row" style="margin-top: 2%">
             <div class="col">
                 <div class="row justify-content-md-center text-profil">
@@ -213,6 +128,7 @@
 
 
     </div>
+
     <div class="box" style="margin-top: 10px;">
         <nav>
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -540,7 +456,6 @@
         </div>
     </div>
 
-
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -548,11 +463,9 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script> -->
     <script src="js/slick.js"></script>
 
-    <script type="text/javascript">
-        function showNoTelp() {
-            document.getElementById('no-telp').innerHTML = '08924235435';
-        }
-    </script>
+
+
+
 </body>
 
 </html>
