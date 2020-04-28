@@ -20,6 +20,8 @@ Route::group(['middleware' => ['guest']], function () {
         return view('register');
     });
     Route::post('/register', 'AuthController@register');
+    Route::get('/login/google', 'GoogleAuthController@redirectToProvider');
+    Route::get('/login/google/callback', 'GoogleAuthController@handleProviderCallback');
 });
 
 Route::group(['middleware' => ['isSignIn']], function () {
