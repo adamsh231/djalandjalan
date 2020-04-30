@@ -8,25 +8,10 @@ body {
 
 /* NAVBAR */
 .navbar{
-  background-color: #FAF5E7;
+  background-color:white;
+  box-shadow:0px 4px 8px rgba(0, 0, 0, 0.08) !important;
 }
-.search input[type=search]{
-  display: block;
-  text-align: center;
-  width:100%;
-  font-size: 12px;
-}
-.search{
-  position: relative;
-  width: 75%;
-}
-.search i{
-  position: absolute;
-  right:0;
-  top:0;
-  padding: 10px;
-  color:#aaa
-}
+
 .navbar .dropdown-item i {
   font-size: 16px;
   min-width: 22px;
@@ -78,7 +63,38 @@ body {
   border-radius: 50%;
   background-color: black;
 }
+nav span.animated{
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+}
+/* */
 
+.search input, .search select{
+  text-align: center;
+  width:30%;
+  font-size: 15px;
+  border-width:0px;
+  border:none;
+  margin-right:5px ;
+}
+
+.search{
+  width: 100%;
+  height: auto; 
+  margin-top:100px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08) !important;
+  padding:10px;
+}
+.search button{
+  background-color: #2ED1A2; 
+  color: white;
+  margin-left: 10px;
+}
+
+.btn-core:hover{
+  background-color:rgb(68, 230, 184) ;
+  color: white;
+}
 /* */
 .openingText{
   line-height: 50px;

@@ -2,7 +2,10 @@
   --input-padding-x: 1.5rem;
   --input-padding-y: 0.75rem;
 }
-
+a {
+  text-decoration: none !important;
+  color: #35405a;
+}
 body {
   padding-top: 20px;
 }
@@ -36,9 +39,12 @@ body {
   width: 100%;
 }
 
+
+
 .logo img {
-  width: 50%;
+  width: 100%;
   text-align: center;
+  margin-bottom: 15px;
 }
 
 .card-signin {
@@ -141,8 +147,9 @@ body {
   color: white;
 }
 
-.btn-login:hover {
-  background-color: rgb(72, 202, 165);
+.btn-login:hover{
+  background-color:rgb(68, 230, 184) ;
+  color: white;
 }
 
 .features {
@@ -152,11 +159,7 @@ body {
 .feature-icon img {
   width: 100px;
 }
-footer{
-margin-top: 100px;
-position: fixed;
 
-}
 
 .footer a {
   color: black;

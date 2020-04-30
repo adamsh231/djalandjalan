@@ -1,0 +1,50 @@
+.formBuatTrip {
+    margin: 100px 0 100px 0;
+    /* text-align: center; */
+    left: 50%;
+}
+
+.formBuatTrip {
+    width: 100%;
+}
+
+.inputTrip {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.inputTrip h5 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.formBuatTrip h2 {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.formBuatTrip input,
+.formBuatTrip textarea {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+.formBuatTrip textarea {
+    height: 200px;
+}
+
+.formBuatTrip button {
+    background-color: #2ed1a2;
+    margin-top: 25px;
+    color: white;
+}
+
+.modal-header {
+    border-bottom: 0 none;
+}
+
+.modal-footer {
+    border-top: 0 none;
+}
