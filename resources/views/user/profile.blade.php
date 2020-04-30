@@ -59,7 +59,7 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="{{asset('template/assets/img/profil.jpg')}}" class="avatar" alt="Avatar"><span> {{Auth::user()->name}}</span></a>
+                    <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="{{ Auth::user()->picture }}" class="avatar" alt="Avatar"><span> {{Auth::user()->name}}</span></a>
                     <ul class="dropdown-menu">
                         <li><a href="{{ url('/profile') }}" class="dropdown-item"><i class="fa fa-user-o"></i> Profil</a></li>
                         <li><a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Pengaturan</a></li>
@@ -90,7 +90,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="avatarProfil"><a href="#"><img src="{{asset('template/assets/img/profil.jpg')}}"> </a></div>
+                <div class="avatarProfil"><a href="#"><img src="{{ Auth::user()->picture }}"> </a></div>
                 <div style="margin-bottom: 25px"><img src="{{asset('template/assets/img/check.png')}}" width="15">Terverifikasi</div>
                 <h3><b>{{ Auth::user()->name }}</b>, <span>22</span></h3>
                 <h6>Malang, Jawa Timur</h6>
