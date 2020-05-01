@@ -25,12 +25,6 @@ Route::group(['middleware' => ['guest']], function () {
 });
 
 Route::group(['middleware' => ['isSignIn']], function () {
-
-    //* Manual route for email verification *//
-    Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
-    Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
-    Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
-
     Route::group(['middleware' => ['verified']], function () {
         Route::get('/home', function () {
             return view('user/home');
@@ -45,6 +39,16 @@ Route::group(['middleware' => ['isSignIn']], function () {
             return view('user/thread');
         });
     });
+});
+
+//* Manual route for email verification *//
+Route::group(['middleware' => ['isSignIn']], function () {
+    Route::get('/email/verify', 'Auth\VerificationController@show')->name('verification.notice');
+    Route::post('/email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+});
+Route::get('/email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
+Route::get('/verified', function(){
+    return view('auth/verified');
 });
 
 //! Note for Future to turn on/off default Route in Router.php
