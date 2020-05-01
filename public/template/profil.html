@@ -14,7 +14,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" type="text/css" media="all" href="css/animate.css" />
     <!-- Custom styles for this template -->
     <link href="css/home.css" rel="stylesheet">
     <link href="css/profil.css" rel="stylesheet">
@@ -27,18 +27,23 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand navbar-light justify-content-center fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="home.html"> <img id="home-logo" src="assets/img/LogoH-1.svg" width="150" height="auto" alt="" style="position: relative"></a>
+            <a class="navbar-brand" href="home.html"> <img id="home-logo" src="assets/img/LogoH-1.svg" width="160" height="auto" alt="" style="position: relative"></a>
 
             <ul class="navbar-nav nav-justified text-center">
-                <li class="nav-item">
-                    <a href="buatTrip.html" class="nav-link d-flex flex-column">
+                <li class="nav-item dropdown">
+                    <a href="#" data-toggle="dropdown" class="nav-link d-flex flex-column">
                         <i class="fa fa-plus-circle fa-lg"></i>
                         <span class="d-none d-sm-inline">Tambah</span>
                     </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="openingBuatTrip.html">Partners</a></li>
+                        <li><a href="#">Open Trip</a></li>
+                    </ul>
+
                 </li>
                 <li class="nav-item dropdown">
                     <a href="#" data-toggle="dropdown" class="nav-link d-flex flex-column">
-                        <i class="fa fa-commenting-o fa-lg"><span class="notif">new</span></i>
+                        <i class="fa fa-commenting-o fa-lg"><span class="notif animated rubberBand">new</span></i>
                         <span class="d-none d-sm-inline">Pesan</span>
                     </a>
                     <ul class="dropdown-menu">
@@ -59,10 +64,12 @@
                 <li class="nav-item dropdown">
                     <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="assets/img/profil.jpg" class="avatar" alt="Avatar"><span> Bambang</span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="profil.html" class="dropdown-item"><i class="fa fa-user-o"></i> Profil</a></li>
-                        <li><a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Pengaturan</a></li>
+                        <li><a href="#" class="dropdown-item"><i class="fa fa-plane"></i> Tripmu</a></li>
+                        <li><a href="#" class="dropdown-item"><i class="fa fa-check-circle"></i> Verifikasi Akun</a></li>
                         <li class="divider dropdown-divider"></li>
-                        <li><a href="index.com" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a></li>
+                        <li><a href="profil.html" class="dropdown-item"><i class="fa fa-user-o"></i> Profil</a></li>
+                        <li><a href="settingAccount.html" class="dropdown-item"><i class="fa fa-sliders"></i> Pengaturan Akun</a></li>
+                        <li><a href="index.html" class="dropdown-item"><i class="fa fa-power-off"></i> Keluar</a></li>
                     </ul>
                 </li>
             </ul>
@@ -88,17 +95,20 @@
                 </div>
             </div>
             <div class="col">
-                <div class="avatarProfil"><a href="#"><img src="assets/img/profil.jpg"> </a></div>
+                <div class="avatarProfil">
+                    <a href="#"><img src="assets/img/profil.jpg"> </a>
+                </div>
                 <div style="margin-bottom: 25px"><img src="assets/img/check.png" width="15">Terverifikasi</div>
                 <h3><b>Bambang</b>, <span>22</span></h3>
                 <h6>Malang, Jawa Timur</h6>
                 <h5>Mahasiswa</h5>
             </div>
             <div class="col">
-                <div class="row">
-                    <div class="col" style="text-align: right"><button class="btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="#modalRiwayat">Riwayat</button></div>
-                    <div class="col" style="text-align: left"><button class="btn btn-success btn-sm" type="button" data-toggle="modal" data-target="#modalPenilaian">Penilaian</button></div>
-                </div>
+                <!-- <div class="row"> -->
+                <div class="col" style="text-align: right"><button class="btn btn-core btn-sm" type="button" data-toggle="modal" data-target="#modalRiwayat">Riwayat</button></div>
+                <!-- <div class="col" style="text-align: left"><button class="btn btn-primary btn-sm" type="button"><i class="fa fa-plus" aria-hidden="true"></i>Tambah Teman</button></div> -->
+                <!-- <div class="col" style="text-align: left"><button class="btn btn-success btn-sm" type="button" data-toggle="modal" data-target="#modalPenilaian">Penilaian</button></div> -->
+                <!-- </div> -->
             </div>
         </div>
         <br>
@@ -118,20 +128,14 @@
             <span class="badge badge-light">Diving</span>
             <span class="badge badge-light">Penikmat senja</span>
         </div>
-
-
-
-
-
-
     </div>
 
     <div class="box" style="margin-top: 10px;">
         <nav>
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                 <a class="nav-item nav-link active" id="nav-profil-galeri" data-toggle="tab" href="#nav-galeri" role="tab" aria-controls="nav-galeri" aria-selected="true">Galeri <span class="badge badge-primary">8</span></a>
-                <a class="nav-item nav-link" id="nav-profile-rekomendasi" data-toggle="tab" href="#nav-rekomendasi" role="tab" aria-controls="nav-rekomendasi" aria-selected="false">Rekomendasi <span class="badge badge-primary">4</span></a>
-                <a class="nav-item nav-link" id="nav-contact-teman" data-toggle="tab" href="#nav-teman" role="tab" aria-controls="nav-teman" aria-selected="false">Teman <span class="badge badge-primary">4</span></a>
+                <a class="nav-item nav-link" id="nav-profile-rekomendasi" data-toggle="tab" href="#nav-rekomendasi" role="tab" aria-controls="nav-rekomendasi" aria-selected="false">Rekomendasi</a>
+                <a class="nav-item nav-link" id="nav-contact-teman" data-toggle="tab" href="#nav-teman" role="tab" aria-controls="nav-teman" aria-selected="false">Teman</a>
             </div>
         </nav>
         <div class="tab-content" id="nav-tabContent">
@@ -180,70 +184,290 @@
                     </div>
 
                 </div>
+                <div class="">
+                    <button class="btn btn-sm btn-primary" type="file"><i class="fa fa-plus" aria-hidden="true"></i> Tambah Foto</button>
+                </div>
             </div>
-            <div class="tab-pane fade" id="nav-rekomendasi" role="tabpanel" aria-labelledby="nav-profil-rekomendasi">No Entry2</div>
+            <div class="tab-pane fade" id="nav-rekomendasi" role="tabpanel" aria-labelledby="nav-profil-rekomendasi">Feature not available</div>
             <div class="tab-pane fade" id="nav-teman" role="tabpanel" aria-labelledby="nav-profil-teman">
-                <div class="row text-center text-lg-left">
+                Feature not available
+                <!-- <div class="row text-center text-lg-left">
                     <img class="teman-profil" src="assets/img/adam2.png">
                     <img class="teman-profil" src="assets/img/adam2.png">
                     <img class="teman-profil" src="assets/img/adam2.png">
                     <img class="teman-profil" src="assets/img/adam2.png">
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalRiwayat" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle " aria-hidden="true ">
+        <div class="modal-dialog modal-dialog-centered modal-lg " role="document ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Riwayat</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close ">
+                        <span aria-hidden="true ">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="riwayatPerjalanan">
+                        <h5>Perjalananmu Saat Ini</h5>
+                        <div class="isi-riwayatPerjalanan text-center">
+                            <a href="history.html">
+                                <div class="row row-cols-4" style="margin: 0 auto;height: auto; padding: 10px;">
+                                    <div class="col">
+                                        <img src="assets/img/bromo.jpg ">
+                                    </div>
+                                    <div class="col-md-auto">
+                                        <h5>Gunung Bromo</h5>
+                                        <p>25 April 2019 - 26 April 2019</p>
+                                    </div>
+                                    <div class="col-md-auto">
+                                        <button class="btn btn-primary btn-sm ">Lagi Jalan</button>
+                                    </div>
+                                    <div class="col">
+                                        <p>Bersama dengan 6 orang lainnya</p>
+                                    </div>
+                                    <div class="col">
+                                        <h5> <span class="fa fa-star fa-lg checked "></span> 4.5</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="riwayatPerjalanan ">
+                        <h5>Riwayat Perjalanan</h5>
+                        <div class="isi-riwayatPerjalanan text-center">
+                            <a href="history.html">
+                                <div class="row row-cols-4" style="margin: 0 auto;height: auto; padding: 10px;">
+                                    <div class="col">
+                                        <img src="assets/img/bromo.jpg ">
+                                    </div>
+                                    <div class="col-md-auto">
+                                        <h5>Gunung Bromo</h5>
+                                        <p>25 April 2019 - 26 April 2019</p>
+                                    </div>
+                                    <div class="col-md-auto">
+                                        <button class="btn btn-warning btn-sm ">Aktif</button>
+                                    </div>
+                                    <div class="col">
+                                        <p>Bersama dengan 6 orang lainnya</p>
+                                    </div>
+                                    <div class="col">
+                                        <h5> <span class="fa fa-star fa-lg checked "></span> 4.5</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="isi-riwayatPerjalanan text-center">
+                            <a href="history.html">
+                                <div class="row row-cols-4" style="margin: 0 auto;height: auto; padding: 10px;">
+                                    <div class="col">
+                                        <img src="assets/img/bromo.jpg ">
+                                    </div>
+                                    <div class="col-md-auto">
+                                        <h5>Gunung Bromo</h5>
+                                        <p>25 April 2019 - 26 April 2019</p>
+                                    </div>
+                                    <div class="col-md-auto">
+                                        <button class="btn btn-success btn-sm ">Selesai</button>
+                                    </div>
+                                    <div class="col">
+                                        <p>Bersama dengan 6 orang lainnya</p>
+                                    </div>
+                                    <div class="col">
+                                        <h5> <span class="fa fa-star fa-lg checked "></span> 4.5</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="isi-riwayatPerjalanan text-center">
+                            <a href="history.html">
+                                <div class="row row-cols-4" style="margin: 0 auto;height: auto; padding: 10px;">
+                                    <div class="col">
+                                        <img src="assets/img/bromo.jpg ">
+                                    </div>
+                                    <div class="col-md-auto">
+                                        <h5>Gunung Bromo</h5>
+                                        <p>25 April 2019 - 26 April 2019</p>
+                                    </div>
+                                    <div class="col-md-auto">
+                                        <button class="btn btn-danger btn-sm ">Batal</button>
+                                    </div>
+                                    <div class="col">
+                                        <p>Bersama dengan 6 orang lainnya</p>
+                                    </div>
+                                    <div class="col">
+                                        <h5> <span class="fa fa-star fa-lg checked "></span> 4.5</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="isi-riwayatPerjalanan text-center">
+                            <a href="history.html">
+                                <div class="row row-cols-4" style="margin: 0 auto;height: auto; padding: 10px;">
+                                    <div class="col">
+                                        <img src="assets/img/bromo.jpg ">
+                                    </div>
+                                    <div class="col-md-auto">
+                                        <h5>Gunung Bromo</h5>
+                                        <p>25 April 2019 - 26 April 2019</p>
+                                    </div>
+                                    <div class="col-md-auto">
+                                        <button class="btn btn-success btn-sm ">Selesai</button>
+                                    </div>
+                                    <div class="col">
+                                        <p>Bersama dengan 6 orang lainnya</p>
+                                    </div>
+                                    <div class="col">
+                                        <h5> <span class="fa fa-star fa-lg checked "></span> 4.5</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Modal Penilaian -->
+    <!-- <div class="modal fade" id="modalPenilaian" tabindex="-1" role="dialog " aria-labelledby="exampleModalCenterTitle " aria-hidden="true ">
+        <div class="modal-dialog modal-dialog-centered modal-lg " role="document ">
+            <div class="modal-content ">
+                <div class="modal-header ">
+                    <h5 class="modal-title " id="exampleModalLongTitle ">Penilaian</h5>
+                    <button type="button " class="close" data-dismiss="modal" aria-label="Close ">
+                        <span aria-hidden="true ">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body ">
+
+                    <div class="penilaian ">
+                        <div class="isi-penilaian ">
+                            <div class="row ">
+                                <div class="col text-left ">
+                                    <img src="assets/img/profil.jpg " style="float:left;margin-right:10px ">
+                                    <div>
+                                        <h5>Arini</h5>
+                                        <p>Trip ke Gunung Bromo | 25 April 2019 - 26 April 2019</p>
+                                    </div>
+                                </div>
+                                <div class="col ">
+                                    <div class="rating " style="margin: auto ">
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star "></span>
+                                        <span class="fa fa-star "></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="penilaian ">
+                        <div class="isi-penilaian ">
+                            <div class="row ">
+                                <div class="col text-left ">
+                                    <img src="assets/img/profil.jpg " style="float:left;margin-right:10px ">
+                                    <div>
+                                        <h5>Aldo</h5>
+                                        <p>Trip ke Gunung Bromo | 25 April 2019 - 26 April 2019</p>
+                                    </div>
+                                </div>
+                                <div class="col ">
+                                    <div class="rating " style="margin: auto ">
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star "></span>
+                                        <span class="fa fa-star "></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="penilaian ">
+                        <div class="isi-penilaian ">
+                            <div class="row ">
+                                <div class="col text-left ">
+                                    <img src="assets/img/profil.jpg " style="float:left;margin-right:10px ">
+                                    <div>
+                                        <h5>Nafi</h5>
+                                        <p>Trip ke Gunung Bromo | 25 April 2019 - 26 April 2019</p>
+                                    </div>
+                                </div>
+                                <div class="col ">
+                                    <div class="rating " style="margin: auto ">
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star "></span>
+                                        <span class="fa fa-star "></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
 
     <!-- Footer -->
     <footer id="footer" style="background-color: white">
         <div class="container pt-5 border-bottom">
             <div class="row">
                 <div class="col-md-3 col-sm-12 mb-3 text-center">
-                    <img id="home-logo" src="assets/img/logoV-1.svg" width="100%" height="auto" alt="" style="position: relative">
+                    <img id="home-logo" src="assets/img/LogoV-1.svg" width="100%" height="auto" alt="" style="position: relative">
                 </div>
                 <div class="col-md-9 col-sm-12">
                     <div class="col-md-3 col-sm-6 col-6 p-0 float-left">
-                        <h5 class="mb-4 font-weight-bold text-uppercase">Produk</h5>
+                        <h5 class="mb-4 font-weight-bold text-uppercase">Tentang</h5>
                         <ul class="list-group">
-                            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#">Partners</a></li>
-                            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="href=" #">Persewaan Alat</a></li>
-                            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#">Agen Travel</a></li>
-                            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#">Tour Guide</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-6 p-0 mb-3 float-left">
-                        <h5 class="mb-4 font-weight-bold text-uppercase">Agen</h5>
-                        <ul class="list-group">
-                            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#">Cara Gabung</a></li>
-                            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#">Keuntungan</a></li>
-                            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#">Beriklan di djalandjalan.com</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
-                        <h5 class="mb-4 font-weight-bold text-uppercase">Dukungan</h5>
-                        <ul class="list-group">
-                            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Tentang Kami</a></li>
-                            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Bantuan</a></li>
-                            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Syarat & Ketentuan</a></li>
-                            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Kebijakan Privasi</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
-                        <h5 class="mb-4 font-weight-bold text-uppercase">Temukan Kami</h5>
-                        <ul class="list-group">
+                            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#">djalandjalan.com</a></li>
                             <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                                <a href="#"><img src="assets/img/twitter1.png"></a>
-                                <a href="#"><img src="assets/img/path1.png"></a>
-                                <a href="#"><img src="assets/img/ig1.png"></a>
+                                <a href="href=" # ">Partners</a></li>
+                            <li class="list-group-item bg-transparent border-0 p-0 mb-2 "><a href="# ">Aksesbilitas</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left ">
+                        <h5 class="mb-4 font-weight-bold text-uppercase ">Keamanan</h5>
+                        <ul class="list-group ">
+                            <li class="list-group-item bg-transparent border-0 p-0 mb-2 "><a href="# "></i>Keamanan</a></li>
+                            <li class="list-group-item bg-transparent border-0 p-0 mb-2 "><a href="# "></i>Tips & Trik</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left ">
+                        <h5 class="mb-4 font-weight-bold text-uppercase ">Dukungan</h5>
+                        <ul class="list-group ">
+                            <li class="list-group-item bg-transparent border-0 p-0 mb-2 "><a href="# "></i>Bantuan</a></li>
+                            <li class="list-group-item bg-transparent border-0 p-0 mb-2 "><a href="# "></i>Syarat & Ketentuan</a></li>
+                            <li class="list-group-item bg-transparent border-0 p-0 mb-2 "><a href="# "></i>Kebijakan Privasi</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left ">
+                        <h5 class="mb-4 font-weight-bold text-uppercase ">Temukan Kami</h5>
+                        <ul class="list-group ">
+                            <li class="list-group-item bg-transparent border-0 p-0 mb-2 ">
+                                <a href="# " ><i class="fa fa-twitter fa-2x " aria-hidden="true "></i></a>
+                                <a href="# " style="margin-left: 10px; "><i class="fa fa-facebook-official fa-2x " aria-hidden="true "></i></a>
+                                <a href="# " style="margin-left: 10px; "><i class="fa fa-instagram fa-2x " aria-hidden="true "></i></a>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-12">
-                    <div class="py-4 d-flex justify-content-center align-items-center">
-                        <div class="container">
-                            <p class="m-0 text-center">Copyright &copy; djalandjalan.com 2020</p>
+                <div class="col-md-12 ">
+                    <div class="py-4 d-flex justify-content-center align-items-center ">
+                        <div class="container ">
+                            <p class="m-0 text-center ">Copyright &copy; djalandjalan.com 2020</p>
                         </div>
                     </div>
                 </div>
@@ -251,218 +475,12 @@
         </div>
     </footer>
 
-
-    <div class="modal fade" id="modalRiwayat" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Riwayat</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="riwayatPerjalanan">
-                        <h5>Perjalananmu Saat Ini</h5>
-                        <div class="isi-riwayatPerjalanan">
-                            <div class="row align-items-center">
-                                <div class="col">
-                                    <img src="assets/img/bromo.jpg">
-                                    <div style="float:right;">
-                                        <h5>Gunung Bromo</h5>
-                                        <p>25 April 2019 - 26 April 2019</p>
-                                    </div>
-
-                                </div>
-                                <div class="col-md-3 text-center">
-                                    <button class="btn btn-warning btn-sm">Aktif</button>
-                                </div>
-                                <div class="col">
-                                    <h5>Bersama dengan 6 orang lainnya</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="riwayatPerjalanan">
-                        <h5>Riwayat Perjalanan</h5>
-                        <div class="isi-riwayatPerjalanan">
-                            <div class="row align-items-center">
-                                <div class="col">
-                                    <img src="assets/img/bromo.jpg">
-                                    <div style="float:right;">
-                                        <h5>Gunung Bromo</h5>
-                                        <p>25 April 2019 - 26 April 2019</p>
-                                    </div>
-
-                                </div>
-                                <div class="col-md-3 text-center">
-                                    <button class="btn btn-danger btn-sm">Batal</button>
-                                </div>
-                                <div class="col">
-                                    <h5>Bersama dengan 6 orang lainnya</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="isi-riwayatPerjalanan">
-                            <div class="row align-items-center">
-                                <div class="col">
-                                    <img src="assets/img/bromo.jpg">
-                                    <div style="float:right;">
-                                        <h5>Gunung Bromo</h5>
-                                        <p>25 April 2019 - 26 April 2019</p>
-                                    </div>
-
-                                </div>
-                                <div class="col-md-3 text-center">
-                                    <button class="btn btn-warning btn-sm">Aktif</button>
-                                </div>
-                                <div class="col">
-                                    <h5>Bersama dengan 6 orang lainnya</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="isi-riwayatPerjalanan">
-                            <div class="row align-items-center">
-                                <div class="col">
-                                    <img src="assets/img/bromo.jpg">
-                                    <div style="float:right;">
-                                        <h5>Gunung Bromo</h5>
-                                        <p>25 April 2019 - 26 April 2019</p>
-                                    </div>
-
-                                </div>
-                                <div class="col-md-3 text-center">
-                                    <button class="btn btn-success btn-sm">Selesai</button>
-                                </div>
-                                <div class="col">
-                                    <h5>Bersama dengan 6 orang lainnya</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="isi-riwayatPerjalanan">
-                            <div class="row align-items-center">
-                                <div class="col">
-                                    <img src="assets/img/bromo.jpg">
-                                    <div style="float:right;">
-                                        <h5>Gunung Bromo</h5>
-                                        <p>25 April 2019 - 26 April 2019</p>
-                                    </div>
-
-                                </div>
-                                <div class="col-md-3 text-center">
-                                    <button class="btn btn-success btn-sm">Selesai</button>
-                                </div>
-                                <div class="col">
-                                    <h5>Bersama dengan 6 orang lainnya</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="modalPenilaian" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Penilaian</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <div class="penilaian">
-                        <div class="isi-penilaian">
-                            <div class="row">
-                                <div class="col text-left">
-                                    <img src="assets/img/profil.jpg" style="float:left;margin-right:10px">
-                                    <div>
-                                        <h5>Arini</h5>
-                                        <p>Trip ke Gunung Bromo | 25 April 2019 - 26 April 2019</p>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="rating" style="margin: auto">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="penilaian">
-                        <div class="isi-penilaian">
-                            <div class="row">
-                                <div class="col text-left">
-                                    <img src="assets/img/profil.jpg" style="float:left;margin-right:10px">
-                                    <div>
-                                        <h5>Aldo</h5>
-                                        <p>Trip ke Gunung Bromo | 25 April 2019 - 26 April 2019</p>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="rating" style="margin: auto">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="penilaian">
-                        <div class="isi-penilaian">
-                            <div class="row">
-                                <div class="col text-left">
-                                    <img src="assets/img/profil.jpg" style="float:left;margin-right:10px">
-                                    <div>
-                                        <h5>Nafi</h5>
-                                        <p>Trip ke Gunung Bromo | 25 April 2019 - 26 April 2019</p>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="rating" style="margin: auto">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script> -->
-    <script src="js/slick.js"></script>
-
-
-
+    <script src="vendor/jquery/jquery.min.js "></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js "></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js "></script> -->
+    <script src="js/slick.js "></script>
 
 </body>
-
 </html>

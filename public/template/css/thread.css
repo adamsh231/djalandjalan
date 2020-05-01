@@ -1,184 +1,250 @@
 body {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
+
 a {
-  text-decoration: none !important;
-  color: #35405a;
+    text-decoration: none !important;
+    color: #35405a;
 }
+
+.btn-core {
+    background-color: #2ed1a2;
+    color: white;
+}
+
+.btn-core:hover {
+    background-color: rgb(68, 230, 184);
+    color: white;
+}
+
 .navbar {
-  background-color: #faf5e7;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08) !important;
 }
+
 .search input[type="search"] {
-  display: block;
-  text-align: center;
-  width: 100%;
-  font-size: 12px;
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 12px;
 }
+
 .search {
-  position: relative;
-  width: 75%;
+    position: relative;
+    width: 75%;
 }
+
 .search i {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 10px;
-  color: #aaa;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px;
+    color: #aaa;
 }
+
 .navbar .dropdown-item i {
-  font-size: 16px;
-  min-width: 22px;
+    font-size: 16px;
+    min-width: 22px;
 }
+
 .navbar .dropdown-item .material-icons {
-  font-size: 21px;
-  line-height: 16px;
-  vertical-align: middle;
-  margin-top: -2px;
+    font-size: 21px;
+    line-height: 16px;
+    vertical-align: middle;
+    margin-top: -2px;
 }
-.navbar .nav-item.open > a,
-.navbar .nav-item.open > a:hover,
-.navbar .nav-item.open > a:focus {
-  color: #fff;
-  background: none !important;
+
+.navbar .nav-item.open>a,
+.navbar .nav-item.open>a:hover,
+.navbar .nav-item.open>a:focus {
+    color: #fff;
+    background: none !important;
 }
+
 .navbar .dropdown-menu {
-  border-radius: 1px;
-  border-color: #e5e5e5;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 1px;
+    border-color: #e5e5e5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
+
 .navbar .dropdown-menu li a {
-  color: #777 !important;
-  padding: 8px 20px;
-  line-height: normal;
+    color: #777 !important;
+    padding: 8px 20px;
+    line-height: normal;
 }
+
 .navbar .dropdown-menu li a:hover,
 .navbar .dropdown-menu li a:focus {
-  color: #333 !important;
-  background: transparent !important;
+    color: #333 !important;
+    background: transparent !important;
 }
+
 .navbar .nav .active a,
 .navbar .nav .active a:hover,
 .navbar .nav .active a:focus {
-  color: #fff;
-  text-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
-  background: transparent !important;
+    color: #fff;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
+    background: transparent !important;
 }
+
 .navbar .nav .user-action {
-  padding: 9px 15px;
-}
-.informasi{
-  border: 1px solid #39CCCC; 
-  border-radius: 5px; 
-  padding: 5px 15px 15px 15px;
+    padding: 9px 15px;
 }
 
-.informasi div{
-  margin-bottom: -5px;
+.informasi {
+    border: 1px solid #39CCCC;
+    border-radius: 5px;
+    padding: 5px 15px 15px 15px;
 }
+
+.informasi div {
+    margin-bottom: -5px;
+}
+
 .heading-thread h2 {
-  font-family: Baloo;
-  font-size: 35px;
+    font-family: Baloo;
+    font-size: 35px;
 }
 
-.heading-information span{
-  font-size: 10px;
-  right: 0;
+.heading-information span {
+    font-size: 10px;
+    right: 0;
 }
 
-.information-trip{
-padding: 0px;
+.information-trip {
+    padding: 0px;
 }
 
-.information-trip label{
-  font-size: 12px;
-  width: 120px;
+.information-trip label {
+    font-size: 12px;
+    width: 120px;
 }
 
-.information-trip span{
-  font-size: 12px;
-  margin-left: 25px;
-}
-.informasi button{
-  text-align: center;
-  color: white;
-  background-color:#2ED1A2 ;
-  font-family: OpenSans-SemiBold;
-  width: 75%;
+.information-trip span {
+    font-size: 12px;
+    margin-left: 25px;
 }
 
-.diskusi-trip{
-  margin-top: 10px;
-  border: 1px solid #39CCCC; 
-  border-radius: 5px; 
-  padding: 10px; 
-  font-size:12px;
-  
+.informasi button {
+    text-align: center;
+    color: white;
+    background-color: #2ED1A2;
+    font-family: OpenSans-SemiBold;
+    width: 75%;
 }
 
-.diskusi-trip button{
-  text-align: center;
-  color: white;
-  background-color:#2ED1A2 ;
-  font-family: OpenSans-SemiBold;
-  font-size: 10px;
-  float: right;
+.memberTrip {
+    margin-top: 10px;
+    border: 1px solid #39CCCC;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 12px;
 }
 
-.heading-deskripsi h4{
-  margin-top: 15px;
-  font-family: OpenSans-SemiBold;
+.memberTrip-host {
+    margin-bottom: 5px;
 }
 
-.deskripsi-thread{
-  border: 1px solid #39CCCC; 
-  border-radius: 5px; 
-  padding: 10px; 
-  font-size:12px;
+.memberTrip-member ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
-.box{
-  width: 100%;
+.memberTrip-member li {
+    float: left;
 }
 
+.picMember {
+    margin-right: 15px;
+}
 
+.memberTrip img {
+    width: 35px;
+    height: 35px;
+}
 
+.heading-deskripsi h4 {
+    margin-top: 15px;
+    font-family: OpenSans-SemiBold;
+}
 
+.deskripsi-thread {
+    border: 1px solid #39CCCC;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 12px;
+}
 
+.box {
+    width: 100%;
+}
+
+.diskusi {
+    border: 1px solid #39CCCC;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 12px;
+    margin-top: 15px;
+    display: inline-block;
+    width: 100%;
+}
+
+.icon-diskusi {
+    vertical-align: middle;
+    font-size: 40px;
+}
+
+.diskusi button {
+    font-size: 14px;
+    margin: auto;
+}
+
+.isiDiskusi-jawab {
+    margin-left: 50px;
+}
 
 .notif {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  width: auto;
-  margin-top: 0;
-  padding: 3px 5px;
-  background: #da311b;
-  font-family: "Roboto", sans-serif;
-  font-size: 10px;
-  color: #fff;
-  font-weight: 300;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: auto;
+    margin-top: 0;
+    padding: 3px 5px;
+    background: #da311b;
+    font-family: "Roboto", sans-serif;
+    font-size: 10px;
+    color: #fff;
+    font-weight: 300;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
 }
 
 .avatar {
-  vertical-align: middle;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  background-color: black;
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: black;
 }
 
 @font-face {
-  font-family: Baloo;
-  src: url(../fonts/Baloo-Regular.ttf);
+    font-family: Baloo;
+    src: url(../fonts/Baloo-Regular.ttf);
 }
+
 @font-face {
-  font-family: OpenSans-Reguler;
-  src: url(../fonts/OpenSans-Regular.ttf);
+    font-family: OpenSans-Reguler;
+    src: url(../fonts/OpenSans-Regular.ttf);
 }
+
 @font-face {
-  font-family: OpenSans-SemiBold;
-  src: url(../fonts/OpenSans-Semibold.ttf);
+    font-family: OpenSans-SemiBold;
+    src: url(../fonts/OpenSans-Semibold.ttf);
+}
+
+html {
+    scroll-behavior: smooth;
 }
