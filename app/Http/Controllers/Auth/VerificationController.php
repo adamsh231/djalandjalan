@@ -62,7 +62,7 @@ class VerificationController extends Controller
         }
 
         if ($user->hasVerifiedEmail()) {
-            return redirect($this->redirectPath());
+            return redirect($this->redirectPath())->with('verified', true);
         }
 
         if ($user->markEmailAsVerified()) {

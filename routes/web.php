@@ -49,7 +49,7 @@ Route::group(['middleware' => ['isSignIn']], function () {
 Route::get('/email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
 Route::get('/verified', function(){
     return view('auth/verified');
-});
+})->middleware('guest');
 
 //! Note for Future to turn on/off default Route in Router.php
 // Auth::routes(
