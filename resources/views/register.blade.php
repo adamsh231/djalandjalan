@@ -39,9 +39,7 @@
                 <div class="card card-signin">
                     <div class="card-body">
                         <div class="header text-center">
-                            <a href="index.html" class="logo"><img src="{{asset('template/assets/img/djalandjalanlogo.png')}}"></a>
-                            <br /><span>Gabung dengan kami untuk menemukan</span>
-                            <br /><span>teman travelingmu yang cocok!</span>
+                            <a href="index.html" class="logo"><img src="{{asset('template/assets/img/LogoH-1.svg')}}"></a>
                         </div>
                         <form class="form-signin" id="form_register">
                             <div class="form-label-group">
@@ -55,6 +53,11 @@
                                 <label for="inputEmail">Email</label>
                                 <small name="email" class="form-text text-danger d-none"></small>
                             </div>
+
+                            <div class="form-label-group">
+								<input type="text" id="inputTTL" class="form-control" placeholder="Tanggal Lahir" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
+								<label for="inputTTL">Tanggal Lahir</label>
+							</div>
 
                             <div class="form-label-group">
                                 <input type="text" id="inputPhone" name="phone" class="form-control" placeholder="No. Handphone">
@@ -94,24 +97,58 @@
             </div>
         </div>
 
-        <div class="footer container">
-            <div class="row">
-                <div class="col-8">
-                    <div class="row">
-                        <div class="col"><a href="#">Tentang Kami</a></div>
-                        <div class="col"><a href="#">Bantuan</a></div>
-                        <div class="col"><a href="#">Syarat & Ketentuan</a></div>
-                        <div class="col"><a href="#">Kebijakan Privasi</a></div>
+        <footer id="footer" style="background-color: white; margin-top: 50px;">
+            <div class="container pt-3 border-bottom">
+                <div class="row">
+                    <div class="col-md-3 col-sm-12 mb-3 text-center">
+                        <img id="home-logo" src="{{asset('template/assets/img/logoV-1.svg')}}" width="100%" height="auto" alt="" style="position: relative">
+                    </div>
+                    <div class="col-md-9 col-sm-12">
+                        <div class="col-md-3 col-sm-6 col-6 p-0 float-left">
+                            <h5 class="mb-4 font-weight-bold text-uppercase">Tentang</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#">djalandjalan.com</a></li>
+                                <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="href=" #">Partners</a></li>
+                                <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#">Aksesbilitas</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
+                            <h5 class="mb-4 font-weight-bold text-uppercase">Keamanan</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Keamanan</a></li>
+                                <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Tips & Trik</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
+                            <h5 class="mb-4 font-weight-bold text-uppercase">Dukungan</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Bantuan</a></li>
+                                <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Syarat & Ketentuan</a></li>
+                                <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Kebijakan Privasi</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
+                            <h5 class="mb-4 font-weight-bold text-uppercase">Temukan Kami</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                                    <a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+                                    <a href="#" style="margin-left: 10px;"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a>
+                                    <a href="#" style="margin-left: 10px;"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class=" d-flex justify-content-center align-items-center">
+                            <div class="container">
+                                <p class="m-0 text-center">Copyright &copy; djalandjalan.com 2020</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-4" style="text-align: right">
-                    <a href="#">Temukan Kami di :</a>
-                    <a href="#"><img src="{{asset('template/assets/img/twitter1.png')}}"></a>
-                    <a href="#"><img src="{{asset('template/assets/img/path1.png')}}"></a>
-                    <a href="#"><img src="{{asset('template/assets/img/ig1.png')}}"></a>
-                </div>
             </div>
-        </div>
+        </footer>
     </div>
 
     <!--===============================================================================================-->
