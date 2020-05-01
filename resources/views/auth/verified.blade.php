@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
+@if (session('verified'))
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -14,3 +15,6 @@
         </div>
     </div>
 </div>
+@else
+<script>window.location.href = "{{ url('/') }}";</script>
+@endif
