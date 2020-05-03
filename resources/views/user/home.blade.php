@@ -179,9 +179,9 @@
                                 <div class="card-body">
                                     <img src="{{ $p->user->picture }}" class="display-profil" alt="Avatar">
                                     <h5 class="card-title">{{ (explode(' ', $p->dest_name)[0]) }}</h5>
-                                    <h6 class="card-title">{{ (explode(' ', $p->user->name)[0]) }} / Malang</h6>
+                                    <h6 class="card-title">{{ (explode(' ', $p->user->name)[0]) }} / {{ $p->user->city }}</h6>
                                     <p class="card-text">Tgl: <span>{{ date('d M Y', strtotime($p->start_date)) }} - {{ date('d M Y', strtotime($p->end_date)) }}</span></p>
-                                    <p class="card-text">Titik Kumpul: <span>{{ $p->gather_point }}</span></p>
+                                    <p class="card-text">Titik Kumpul: <span>{{ substr($p->gather_point,0,20) }}</span></p>
                                     <p class="card-text" style="float: right;">Butuh: <span style="font-weight: bold">4 orang lagi</span></p>
                                 </div>
                             </div>
