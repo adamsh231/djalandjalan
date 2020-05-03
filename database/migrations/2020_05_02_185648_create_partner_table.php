@@ -24,6 +24,7 @@ class CreatePartnerTable extends Migration
             $table->dateTime('gather_time');
             $table->string('gather_point');
             $table->integer('required_person');
+            $table->string('categories');
             $table->text('description')->nullable();
             $table->integer('status')->default(0);
             $table->timestamps();
