@@ -28,7 +28,7 @@ $factory->define(User::class, function () {
         'gender' => $faker->numberBetween(0,1),
         'nik' => $faker->optional()->nik(),
         'occupation' => $faker->optional()->jobTitle,
-        'city' => $faker->optional()->city,
+        'city' => $faker->city,
         'picture' => 'https://robohash.org/'.$faker->unique()->sentence(3).'?set=set3',
         'description' => $faker->optional()->text(200),
         'completeness' => $faker->numberBetween(0,100),
