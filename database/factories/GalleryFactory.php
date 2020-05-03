@@ -12,6 +12,8 @@ $factory->define(Gallery::class, function () {
     return [
         'user_id' => $faker->randomElement($users),
         'path' => 'https://picsum.photos/seed/'.$faker->word.'/800/600',
+        'caption' => $faker->sentence(5),
+        'description' => $faker->sentence(5),
         'created_at' => now(),
         'updated_at' => now(),
     ];

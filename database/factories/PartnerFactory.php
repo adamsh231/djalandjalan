@@ -20,6 +20,7 @@ $factory->define(Partner::class, function () {
         'end_date' => $end_date,
         'gather_time' => now(),
         'gather_point' => $faker->address,
+        'required_person' => $faker->numberBetween(5,20),
         'description' => $faker->text(200),
         'status' => $faker->numberBetween(-1,2),
         'created_at' => now(),
