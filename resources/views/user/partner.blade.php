@@ -134,23 +134,25 @@
                 <div class="col-8">
                     <div class="row partners-thread">
 
-                        @foreach ($collection = array_fill(0, 6, array_fill(0, 10, 0)) as $item)
-                        <div class="col-6 col-md-4 partners-thread-card">
-                            <a href="{{ url('/thread') }}">
-                                <div class="card card-partners">
-                                    <div class="img-hover-zoom">
-                                        <img src="{{asset('template/assets/img/bromo.jpg')}}" class="card-img-top" alt="...">
+                        @foreach ($partner as $p)
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="strat">
+                                <a href="{{ url('/thread') }}">
+                                    <div class="card card-partners">
+                                        <div class="img-hover-zoom">
+                                            <img src="{{ $p->dest_picture }}" class="card-img-top" alt="...">
+                                        </div>
+                                        <div class="card-body">
+                                            <img src="{{ $p->user->picture }}" class="display-profil" alt="Avatar">
+                                            <h5 class="card-title">{{ (explode(' ', $p->dest_name)[0]) }}</h5>
+                                            <h6 class="card-title">{{ (explode(' ', $p->user->name)[0]) }} / Malang</h6>
+                                            <p class="card-text">Tgl: <span>{{ date('d M Y', strtotime($p->start_date)) }} - {{ date('d M Y', strtotime($p->end_date)) }}</span></p>
+                                            <p class="card-text">Titik Kumpul: <span>{{ $p->gather_point }}</span></p>
+                                            <p class="card-text" style="float: right;">Butuh: <span style="font-weight: bold">4 orang lagi</span></p>
+                                        </div>
                                     </div>
-                                    <div class="card-body">
-                                        <img src="{{asset('template/assets/img/profil.jpg')}}" class="display-profil" alt="Avatar">
-                                        <h5 class="card-title">Gunung Bromo</h5>
-                                        <h6 class="card-title">Ryan / Malang</h6>
-                                        <p class="card-text">Tgl: <span>25/08/2020 - 26/08/2020</span></p>
-                                        <p class="card-text">Titik Kumpul: <span>Stasiun Malang</span></p>
-                                        <p class="card-text" style="float: right;">Butuh: <span style="font-weight: bold">4 orang lagi</span></p>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
                         @endforeach
 

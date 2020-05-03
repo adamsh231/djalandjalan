@@ -26,15 +26,11 @@ Route::group(['middleware' => ['guest']], function () {
 
 Route::group(['middleware' => ['isSignIn']], function () {
     Route::group(['middleware' => ['verified']], function () {
-        Route::get('/home', function () {
-            return view('user/home');
-        });
+        Route::get('/home', 'PartnerController@view');
         // Route::get('/profile', function () {
         //     return view('user/profile');
         // });
-        // Route::get('/partner', function () {
-        //     return view('user/partner');
-        // });
+        Route::get('/partner', 'PartnerController@overview');
         // Route::get('/thread', function () {
         //     return view('user/thread');
         // });
