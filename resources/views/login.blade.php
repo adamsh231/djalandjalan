@@ -29,9 +29,11 @@
 
 <body>
     <div class="container">
+
         <div class="signup clearfix">
             <button class="btn btn-daftar" onclick="window.location.href = '{{ url('/register') }}';">Daftar</button>
         </div>
+
         <div class="row" style="margin-top:50px;">
             <div class="col-lg-4">
                 <div class="form-login">
@@ -175,6 +177,7 @@
                 </div>
             </div>
         </footer>
+
     </div>
 
     <!--===============================================================================================-->
