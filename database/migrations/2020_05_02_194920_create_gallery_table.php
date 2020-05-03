@@ -17,6 +17,8 @@ class CreateGalleryTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('path');
+            $table->string('caption')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
