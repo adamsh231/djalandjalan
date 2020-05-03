@@ -3,7 +3,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\User;
-use Faker\Generator as Faker;
+use Faker\Factory as Faker;
 use Illuminate\Support\Str;
 
 /*
@@ -17,12 +17,24 @@ use Illuminate\Support\Str;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
+$factory->define(User::class, function () {
+    $faker = Faker::create('id_ID');
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
+        'password' => bcrypt('dayung231'),
+        'phone' => $faker->unique()->phoneNumber,
+        'birth' => $faker->dateTimeBetween('1990-01-01', '2012-12-31')->format('Y-m-d'),
+        'gender' => $faker->numberBetween(0,1),
+        'nik' => $faker->nik(),
+        'occupation' => $faker->jobTitle,
+        'city' => $faker->city,
+        'picture' => 'https://robohash.org/'.$faker->unique()->sentence(3).'?set=set3',
+        'description' => $faker->text(200),
+        'completeness' => $faker->numberBetween(0,100),
         'email_verified_at' => now(),
-        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         'remember_token' => Str::random(10),
+        'created_at' => now(),
+        'updated_at' => now(),
     ];
 });

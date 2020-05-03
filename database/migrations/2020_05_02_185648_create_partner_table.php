@@ -21,7 +21,7 @@ class CreatePartnerTable extends Migration
             $table->string('dest_picture');
             $table->date('start_date');
             $table->date('end_date');
-            $table->date('gather_time');
+            $table->dateTime('gather_time');
             $table->string('gather_point');
             $table->text('description')->nullable();
             $table->integer('status')->default(0);
