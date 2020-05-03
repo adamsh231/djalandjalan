@@ -8,7 +8,7 @@ use Faker\Factory as Faker;
 
 $factory->define(Partner::class, function () {
     $faker = Faker::create('id_ID');
-    $users = App\User::pluck('id')->toArray();
+    $users = User::pluck('id')->toArray();
     $start_date = $faker->dateTimeBetween('2020-06-01', '2021-01-01')->format('Y-m-d');
     $end_date = $faker->dateTimeBetween($start_date, '2021-01-01')->format('Y-m-d');
     return [
