@@ -80,10 +80,10 @@
                         <button class="btn btn-lg btn-block text-uppercase btn-login" type="submit" onclick="submit('{{url('/')}}')">Daftar</button>
                         <div class="text-center" style="padding: 10px 0 10px 0">
                             <span class="txt1">
-                                Atau daftar dengan
+                                Atau masuk dengan
                             </span>
                         </div>
-                        <button class="btn btn-lg btn-google btn-block" type="submit"><i class="fa fa-google mr-2"></i>Google</button>
+                        <a class="btn btn-lg btn-google btn-block" href="{{ url('/login/google') }}"><i class="fa fa-google mr-2"></i>Google</a>
                         <div class="text-center w-full p-t-25">
                             <span class="txt1">
                                 Sudah punya akun?
