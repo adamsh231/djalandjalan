@@ -27,9 +27,10 @@ Route::group(['middleware' => ['guest']], function () {
 Route::group(['middleware' => ['isSignIn']], function () {
     Route::group(['middleware' => ['verified']], function () {
         Route::get('/', 'PartnerController@view');
-        Route::get('/profile', 'UserController@overview');
+        Route::get('/profile', 'UserController@profile');
+        Route::get('/profile/{user}', 'UserController@profilex');
         Route::get('/partner', 'PartnerController@overview');
-        Route::get('/thread/{id}', 'PartnerController@thread');
+        Route::get('/partner/{id}', 'PartnerController@partner');
     });
 });
 

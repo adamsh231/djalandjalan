@@ -91,13 +91,15 @@
 
                 @foreach ($partner as $p)
                 <div class="col-6 col-md-3 partners-thread-card">
-                    <a href="{{ url('/thread/'.$p->id) }}">
+                    <a href="{{ url('/partner/'.$p->id) }}">
                         <div class="card card-partners">
                             <div class="img-hover-zoom">
                                 <img src="{{ $p->dest_picture }}" class="card-img-top" alt="...">
                             </div>
                             <div class="card-body">
-                                <img src="{{ $p->user->picture }}" class="display-profil" alt="Avatar">
+                                <a href="{{ url('/profile/'.$p->user->id) }}">
+                                    <img src="{{ $p->user->picture }}" class="display-profil" alt="Avatar">
+                                </a>
                                 <h5 class="card-title">{{ (explode(' ', $p->dest_name)[0]) }}</h5>
                                 <h6 class="card-title">{{ (explode(' ', $p->user->name)[0]) }} / {{ $p->user->city }}</h6>
                                 <p class="card-text">Tgl: <span>{{ date('d M Y', strtotime($p->start_date)) }} - {{ date('d M Y', strtotime($p->end_date)) }}</span></p>

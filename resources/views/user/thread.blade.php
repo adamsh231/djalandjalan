@@ -47,7 +47,9 @@
             </div>
             <div class="memberTrip">
                 <div class="memberTrip-host">
-                    <img src="{{ $partner->user->picture }}" class="avatar">
+                    <a href="{{ url('/profile/'.$partner->user->id) }}">
+                        <img src="{{ $partner->user->picture }}" class="avatar">
+                    </a>
                     <b>Host</b>
                 </div>
                 <div class="memberTrip-member">
@@ -55,7 +57,9 @@
                     <ul>
                         @foreach ($partner->join as $pj)
                         <li>
-                            <a href="#"><img src="{{ $pj->user->picture }}" class="avatar picMember"></a>
+                            <a href="{{ url('/profile/'.$pj->user->id) }}">
+                                <img src="{{ $pj->user->picture }}" class="avatar picMember">
+                            </a>
                         </li>
                         @endforeach
                     </ul>

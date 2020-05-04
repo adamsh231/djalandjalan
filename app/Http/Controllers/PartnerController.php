@@ -20,7 +20,7 @@ class PartnerController extends Controller
         return view('user/partner', ['partner' => $partner]);
     }
 
-    public function thread($id)
+    public function partner($id)
     {
         $partner = Partner::with(
             [
