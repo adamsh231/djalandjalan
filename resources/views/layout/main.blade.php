@@ -1,0 +1,145 @@
+@php
+//TODO: Search Engine Optimization
+@endphp
+<!DOCTYPE html>
+<html lang="@yield('lang')">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>@yield('title')</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="{{asset('template/vendor/bootstrap/css/bootstrap.min.css')}}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{{asset('template/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+
+    <!-- Custom styles for this template -->
+    @yield('add_style')
+
+</head>
+
+<body>
+
+    @yield('background')
+
+    <nav class="navbar navbar-expand navbar-light justify-content-center fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url('/') }}"> <img id="home-logo" src="{{asset('template/assets/img/LogoH-1.svg')}}" width="160" height="auto" alt="" style="position: relative"></a>
+
+            <ul class="navbar-nav nav-justified text-center">
+                <li class="nav-item dropdown">
+                    <a href="#" data-toggle="dropdown" class="nav-link d-flex flex-column">
+                        <i class="fa fa-plus-circle fa-lg"></i>
+                        <span class="d-none d-sm-inline">Tambah</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="openingBuatTrip.html">Partners</a></li>
+                        <li><a href="#">Open Trip</a></li>
+                    </ul>
+
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" data-toggle="dropdown" class="nav-link d-flex flex-column">
+                        <i class="fa fa-commenting-o fa-lg"><span class="notif animated rubberBand">new</span></i>
+                        <span class="d-none d-sm-inline">Pesan</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Pesan</a></li>
+                        <li><a href="#">Pesan</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" data-toggle="dropdown" class="nav-link d-flex flex-column">
+                        <i class="fa fa-bell fa-lg"></i>
+                        <span class="d-none d-sm-inline">Notifikasi</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Notif</a></li>
+                        <li><a href="#">Notif</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="{{ Auth::user()->picture }}" class="avatar" alt="Avatar"><span> {{ Auth::user()->name }}</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" class="dropdown-item"><i class="fa fa-plane"></i> Tripmu</a></li>
+                        <li><a href="#" class="dropdown-item"><i class="fa fa-check-circle"></i> Verifikasi Akun</a></li>
+                        <li class="divider dropdown-divider"></li>
+                        <li><a href="{{ url('/profile') }}" class="dropdown-item"><i class="fa fa-user-o"></i> Profil</a></li>
+                        <li><a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Pengaturan Akun</a></li>
+                        <li><a href="{{ url('/logout') }}" class="dropdown-item"><i class="fa fa-power-off"></i> Keluar</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    @yield('content')
+
+    <footer id="footer" style="background-color: white; margin-top: 50px;">
+        <div class="container pt-3 border-bottom">
+            <div class="row">
+                <div class="col-md-3 col-sm-12 mb-3 text-center">
+                    <img id="home-logo" src="{{asset('template/assets/img/logoV-1.svg')}}" width="100%" height="auto" alt="" style="position: relative">
+                </div>
+                <div class="col-md-9 col-sm-12">
+                    <div class="col-md-3 col-sm-6 col-6 p-0 float-left">
+                        <h5 class="mb-4 font-weight-bold text-uppercase">Tentang</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#">djalandjalan.com</a></li>
+                            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="href=" #">Partners</a></li>
+                            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#">Aksesbilitas</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
+                        <h5 class="mb-4 font-weight-bold text-uppercase">Keamanan</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Keamanan</a></li>
+                            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Tips & Trik</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
+                        <h5 class="mb-4 font-weight-bold text-uppercase">Dukungan</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Bantuan</a></li>
+                            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Syarat & Ketentuan</a></li>
+                            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Kebijakan Privasi</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
+                        <h5 class="mb-4 font-weight-bold text-uppercase">Temukan Kami</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                                <a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+                                <a href="#" style="margin-left: 10px;"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a>
+                                <a href="#" style="margin-left: 10px;"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class=" d-flex justify-content-center align-items-center">
+                        <div class="container">
+                            <p class="m-0 text-center">Copyright &copy; djalandjalan.com 2020</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{asset('template/vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('template/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
+    <script src="{{asset('template/js/slick.js')}}"></script>
+
+    <!-- Custom JavaScript -->
+    @yield('add_script')
+
+</body>

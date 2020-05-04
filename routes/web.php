@@ -12,7 +12,7 @@
 */
 
 Route::group(['middleware' => ['guest']], function () {
-    Route::get('/', function () {
+    Route::get('/login', function () {
         return view('login');
     });
     Route::post('/login', 'AuthController@login');
@@ -26,18 +26,10 @@ Route::group(['middleware' => ['guest']], function () {
 
 Route::group(['middleware' => ['isSignIn']], function () {
     Route::group(['middleware' => ['verified']], function () {
-        Route::get('/home', function () {
-            return view('user/home');
-        });
-        // Route::get('/profile', function () {
-        //     return view('user/profile');
-        // });
-        // Route::get('/partner', function () {
-        //     return view('user/partner');
-        // });
-        // Route::get('/thread', function () {
-        //     return view('user/thread');
-        // });
+        Route::get('/', 'PartnerController@view');
+        Route::get('/profile', 'UserController@overview');
+        Route::get('/partner', 'PartnerController@overview');
+        Route::get('/thread/{id}', 'PartnerController@thread');
     });
 });
 
