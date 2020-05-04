@@ -30,7 +30,7 @@
 <body>
     <div class="container">
         <div class="signup clearfix">
-            <button class="btn btn-daftar" onclick="window.location.href = '{{ url('/') }}';">Masuk</button>
+            <button class="btn btn-daftar" onclick="window.location.href = '{{ url('/login') }}';">Masuk</button>
         </div>
 
         <div class="row" style="margin-top:50px;">
@@ -88,7 +88,7 @@
                             <span class="txt1">
                                 Sudah punya akun?
                             </span>
-                            <a class="txt1 bo1 hov1" href="{{url('/')}}">
+                            <a class="txt1 bo1 hov1" href="{{url('/login')}}">
                                 Login
                             </a>
                         </div>
@@ -108,7 +108,7 @@
                             <h5 class="mb-4 font-weight-bold text-uppercase">Tentang</h5>
                             <ul class="list-group">
                                 <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#">djalandjalan.com</a></li>
-                                <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="href=" #">Partners</a></li>
+                                <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#">Partners</a></li>
                                 <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#">Aksesbilitas</a></li>
                             </ul>
                         </div>

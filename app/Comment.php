@@ -15,4 +15,7 @@ class Comment extends Model
     public function partner(){
         return $this->belongsTo('App\Partner');
     }
+    public function reply(){
+        return $this->hasMany('App\Reply');
+    }
 }

@@ -38,7 +38,7 @@
                     <div class="card card-signin">
                         <div class="card-body">
                             <div class="header text-center">
-                                <a href="index.html" class="logo"><img src="{{asset('template/assets/img/LogoH-1.svg')}}"></a>
+                                <a href="{{ url('/') }}" class="logo"><img src="{{asset('template/assets/img/LogoH-1.svg')}}"></a>
                             </div>
                             <form class="form-signin" id="form_login">
                                 <div class="form-label-group">
