@@ -86,7 +86,9 @@
     <div class="diskusi">
         <div class="isiDiskusi">
             <div class="isiDiskusi-profil">
-                <img src="{{ $c->user->picture }}" class="avatar picMember">
+                <a href="{{ url('/profile/'.$c->user->id) }}">
+                    <img src="{{ $c->user->picture }}" class="avatar picMember">
+                </a>
                 <b>{{ $c->user->name }}</b>&nbsp;
                 <label>{{ date('d M Y H:i', strtotime($c->updated_at)) }}</label>
             </div>
@@ -97,7 +99,9 @@
         @foreach ($c->reply as $cr)
         <div class="isiDiskusi-jawab">
             <div class="isiDiskusi-profil">
-                <img src="{{ $cr->user->picture }}" class="avatar picMember">
+                <a href="{{ url('/profile/'.$cr->user->id) }}">
+                    <img src="{{ $cr->user->picture }}" class="avatar picMember">
+                </a>
                 <b>{{ $cr->user->name }}</b>&nbsp;
                 <label>{{ date('d M Y H:i', strtotime($cr->updated_at)) }}</label>
             </div>
