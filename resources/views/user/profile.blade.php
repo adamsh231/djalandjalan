@@ -21,11 +21,11 @@
         <div class="col">
             <div class="row justify-content-md-center text-profil">
                 <div class="col col-lg-2 ">
-                    <span>X kali</span>
+                    <span>X</span>
                     <p>Trip</p>
                 </div>
                 <div class="col-md-auto">
-                    <span>Y kali</span>
+                    <span>Y</span>
                     <p>Partners</p>
                 </div>
                 <div class="col col-lg-2">

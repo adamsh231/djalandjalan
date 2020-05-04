@@ -28,6 +28,16 @@ class DatabaseSeeder extends Seeder
                 'updated_at' => now(),
             ]);
         }
+        DB::table('user')->insert([
+            'name' => 'Aldimagus Naridam',
+            'email' => 'coba@gmail.com',
+            'password' => bcrypt('cobacoba'),
+            'phone' => '082140320491',
+            'picture' => 'https://robohash.org/coba@gmail.com?set=set3',
+            'email_verified_at' => now(),
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
         factory(User::class, 25)->create();
         factory(Partner::class, 12)->create();
         factory(Join::class, 60)->create();
