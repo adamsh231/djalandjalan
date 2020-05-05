@@ -7,7 +7,7 @@ use App\Comment;
 use App\Reply;
 use App\Gallery;
 use App\Notification;
-use App\Review;
+use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $faker = Faker::create('id_ID');
+
         $arr_category = ['Gunung', 'Pantai', 'Air Terjun', 'Road Trip'];
         for ($i = 1; $i <= count($arr_category); $i++) {
             DB::table('category')->insert([
@@ -39,17 +41,17 @@ class DatabaseSeeder extends Seeder
             'updated_at' => now(),
         ]);
         factory(User::class, 25)->create();
-        factory(Partner::class, 12)->create();
-        factory(Join::class, 60)->create()
-            ->each(function ($join) {
+        factory(Partner::class, 100)->create();
+        factory(Join::class, 500)->create()
+            ->each(function ($join) use($faker) {
                 $join->review()->createMany(
-                    factory(App\Review::class, 5)->make()->toArray()
+                    factory(App\Review::class, $faker->numberBetween(5,20))->make()->toArray()
                 );
             });
-        factory(Comment::class, 200)->create();
-        factory(Reply::class, 300)->create();
-        factory(Gallery::class, 50)->create();
-        factory(Notification::class, 70)->create();
+        factory(Comment::class, 400)->create();
+        factory(Reply::class, 700)->create();
+        factory(Gallery::class, 100)->create();
+        factory(Notification::class, 200)->create();
         // factory(Review::class, 100)->create(); //! Review and Join should be integrated !//
     }
 }
