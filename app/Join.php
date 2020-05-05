@@ -15,4 +15,7 @@ class Join extends Model
     public function partner(){
         return $this->belongsTo('App\Partner');
     }
+    public function review(){
+        return $this->hasMany('App\Review');
+    }
 }

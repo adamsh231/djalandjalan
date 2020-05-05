@@ -16,7 +16,7 @@ class PartnerController extends Controller
 
     public function overview()
     {
-        $partner = Partner::with(['user'])->get()->take(12);
+        $partner = Partner::with(['user'])->get();
         return view('user/partner', ['partner' => $partner]);
     }
 

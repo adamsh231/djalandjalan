@@ -34,6 +34,10 @@ class CreateForeignTable extends Migration
         Schema::table('notification', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade');
         });
+        Schema::table('review', function (Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade');
+            $table->foreign('join_id')->references('id')->on('join')->onDelete('cascade');
+        });
     }
 
     /**
@@ -63,6 +67,10 @@ class CreateForeignTable extends Migration
         });
         Schema::table('notification', function (Blueprint $table) {
             $table->dropForeign(['user_id']);
+        });
+        Schema::table('review', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+            $table->dropForeign(['join_id']);
         });
     }
 }

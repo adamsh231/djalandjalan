@@ -87,7 +87,7 @@
         </div>
 
         <div class="col-10">
-            <div class="row partners-thread">
+            <div class="row partners-thread" style="overflow: auto; height: 650px">
 
                 @foreach ($partner as $p)
                 <div class="col-6 col-md-3 partners-thread-card">
