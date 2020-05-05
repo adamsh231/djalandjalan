@@ -29,7 +29,7 @@
                     <p>Partners</p>
                 </div>
                 <div class="col col-lg-2">
-                    <span>{{ $review->sum('rating')/$review->count() }}</span>
+                    <span>{{ round($review->sum('rating')/$review->count(), 1) }}</span>
                     <p>Rating</p>
                 </div>
             </div>
@@ -129,7 +129,7 @@
                                     <p>Bersama dengan {{ $j->partner->join->count() - 1 }} orang lainnya</p>
                                 </div>
                                 <div class="col">
-                                    <h5> <span class="fa fa-star fa-lg checked "></span> ??</h5>
+                                    <h5> <span class="fa fa-star fa-lg checked "></span> {{ round($j->review->sum('rating')/$j->review->count(), 1) }}</h5>
                                 </div>
                             </div>
                         </a>
