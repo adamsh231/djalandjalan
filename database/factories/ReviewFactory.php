@@ -13,7 +13,7 @@ $factory->define(Review::class, function () {
     $join = Join::pluck('id')->toArray();
     return [
         'user_id' => $faker->randomElement($users),
-        'join_id' => $faker->randomElement($join),
+        // 'join_id' => $faker->randomElement($join),
         'message' => $faker->optional()->text(200),
         'rating' => $faker->numberBetween(1,5),
         'created_at' => now(),

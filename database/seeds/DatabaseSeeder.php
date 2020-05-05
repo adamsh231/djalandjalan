@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         for ($i = 1; $i <= count($arr_category); $i++) {
             DB::table('category')->insert([
                 'id' => $i,
-                'name' => $arr_category[($i-1)],
+                'name' => $arr_category[($i - 1)],
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
@@ -40,11 +40,16 @@ class DatabaseSeeder extends Seeder
         ]);
         factory(User::class, 25)->create();
         factory(Partner::class, 12)->create();
-        factory(Join::class, 60)->create();
+        factory(Join::class, 60)->create()
+            ->each(function ($join) {
+                $join->review()->createMany(
+                    factory(App\Review::class, 5)->make()->toArray()
+                );
+            });
         factory(Comment::class, 200)->create();
         factory(Reply::class, 300)->create();
         factory(Gallery::class, 50)->create();
         factory(Notification::class, 70)->create();
-        factory(Review::class, 100)->create(); //! Review and Join should be integrated !//
+        // factory(Review::class, 100)->create(); //! Review and Join should be integrated !//
     }
 }
