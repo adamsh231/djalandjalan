@@ -29,7 +29,7 @@
                     <p>Partners</p>
                 </div>
                 <div class="col col-lg-2">
-                    <span>???</span>
+                    <span>{{ $review->sum('rating')/$review->count() }}</span>
                     <p>Rating</p>
                 </div>
             </div>
@@ -69,7 +69,7 @@
 <div class="box" style="margin-top: 10px;">
     <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link active" id="nav-profil-galeri" data-toggle="tab" href="#nav-galeri" role="tab" aria-controls="nav-galeri" aria-selected="true">Galeri <span class="badge badge-primary">8</span></a>
+            <a class="nav-item nav-link active" id="nav-profil-galeri" data-toggle="tab" href="#nav-galeri" role="tab" aria-controls="nav-galeri" aria-selected="true">Galeri <span class="badge badge-primary">{{ $gallery->count() }}</span></a>
             <a class="nav-item nav-link" id="nav-profile-rekomendasi" data-toggle="tab" href="#nav-rekomendasi" role="tab" aria-controls="nav-rekomendasi" aria-selected="false">Rekomendasi</a>
             <a class="nav-item nav-link" id="nav-contact-teman" data-toggle="tab" href="#nav-teman" role="tab" aria-controls="nav-teman" aria-selected="false">Teman</a>
         </div>
