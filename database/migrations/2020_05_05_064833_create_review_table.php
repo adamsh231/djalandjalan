@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateJoinTable extends Migration
+class CreateReviewTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateJoinTable extends Migration
      */
     public function up()
     {
-        Schema::create('join', function (Blueprint $table) {
+        Schema::create('review', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('join_id');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('partner_id');
-            $table->integer('status')->default(0);
+            $table->text('message')->nullable();
+            $table->integer('rating')->default(0);
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateJoinTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('join');
+        Schema::dropIfExists('review');
     }
 }

@@ -7,7 +7,7 @@ use App\Comment;
 use App\Reply;
 use App\Gallery;
 use App\Notification;
-use App\Category;
+use App\Review;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -45,5 +45,6 @@ class DatabaseSeeder extends Seeder
         factory(Reply::class, 300)->create();
         factory(Gallery::class, 50)->create();
         factory(Notification::class, 70)->create();
+        factory(Review::class, 100)->create(); //! Review and Join should be integrated !//
     }
 }
