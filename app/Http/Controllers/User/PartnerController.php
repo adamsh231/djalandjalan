@@ -24,6 +24,10 @@ class PartnerController extends Controller
             $partner->where('dest_name','LIKE', '%'.$request->get('filter_tempat').'%');
             $arr_old->put('filter_tempat', $request->get('filter_tempat'));
         }
+        if (!is_null($request->get('filter_kategori'))) {
+            $partner->where('categories','LIKE', '%'.$request->get('filter_kategori').'%');
+            $arr_old->put('filter_kategori', $request->get('filter_kategori'));
+        }
         if (!is_null($request->get('start_date'))) {
             $partner->where([
                 ['start_date','>=', $request->get('start_date')],

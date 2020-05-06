@@ -54,35 +54,35 @@
         <div class="row as">
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="strat">
-                    <a href="#">
+                    <a href="{{ url('/partner?filter_kategori=gunung') }}">
                         <img src="{{asset('template/assets/img/gunung.png')}}" class="img-fluid">
                     </a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="strat">
-                    <a href="#">
+                    <a href="{{ url('/partner?filter_kategori=pantai') }}">
                         <img src="{{asset('template/assets/img/pantai.png')}}" class="img-fluid">
                     </a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="strat">
-                    <a href="#">
+                    <a href="{{ url('/partner?filter_kategori=air terjun') }}">
                         <img src="{{asset('template/assets/img/airterjun.png')}}" class="img-fluid">
                     </a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="strat">
-                    <a href="#">
+                    <a href="{{ url('/partner?filter_kategori=road trip') }}">
                         <img src="{{asset('template/assets/img/roadtrip.png')}}" class="img-fluid">
                     </a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="strat">
-                    <a href="#">
+                    <a href="{{ url('/partner?filter_kategori=air terjun') }}">
                         <img src="{{asset('template/assets/img/airterjun.png')}}" class="img-fluid">
                     </a>
                 </div>
