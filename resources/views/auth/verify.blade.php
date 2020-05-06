@@ -17,14 +17,14 @@
                 <div class="card-body">
                     @if (session('resent'))
                     <div class="alert alert-success" role="alert">
-                        {{ __('A fresh verification link has been sent to your email address.') }}
+                        {{ __('A fresh verification link has been proceed by system.') }}
                     </div>
-                    <p class="text-right">{{ __('Please wait your verification link (5 - 15 minutes).') }}</p>
+                    <p class="text-right">{{ __('Please wait, verification will be send to your email (5 - 15 minutes).') }}</p>
                     @else
-                    {{ __('Before proceeding, please request verification link for your email.') }}
+                    {{ __('Before proceeding, please request verification link for your email address.') }}
                     <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                         @csrf
-                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request verification') }}</button>.
+                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request verification link') }}</button>.
                     </form>
                     @endif
                 </div>
