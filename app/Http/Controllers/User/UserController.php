@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
@@ -11,8 +12,16 @@ use App\Review;
 
 class UserController extends Controller
 {
-    public function profile()
+    public function profile($user = null)
     {
+        if(is_null($user)){
+            // if(!Auth::check()){
+            //     return redirect('/');
+            // }
+            $user = Auth::user();
+        }else{
+            $user = User::find($user);
+        }
         $join = Join::with(
             [
                 'partner' => function ($query) {
@@ -26,28 +35,6 @@ class UserController extends Controller
         return view(
             'user/profile',
             [
-                'gallery' => $gallery,
-                'join' => $join,
-                'review' => $review
-            ]
-        );
-    }
-
-    public function profilex(User $user)
-    {
-        $join = Join::with(
-            [
-                'partner' => function ($query) {
-                    $query->with(['join'])->get();
-                },
-                'review'
-            ]
-        )->where('user_id', $user->id)->get();
-        $gallery = Gallery::where('user_id', $user->id)->get();
-        $review = Review::where('user_id', $user->id)->get();
-        return view(
-            'user/profilex',
-            [
                 'user' => $user,
                 'gallery' => $gallery,
                 'join' => $join,
@@ -55,4 +42,5 @@ class UserController extends Controller
             ]
         );
     }
+
 }

@@ -36,12 +36,12 @@
         </div>
         <div class="col">
             <div class="avatarProfil">
-                <a href="#"><img src="{{ Auth::user()->picture }}"> </a>
+                <a href="#"><img src="{{ $user->picture }}"> </a>
             </div>
             <div style="margin-bottom: 25px"><img src="{{asset('template/assets/img/check.png')}}" width="15">Terverifikasi ??</div>
-            <h3><b>{{ Auth::user()->name }}</b>, <span>{{ (date('Y') - date('Y', strtotime(Auth::user()->birth)) ) }}</span></h3>
-            <h6>{{ Auth::user()->city }}</h6>
-            <h5>{{ Auth::user()->occupation }}</h5>
+            <h3><b>{{ $user->name }}</b>, <span>{{ (date('Y') - date('Y', strtotime( $user->birth)) ) }}</span></h3>
+            <h6>{{  $user->city }}</h6>
+            <h5>{{ $user->occupation }}</h5>
         </div>
         <div class="col">
             <div class="col" style="text-align: right"><button class="btn btn-core btn-sm" type="button" data-toggle="modal" data-target="#modalRiwayat">Riwayat</button></div>
@@ -50,7 +50,7 @@
     <br>
     <hr class="mt-2 mb-5">
     <div class="deskripsi-profil">
-        <p>{{ Auth::user()->description }}</p>
+        <p>{{  $user->description }}</p>
     </div>
     <div class="minat-profil">
         <h5>Minat & Hobi :</h5>

@@ -13,24 +13,25 @@
 
 Route::group(['middleware' => ['guest']], function () {
     Route::get('/login', function () {
-        return view('login');
+        return view('auth/login');
     });
-    Route::post('/login', 'AuthController@login');
+    Route::post('/login', 'Auth\AuthController@login');
     Route::get('/register', function () {
-        return view('register');
+        return view('auth/register');
     });
-    Route::post('/register', 'AuthController@register');
-    Route::get('/login/google', 'GoogleAuthController@redirectToProvider');
-    Route::get('/login/google/callback', 'GoogleAuthController@handleProviderCallback');
+    Route::post('/register', 'Auth\AuthController@register');
+    Route::get('/login/google', 'Auth\GoogleAuthController@redirectToProvider');
+    Route::get('/login/google/callback', 'Auth\GoogleAuthController@handleProviderCallback');
 });
 
 Route::group(['middleware' => ['isSignIn']], function () {
     Route::group(['middleware' => ['verified']], function () {
-        Route::get('/', 'PartnerController@view');
-        Route::get('/profile', 'UserController@profile');
-        Route::get('/profile/{user}', 'UserController@profilex');
-        Route::get('/partner', 'PartnerController@overview');
-        Route::get('/partner/{id}', 'PartnerController@partner');
+        Route::get('/', 'User\PartnerController@view');
+        // Route::get('/profile', 'User\UserController@profile');
+        Route::get('/profile/{user?}', 'User\UserController@profile');
+        // Route::get('/profile/{user}', 'User\UserController@profilex');
+        Route::get('/partner', 'User\PartnerController@overview');
+        Route::get('/partner/{id}', 'User\PartnerController@partner');
     });
 });
 
@@ -54,4 +55,4 @@ Route::get('/verified', function(){
 //     ]
 // );
 
-Route::get('/logout', 'AuthController@logout');
+Route::get('/logout', 'Auth\AuthController@logout');
