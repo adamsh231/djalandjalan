@@ -17,7 +17,7 @@ class CreateJoinTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('partner_id');
-            $table->integer('status')->default(0);
+            $table->integer('status')->default(0)->comment('0:wait confirmation, 1:accepted');
             $table->timestamps();
         });
     }
