@@ -40,7 +40,7 @@ function submit(url) {
             Swal.close();
             Swal.fire({
                 title: 'Registration Success!',
-                text: 'Redirect you to login page..',
+                text: 'Please verify your email address, Redirect..',
                 icon: 'success',
                 allowEscapeKey: false,
                 allowOutsideClick: false,

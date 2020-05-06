@@ -19,13 +19,14 @@
                     <div class="alert alert-success" role="alert">
                         {{ __('A fresh verification link has been sent to your email address.') }}
                     </div>
-                    @endif
-
+                    <p class="text-right">{{ __('Please wait your verification link (5 - 15 minutes).') }}</p>
+                    @else
                     {{ __('Before proceeding, please request verification link for your email.') }}
                     <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                         @csrf
                         <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request verification') }}</button>.
                     </form>
+                    @endif
                 </div>
             </div>
         </div>

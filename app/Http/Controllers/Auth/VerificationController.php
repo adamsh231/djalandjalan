@@ -44,7 +44,7 @@ class VerificationController extends Controller
         //* Already have my own authentication middleware
         // $this->middleware('auth');
         $this->middleware('signed')->only('verify');
-        $this->middleware('throttle:6,1')->only('verify', 'resend');
+        $this->middleware('throttle:5,10')->only('verify', 'resend');
     }
 
     //* Override
