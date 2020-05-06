@@ -29,17 +29,31 @@
                     <p>Partners</p>
                 </div>
                 <div class="col col-lg-2">
-                    <span>{{ round($review->sum('rating')/$review->count(), 1) }}</span>
+                    @php
+                    $total_rating = ($review->count() == 0 ? 0 : round($review->sum('rating')/$review->count(), 1));
+                    @endphp
+                    <span>{{ $total_rating }}</span>
                     <p>Rating</p>
                 </div>
             </div>
         </div>
         <div class="col">
-            <div class="avatarProfil">
+            <div class="avatarProfil mb-2">
                 <a href="#"><img src="{{ $user->picture }}"> </a>
             </div>
-            <div style="margin-bottom: 25px"><img src="{{asset('template/assets/img/check.png')}}" width="15">Terverifikasi ??</div>
-            <h3><b>{{ $user->name }}</b>, <span>{{ (date('Y') - date('Y', strtotime( $user->birth)) ) }}</span></h3>
+            @if ($user->nik)
+            <div style="margin-bottom: 25px;">
+                <img src="{{asset('template/assets/img/check.png')}}" width="15"> Terverifikasi
+            </div>
+            @endif
+            <h3>
+                <b>{{ $user->name }}</b>,
+                @if ($user->birth)
+                <span>
+                    {{ (date('Y') - date('Y', strtotime( $user->birth)) ) }}
+                </span>
+                @endif
+            </h3>
             <h6>{{  $user->city }}</h6>
             <h5>{{ $user->occupation }}</h5>
         </div>
@@ -129,7 +143,13 @@
                                     <p>Bersama dengan {{ $j->partner->join->count() - 1 }} orang lainnya</p>
                                 </div>
                                 <div class="col">
-                                    <h5> <span class="fa fa-star fa-lg checked "></span> {{ round($j->review->sum('rating')/$j->review->count(), 1) }}</h5>
+                                    @php
+                                    $total_rating = ($j->review->count() == 0 ? 0 : round($j->review->sum('rating')/$j->review->count(), 1));
+                                    @endphp
+                                    <h5>
+                                        <span class="fa fa-star fa-lg checked "></span>
+                                        {{ $total_rating }}
+                                    </h5>
                                 </div>
                             </div>
                         </a>
