@@ -12,22 +12,25 @@
 @section('content')
 <div class="container">
 
-    <div class="search">
-        <div class="pencarian ">
-            <input type="search" class="form-control pull-left" placeholder="Pilih Destinasi Keinginanmu">
-            <input type="text" name="datefilter " class="form-control pull-left" placeholder="Pilih Tanggal" value="">
-            <select class="form-control pull-left" id="inputSelectAnggota">
-                <option selected>Pilih Jumlah Anggota</option>
-                <option value="3">
-                    < 3 Orang </option> <option value="6">3-6 Orang
-                </option>
-                <option value="10">>8 Orang</option>
-            </select>
+    <form action="{{ url('/partner') }}">
+        <div class="search">
+            <div class="pencarian ">
+                <input type="hidden" name="start_date">
+                <input type="hidden" name="end_date">
+                <input type="search" autocomplete="off" name="filter_tempat" class="form-control pull-left" placeholder="Cari Destinasi Keinginanmu">
+                <input type="text" autocomplete="off" id="filter_tanggal" class="form-control pull-left" placeholder="Pilih Tanggal" value="">
+                <select class="form-control pull-left" name="filter_jumlah">
+                    <option selected>Pilih Jumlah Anggota</option>
+                    <option value="1">Kurang dari 3</option>
+                    <option value="2">3 sampai 6</option>
+                    <option value="3">Lebih dari 6</option>
+                </select>
+            </div>
+            <div class="pencarian-btn">
+                <button class="btn btn-core" type="submit"><i class="fa fa-search"></i> Cari</button>
+            </div>
         </div>
-        <div class="pencarian-btn">
-            <button class="btn btn-core" type="submit"><i class="fa fa-search"></i> Cari</button>
-        </div>
-    </div>
+    </form>
 
     <div class="top-wrap" style="height: 400px; margin-top:10px;">
         <div class="landing">
@@ -298,18 +301,22 @@
     });
 
     $(function() {
-        $('input[name="datefilter "]').daterangepicker({
+        $('#filter_tanggal').daterangepicker({
             autoUpdateInput: false,
             locale: {
                 cancelLabel: 'Clear'
             }
         });
 
-        $('input[name="datefilter "]').on('apply.daterangepicker', function(ev, picker) {
+        $('#filter_tanggal').on('apply.daterangepicker', function(ev, picker) {
+            $('input[name="start_date"]').val(picker.startDate.format('YYYY-MM-DD'));
+            $('input[name="end_date"]').val(picker.endDate.format('YYYY-MM-DD'));
             $(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
         });
 
-        $('input[name="datefilter "]').on('cancel.daterangepicker', function(ev, picker) {
+        $('#filter_tanggal').on('cancel.daterangepicker', function(ev, picker) {
+            $('input[name="start_date"]').val('');
+            $('input[name="end_date"]').val('');
             $(this).val('');
         });
 

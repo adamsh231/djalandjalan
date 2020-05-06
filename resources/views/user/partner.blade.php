@@ -20,12 +20,15 @@
 
                 <div class="filter">
                     <div class="kategori-filter">
-                        @php
-                        $tanggal = ($old_key->start_date ? (date('d/m/Y', strtotime($old_key->start_date)). " - " .date('d/m/Y', strtotime($old_key->end_date))) : "");
-                        @endphp
+                        <b>Destinasi</b>
+                        <input autocomplete="off" name="filter_tempat" type="text" class="form-control" placeholder="Nama Tempat">
+                    </div>
+                </div>
+
+                <div class="filter">
+                    <div class="kategori-filter">
                         <b>Tanggal</b>
-                        <input id="filter_tanggal" type="text" class="form-control" placeholder="Pilih Tanggal">
-                        {{-- <small class="text-primary">{{ $tanggal }}</small> --}}
+                        <input autocomplete="off" id="filter_tanggal" type="text" class="form-control" placeholder="Pilih Tanggal">
                     </div>
                 </div>
 
@@ -35,7 +38,7 @@
                         <select class="form-control" name="filter_jumlah">
                             <option></option>
                             <option value="1">Kurang dari 3</option>
-                            <option value="2">3 hingga 6</option>
+                            <option value="2">3 sampai 6</option>
                             <option value="3">Lebih dari 6</option>
                         </select>
                     </div>
@@ -109,6 +112,13 @@
         </div>
 
         <div class="col-10">
+
+            <div class="mb-4">
+                @foreach ($old_key as $key => $value)
+                <span class="badge badge-info">{{ $value }}</span>
+                @endforeach
+            </div>
+
             <div class="row partners-thread" style="overflow: auto; height: 650px">
 
                 @foreach ($partner as $p)
