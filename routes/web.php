@@ -30,8 +30,9 @@ Route::get('/partner', 'User\PartnerController@overview');
 Route::get('/partner/{id}', 'User\PartnerController@partner');
 
 Route::group(['middleware' => ['isSignIn']], function () {
-    Route::group(['middleware' => ['verified']], function () {
-    });
+    Route::get('/logout', 'Auth\AuthController@logout');
+    // Route::group(['middleware' => ['verified']], function () {
+    // });
 });
 
 //* Manual route for email verification *//
@@ -54,4 +55,3 @@ Route::get('/verified', function () {
 //     ]
 // );
 
-Route::get('/logout', 'Auth\AuthController@logout');

@@ -12,6 +12,8 @@
 
     <title>@yield('title')</title>
 
+    <link rel="icon" href="{{asset('template/assets/img/LogoK-1.svg')}}" type="image/gif" sizes="16x16">
+
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('template/vendor/bootstrap/css/bootstrap.min.css')}}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" rel="stylesheet" />
