@@ -39,7 +39,7 @@
                 <div class="card card-signin">
                     <div class="card-body">
                         <div class="header text-center">
-                            <a href="index.html" class="logo"><img src="{{asset('template/assets/img/LogoH-1.svg')}}"></a>
+                            <a href="{{ url('/') }}" class="logo"><img src="{{asset('template/assets/img/LogoH-1.svg')}}"></a>
                         </div>
                         <form class="form-signin" id="form_register">
                             <div class="form-label-group">
@@ -77,7 +77,7 @@
                                 <small name="agreement" class="form-text text-danger d-none"></small>
                             </div>
                         </form>
-                        <button class="btn btn-lg btn-block text-uppercase btn-login" type="submit" onclick="submit('{{url('/')}}')">Daftar</button>
+                        <button class="btn btn-lg btn-block text-uppercase btn-login" type="submit" onclick="submit('{{url('/email/verify')}}')">Daftar</button>
                         <div class="text-center" style="padding: 10px 0 10px 0">
                             <span class="txt1">
                                 Atau masuk dengan

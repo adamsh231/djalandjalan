@@ -42,7 +42,10 @@ class AuthController extends Controller
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->phone = $request->phone;
+        $user->picture = 'https://robohash.org/'.$request->email.'?set=set3';
         $user->save();
+
+        Auth::attempt(['email' => $request->email, 'password' => $request->password]);
 
         return response()->json(
             [
