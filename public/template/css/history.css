@@ -16,3 +16,12 @@
         height: 65px;
         border-radius: 50%;
     }
+    
+    .checked {
+        color: orange;
+    }
+    
+    a {
+        text-decoration: none !important;
+        color: #35405a;
+    }

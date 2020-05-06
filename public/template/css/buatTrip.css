@@ -1,7 +1,10 @@
 .formBuatTrip {
     margin: 100px 0 100px 0;
-    /* text-align: center; */
-    left: 50%;
+}
+
+a {
+    text-decoration: none !important;
+    color: #35405a;
 }
 
 .formBuatTrip {
@@ -9,25 +12,27 @@
 }
 
 .inputTrip {
-    width: 50%;
+    width: 100%;
     display: block;
     margin: 0 auto;
 }
 
 .inputTrip h5 {
-    margin-top: 20px;
+    /* margin-top: 20px; */
     margin-bottom: 5px;
     text-align: left;
+}
+
+.inputTrip input {
+    margin-bottom: 20px;
 }
 
 .formBuatTrip h2 {
     font-weight: bold;
     text-align: center;
-    margin-bottom: 50px;
 }
 
-.formBuatTrip input,
-.formBuatTrip textarea {
+.shadowBox {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08) !important;
 }
 
@@ -37,8 +42,12 @@
 
 .formBuatTrip button {
     background-color: #2ed1a2;
-    margin-top: 25px;
     color: white;
+    width: 100%;
+}
+
+.formBuatTrip textarea {
+    margin-bottom: 20px;
 }
 
 .modal-header {
@@ -47,4 +56,32 @@
 
 .modal-footer {
     border-top: 0 none;
+}
+
+.uploadFotoTrip {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08) !important;
+    padding: 15px;
+    border: 1px solid #39CCCC;
+    border-radius: 5px;
+}
+
+.viewPic {
+    border: 1px solid #39CCCC;
+    border-radius: 5px;
+}
+
+.viewPic img {
+    width: auto;
+    height: 150px;
+}
+
+.btn-core {
+    background-color: #2ed1a2;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.btn-core:hover {
+    background-color: rgb(68, 230, 184);
+    color: white;
 }

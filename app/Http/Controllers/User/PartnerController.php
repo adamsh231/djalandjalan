@@ -11,7 +11,7 @@ class PartnerController extends Controller
 {
     public function view()
     {
-        $partner = Partner::with(['user'])->get()->take(5);
+        $partner = Partner::with(['user', 'join'])->get()->take(5);
         return view('user/home', ['partner' => $partner]);
     }
 

@@ -17,11 +17,6 @@ a {
     color: white;
 }
 
-.navbar {
-    background-color: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08) !important;
-}
-
 .search input[type="search"] {
     display: block;
     text-align: center;
@@ -40,55 +35,6 @@ a {
     top: 0;
     padding: 10px;
     color: #aaa;
-}
-
-.navbar .dropdown-item i {
-    font-size: 16px;
-    min-width: 22px;
-}
-
-.navbar .dropdown-item .material-icons {
-    font-size: 21px;
-    line-height: 16px;
-    vertical-align: middle;
-    margin-top: -2px;
-}
-
-.navbar .nav-item.open>a,
-.navbar .nav-item.open>a:hover,
-.navbar .nav-item.open>a:focus {
-    color: #fff;
-    background: none !important;
-}
-
-.navbar .dropdown-menu {
-    border-radius: 1px;
-    border-color: #e5e5e5;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.navbar .dropdown-menu li a {
-    color: #777 !important;
-    padding: 8px 20px;
-    line-height: normal;
-}
-
-.navbar .dropdown-menu li a:hover,
-.navbar .dropdown-menu li a:focus {
-    color: #333 !important;
-    background: transparent !important;
-}
-
-.navbar .nav .active a,
-.navbar .nav .active a:hover,
-.navbar .nav .active a:focus {
-    color: #fff;
-    text-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
-    background: transparent !important;
-}
-
-.navbar .nav .user-action {
-    padding: 9px 15px;
 }
 
 .informasi {

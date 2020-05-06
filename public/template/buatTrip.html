@@ -8,20 +8,22 @@
     <meta name="author" content="">
     <title>Djalandjalan.com</title>
     <!-- Bootstrap core CSS -->
+    <link rel="icon" href="assets/img/LogoK-1.svg">
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" type="text/css" href="css/daterangepicker.css" />
     <link rel="stylesheet" type="text/css" media="all" href="css/animate.css">
-    <link href="css/home.css" rel="stylesheet">
+    <link type="text/css" href="vendor/select2/select2.min.css" rel="stylesheet" />
     <link href="css/buatTrip.css" rel="stylesheet">
+    <link href="css/navbar.css" rel="stylesheet">
 </head>
 
 <body>
     <nav class="navbar navbar-expand navbar-light justify-content-center fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="home.html"> <img id="home-logo" src="assets/img/LogoH-1.svg" width="150" height="auto" alt="" style="position: relative"></a>
+            <a class="navbar-brand" href="index.html"> <img id="home-logo" src="assets/img/LogoH-1.svg" width="150" height="auto" alt="" style="position: relative"></a>
 
             <ul class="navbar-nav nav-justified text-center">
                 <li class="nav-item">
@@ -57,7 +59,7 @@
                         <li><a href="#" class="dropdown-item"><i class="fa fa-check-circle"></i> Verifikasi Akun</a></li>
                         <li class="divider dropdown-divider"></li>
                         <li><a href="profil.html" class="dropdown-item"><i class="fa fa-user-o"></i> Akun</a></li>
-                        <li><a href="#" class="dropdown-item"><i class="fa fa-info"></i> Bantuan</a></li>
+                        <li><a href="settingAccount.html" class="dropdown-item"><i class="fa fa-sliders"></i> Pengaturan Akun</a></li>
                         <li><a href="index.html" class="dropdown-item"><i class="fa fa-power-off"></i> Keluar</a></li>
                     </ul>
                 </li>
@@ -65,34 +67,71 @@
         </div>
     </nav>
 
-
-    <div class="container text-center">
+    <div class="container">
         <form class="formBuatTrip ">
-            <h2>Buat Trip</h2>
-            <div class="inputTrip">
-                <h5>Tujuan Destinasi</h5>
-                <input type="text" class="form-control" placeholder="Tulis Tujuan Destinasi">
-                <h5>Lokasi Destinasi</h5>
-                <input type="text" class="form-control" placeholder="Tulis Deskripsi Destinasi">
-                <h5>Deskripsi Trip</h5>
-                <textarea class="form-control" placeholder="Tulis Tujuan Destinasi"></textarea>
-                <h5>Tanggal Trip</h5>
-                <input type="text" name="datefilter " class="form-control" placeholder="Pilih Tanggal" value="">
-                <h5>Durasi</h5>
-                <input type="text" class="form-control" id="durasiTrip" disabled value="">
-                <h5>Titik Kumpul</h5>
-                <input type="text" class="form-control" placeholder="Tulis Titik Temu">
-                <h5>Jumlah Anggota</h5>
-                <input type="number" class="form-control" placeholder="Tulis Jumlah Anggota">
+            <h2 style="margin-bottom: 25px;">Buat Trip</h2>
+            <div class="row">
+                <div class="col">
+                    <h5>Upload Foto</h5>
+                    <div class="uploadFotoTrip shadowBox">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <input type="file" class="form-control-file" id="fotoTrip">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="viewPic">
+                                    <img id="reviewPic">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 style="margin-top: 25px;">Kategori Trip</h5>
+                    <select class="form-control inputHobi shadowBox" multiple="multiple">
+                            <option>Gunung</option>
+                            <option>Pantai</option>
+                            <option>Road Trip</option>
+                            <option>Air Terjun</option>
+                     </select>
+                </div>
+                <div class="col">
+                    <div class="inputTrip">
+                        <h5>Tujuan Destinasi</h5>
+                        <input type="text" class="form-control shadowBox" placeholder="Tulis Tujuan Destinasi">
+                        <h5>Lokasi Destinasi</h5>
+                        <input type="text" class="form-control shadowBox" placeholder="Tulis Deskripsi Destinasi">
+                        <div class="row">
+                            <div class="col">
+                                <h5>Tanggal Trip</h5>
+                                <input type="text" name="datefilter " class="form-control shadowBox" placeholder="Pilih Tanggal" value="">
+                            </div>
+                            <div class="col">
+                                <h5>Durasi</h5>
+                                <input type="text" class="form-control shadowBox" id="durasiTrip" disabled value="">
+                            </div>
+                        </div>
 
-            </div>
-            <div class="wrapper-foto">
 
-            </div>
-            <button class="btn btn-core" type="button" data-toggle="modal" data-target="#konfirmasiBuatTrip">Buat Trip</button>
-            <!-- Modal -->
+                        <h5>Titik Kumpul</h5>
+                        <input type="text" class="form-control shadowBox" placeholder="Tulis Titik Temu">
+                        <h5>Jumlah Anggota</h5>
+                        <input type="number" class="form-control shadowBox" placeholder="Tulis Jumlah Anggota">
 
+                        <h5>Deskripsi Trip</h5>
+                        <textarea class="form-control shadowBox" placeholder="Tulis Tujuan Destinasi"></textarea>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                          Saya Menyetujui Syarat & Ketentuan
+                        </label>
+                    </div>
+                    <button class="btn btn-core" type="button" data-toggle="modal" data-target="#konfirmasiBuatTrip">Buat Trip</button>
         </form>
+        </div>
+        </div>
+
     </div>
 
     <div class="modal fade" id="konfirmasiBuatTrip" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -175,9 +214,9 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js "></script>
-    <script type="text/javascript " src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js "></script>
-    <script type="text/javascript " src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js "></script>
-
+    <script type="text/javascript " src="js/moment.min.js "></script>
+    <script type="text/javascript " src="js/daterangepicker.min.js "></script>
+    <script src="vendor/select2/select2.min.js "></script>
     <script>
          $(function() {
             $('input[name="datefilter "]').daterangepicker({
@@ -201,6 +240,26 @@
 
         });
 
+        $(document).ready(function() {
+        $(".inputHobi ").select2({
+            tags: true,
+            tokenSeparators: [',', ' ']
+            })
+        });
+
+        function readURL(input) {
+             if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                     $('#reviewPic').attr('src', e.target.result);
+                }
+            reader.readAsDataURL(input.files[0]); // convert to base64 string
+        }
+        }
+
+        $("#fotoTrip ").change(function() {
+            readURL(this);
+        });
     </script>
 </body>
 
