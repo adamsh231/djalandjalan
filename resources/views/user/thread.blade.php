@@ -77,13 +77,19 @@
     </div>
 
     <div class="diskusi">
+        @if (Auth::check())
         <i class="fa fa-question-circle-o fa-3x icon-diskusi"></i>&nbsp;
         <label>Ada pertanyaan? Diskusikan saja dengan Partners</label>
         <button class="btn btn-core pull-right" onclick="window.location.href = '#tulisDiskusi';">Mulai Diskusi</button>
+        @else
+        <i class="fa fa-exclamation-circle fa-3x icon-diskusi"></i>&nbsp;
+        <label>Ada pertanyaan? Diskusikan saja dengan Partners (Masuk dulu sebelum mulai diskusi)</label>
+        <button class="btn btn-core pull-right" onclick="window.location.href = '{{ url('/login') }}';">Masuk</button>
+        @endif
     </div>
 
     @foreach ($comment as $c)
-    <div class="diskusi">
+    <div class="diskusi" id="comment{{ $c->id }}">
         <div class="isiDiskusi">
             <div class="isiDiskusi-profil">
                 <a href="{{ url('/profile/'.$c->user->id) }}">
@@ -111,22 +117,41 @@
         </div>
         @endforeach
         @if (Auth::check())
-        <div class="isiDiskusi-jawab">
-            <div class="row">
-                <div class="col-md-auto">
-                    <img src="{{ Auth::user()->picture }}" class="avatar picMember">
-                </div>
-                <div class="col" style="padding-left: 0;">
-                    <input class="form-control" type="text" placeholder="Masukan Komentar">
-                </div>
-                <div class="col">
-                    <button type="submit" class="btn btn-success">Kirim</button>
+        <form action="{{ url('/partner/'.$partner->id.'/comment/'.$c->id.'/reply') }}" method="POST">
+            @csrf
+            <div class="isiDiskusi-jawab">
+                <div class="row">
+                    <div class="col-md-auto">
+                        <img src="{{ Auth::user()->picture }}" class="avatar picMember">
+                    </div>
+                    <div class="col" style="padding-left: 0;">
+                        <input name="message" class="form-control" type="text" placeholder="Masukan Komentar" required>
+                    </div>
+                    <div class="col">
+                        <button type="submit" class="btn btn-success">Kirim</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
         @endif
     </div>
     @endforeach
+
+    @if (Auth::check())
+    <form action="{{ url('/partner/'.$partner->id.'/comment') }}" method="POST">
+        @csrf
+        <div class="diskusi" id="tulisDiskusi">
+            <div class="row">
+                <div class="col">
+                    <input name="message" class="form-control" type="text" placeholder="Bertanya ke partners" required>
+                </div>
+                <div class="col-md-auto">
+                    <button type="submit" class="btn btn-success pull-right">Kirim</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    @endif
 
 </div>
 @endsection

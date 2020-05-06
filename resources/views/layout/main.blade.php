@@ -19,8 +19,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{{asset('template/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
-    <link href="{{asset('template/css/navbar.css')}}" rel="stylesheet">
     <!-- Custom styles for this template -->
+    <link href="{{asset('template/css/navbar.css')}}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="all" href="{{ url('template/css/animate.css') }}">
     @yield('add_style')
 
 </head>

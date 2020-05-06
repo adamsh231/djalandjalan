@@ -5,7 +5,6 @@
 
 @section('add_style')
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-<link rel="stylesheet" type="text/css" media="all" href="{{ url('template/css/animate.css') }}">
 <link href="{{asset('template/css/home.css')}}" rel="stylesheet">
 @endsection
 

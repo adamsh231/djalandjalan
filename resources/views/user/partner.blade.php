@@ -46,6 +46,19 @@
 
                 <div class="filter">
                     <div class="kategori-filter">
+                        <b>Kategori</b>
+                        <select class="form-control" name="filter_kategori">
+                            <option></option>
+                            <option value="gunung">Gunung</option>
+                            <option value="pantai">Pantai</option>
+                            <option value="air terjun">Air Terjun</option>
+                            <option value="road trip">Road Trip</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="filter">
+                    <div class="kategori-filter">
                         <b>Urutkan Berdasarkan</b>
                         <select class="form-control" name="filter_urutan">
                             <option></option>
@@ -54,8 +67,8 @@
                         </select>
                         <select class="form-control" name="filter_urutan_jenis">
                             <option></option>
-                            <option value="ASC">A - Z</option>
-                            <option value="DESC">Z - A</option>
+                            <option value="ASC">Menaik</option>
+                            <option value="DESC">Menurun</option>
                         </select>
                     </div>
                 </div>
@@ -119,7 +132,7 @@
                 @endforeach
             </div>
 
-            <div class="row partners-thread" style="overflow: auto; height: 650px">
+            <div class="row partners-thread">
 
                 @foreach ($partner as $p)
                 <div class="col-6 col-md-3 partners-thread-card">

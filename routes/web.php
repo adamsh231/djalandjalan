@@ -41,9 +41,16 @@ Route::group(['middleware' => ['guest']], function () {
 
 Route::group(['middleware' => ['isSignIn']], function () {
     Route::get('/logout', 'Auth\AuthController@logout');
+
+    //* --------------- Verified Email Access ----------------- *//
+
     Route::group(['middleware' => ['verified']], function () {
         Route::get('/profile', 'User\UserController@profile');
+        Route::post('/partner/{partner}/comment', 'User\CommentController@newComment');
+        Route::post('/partner/{partner}/comment/{comment}/reply', 'User\CommentController@newReply');
     });
+
+    //* ------------------------------------------------------ *//
 });
 
 //* --------------------------------------------------------------------------------------- *//
