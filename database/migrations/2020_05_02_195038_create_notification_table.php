@@ -17,7 +17,7 @@ class CreateNotificationTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('message');
-            $table->integer('status')->default(0);
+            $table->integer('status')->default(0)->comment('0:unread, 1:read');
             $table->timestamps();
         });
     }
