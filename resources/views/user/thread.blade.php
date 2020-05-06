@@ -110,6 +110,7 @@
             </div>
         </div>
         @endforeach
+        @if (Auth::check())
         <div class="isiDiskusi-jawab">
             <div class="row">
                 <div class="col-md-auto">
@@ -123,6 +124,7 @@
                 </div>
             </div>
         </div>
+        @endif
     </div>
     @endforeach
 
