@@ -4,7 +4,6 @@
 @section('title', 'Partner | djalandjalan.com')
 
 @section('add_style')
-<link rel="stylesheet" type="text/css" href="{{asset('template/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 <link href="{{asset('template/css/partners.css')}}" rel="stylesheet">
 @endsection
@@ -12,78 +11,101 @@
 @section('content')
 <div class="container page-content">
     <div class="row">
-        <div class="col-2">
-            <div class="filter">
-                <div class="kategori-filter">
-                    <b>Urutkan Berdasarkan</b>
-                    <select class="form-control" id="inputGender">
-                        <option>Terbaru</option>
-                        <option>Jumlah Anggota</option>
-                    </select>
-                </div>
-            </div>
-            <div class="filter">
-                <div class="kategori-filter">
-                    <b>Tanggal</b>
-                    <input type="text" name="datefilter " class="form-control" placeholder="Pilih Tanggal" value="">
-                </div>
-            </div>
-            <div class="filter">
-                <div class="kategori-filter">
-                    <b>Anggota</b>
-                    <select class="form-control" id="inputGender">
-                        <option>Kurang dari 3</option>
-                        <option>3 hingga 6</option>
-                        <option>Lebih dari 6</option>
-                    </select>
-                </div>
-            </div>
-            <div class="filter">
-                <div class="kategori-filter">
-                    <b>Kategori</b>
-                    <div class="form-check">
-                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
-                        <label class="form-check-label" for="inlineRadio1">Gunug</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
-                        <label class="form-check-label" for="inlineRadio1">Pantai</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
-                        <label class="form-check-label" for="inlineRadio1">Air Terjun</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
-                        <label class="form-check-label" for="inlineRadio1">Road Trip</label>
-                    </div>
-                </div>
-            </div>
-            <div class="filter">
-                <div class="kategori-filter">
-                    <b>Lokasi</b>
-                    <div class="form-check">
-                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
-                        <label class="form-check-label" for="inlineRadio1">Jawa Timur</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
-                        <label class="form-check-label" for="inlineRadio1">Jawa Tengah</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
-                        <label class="form-check-label" for="inlineRadio1">Jawa Barat</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
-                        <label class="form-check-label" for="inlineRadio1">DKI Jakarta</label>
-                    </div>
-                </div>
-            </div>
 
-            <div class="text-center reset">
-                <button type="button" id="resetChecklist" class="btn btn-outline-success btn-sm">Reset</button>
-            </div>
+        <div class="col-2">
+
+            <form>
+                <input type="hidden" name="start_date">
+                <input type="hidden" name="end_date">
+
+                <div class="filter">
+                    <div class="kategori-filter">
+                        @php
+                        $tanggal = ($old_key->start_date ? (date('d/m/Y', strtotime($old_key->start_date)). " - " .date('d/m/Y', strtotime($old_key->end_date))) : "");
+                        @endphp
+                        <b>Tanggal</b>
+                        <input id="filter_tanggal" type="text" class="form-control" placeholder="Pilih Tanggal">
+                        {{-- <small class="text-primary">{{ $tanggal }}</small> --}}
+                    </div>
+                </div>
+
+                <div class="filter">
+                    <div class="kategori-filter">
+                        <b>Anggota</b>
+                        <select class="form-control" name="filter_jumlah">
+                            <option></option>
+                            <option value="1">Kurang dari 3</option>
+                            <option value="2">3 hingga 6</option>
+                            <option value="3">Lebih dari 6</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="filter">
+                    <div class="kategori-filter">
+                        <b>Urutkan Berdasarkan</b>
+                        <select class="form-control" name="filter_urutan">
+                            <option></option>
+                            <option value="start_date">Tanggal</option>
+                            <option value="required_person">Jumlah Anggota</option>
+                        </select>
+                        <select class="form-control" name="filter_urutan_jenis">
+                            <option></option>
+                            <option value="ASC">A - Z</option>
+                            <option value="DESC">Z - A</option>
+                        </select>
+                    </div>
+                </div>
+
+                {{-- <div class="filter">
+                    <div class="kategori-filter">
+                        <b>Kategori</b>
+                        <div class="form-check">
+                            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                            <label class="form-check-label" for="inlineRadio1">Gunung</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                            <label class="form-check-label" for="inlineRadio1">Pantai</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                            <label class="form-check-label" for="inlineRadio1">Air Terjun</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                            <label class="form-check-label" for="inlineRadio1">Road Trip</label>
+                        </div>
+                    </div>
+                </div> --}}
+
+                {{-- <div class="filter">
+                    <div class="kategori-filter">
+                        <b>Lokasi</b>
+                        <div class="form-check">
+                            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                            <label class="form-check-label" for="inlineRadio1">Jawa Timur</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                            <label class="form-check-label" for="inlineRadio1">Jawa Tengah</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                            <label class="form-check-label" for="inlineRadio1">Jawa Barat</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                            <label class="form-check-label" for="inlineRadio1">DKI Jakarta</label>
+                        </div>
+                    </div>
+                </div> --}}
+
+                <div class="text-center reset">
+                    <button type="submit" class="btn btn-outline-success btn-sm">Filter</button>
+                </div>
+            </form>
+
         </div>
 
         <div class="col-10">
@@ -104,7 +126,7 @@
                                 <h6 class="card-title">{{ (explode(' ', $p->user->name)[0]) }} / {{ $p->user->city }}</h6>
                                 <p class="card-text">Tgl: <span>{{ date('d M Y', strtotime($p->start_date)) }} - {{ date('d M Y', strtotime($p->end_date)) }}</span></p>
                                 <p class="card-text">Titik Kumpul: <span>{{ substr($p->gather_point,0,20) }}</span></p>
-                                <p class="card-text" style="float: right;">Butuh: <span style="font-weight: bold">X orang lagi</span></p>
+                                <p class="card-text" style="float: right;">Anggota: <span style="font-weight: bold">{{ $p->join->count() }} / {{ $p->required_person }}</span></p>
                             </div>
                         </div>
                     </a>
@@ -122,8 +144,30 @@
 <script type="text/javascript " src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js "></script>
 <script>
     function uncheckAll() {
-        $("input[type='checkbox']:checked").prop("checked", false)
-    }
-    $('#resetChecklist').on('click', uncheckAll)
+        $("input[type='checkbox' ]:checked ").prop("checked ", false)
+    };
+    $('#resetChecklist').on('click', uncheckAll);
+
+    $(function() {
+        $('#filter_tanggal').daterangepicker({
+            autoUpdateInput: false,
+            locale: {
+                cancelLabel: 'Clear'
+            }
+        });
+
+        $('#filter_tanggal').on('apply.daterangepicker', function(ev, picker) {
+            $('input[name="start_date"]').val(picker.startDate.format('YYYY-MM-DD'));
+            $('input[name="end_date"]').val(picker.endDate.format('YYYY-MM-DD'));
+            $(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
+        });
+
+        $('#filter_tanggal').on('cancel.daterangepicker', function(ev, picker) {
+            $('input[name="start_date"]').val('');
+            $('input[name="end_date"]').val('');
+            $(this).val('');
+        });
+
+    });
 </script>
 @endsection

@@ -15,10 +15,37 @@ class PartnerController extends Controller
         return view('user/home', ['partner' => $partner]);
     }
 
-    public function overview()
+    public function overview(Request $request)
     {
-        $partner = Partner::with(['user'])->get();
-        return view('user/partner', ['partner' => $partner]);
+        $partner = (new Partner)->newQuery();
+        $partner->with(['user', 'join']);
+        if (!is_null($request->get('start_date'))) {
+            $partner->where([
+                ['start_date','>=', $request->get('start_date')],
+                ['end_date','<=', $request->get('end_date')]
+            ]);
+        }
+        if (!is_null($request->get('filter_jumlah'))) {
+            switch($request->get('filter_jumlah')){
+                case 1:
+                    $partner->where('required_person','<', '3');
+                    break;
+                case 2:
+                    $partner->whereBetween('required_person',['3','6']);
+                    break;
+                case 3:
+                    $partner->where('required_person','>', '6');
+                    break;
+            }
+        }
+        if (!is_null($request->get('filter_urutan'))) {
+            $partner->orderBy($request->get('filter_urutan'), $request->get('filter_urutan_jenis'));
+        }
+        return view('user/partner',
+        [
+            'partner' => $partner->get(),
+            'old_key' => $request
+        ]);
     }
 
     public function partner($id)
