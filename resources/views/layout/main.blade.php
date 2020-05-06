@@ -27,6 +27,7 @@
 
     @yield('background')
 
+    @if (Auth::check())
     <nav class="navbar navbar-expand navbar-light justify-content-center fixed-top">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}"> <img id="home-logo" src="{{asset('template/assets/img/LogoH-1.svg')}}" width="160" height="auto" alt="" style="position: relative"></a>
@@ -77,6 +78,26 @@
             </ul>
         </div>
     </nav>
+    @else
+    <nav class="navbar navbar-expand navbar-light justify-content-center fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url('/') }}"> <img id="home-logo" src="{{asset('template/assets/img/LogoH-1.svg')}}" width="160" height="auto" alt="" style="position: relative"></a>
+
+            <ul class="navbar-nav nav-justified text-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/login') }}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-core" type="button" onclick="window.location.href = '{{ url('/register') }}';">
+                        Daftar
+                    </button>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    @endif
 
     @yield('content')
 

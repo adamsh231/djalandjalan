@@ -252,9 +252,6 @@
 <script type="text/javascript " src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js "></script>
 
 <script type="text/javascript ">
-    window.onbeforeunload = function () {
-        window.scrollTo(0, 0);
-    }
     var myIndex = 0;
     carousel();
 

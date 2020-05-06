@@ -15,9 +15,9 @@ class UserController extends Controller
     public function profile($user = null)
     {
         if(is_null($user)){
-            // if(!Auth::check()){
-            //     return redirect('/');
-            // }
+            if(!Auth::check()){
+                return redirect('/');
+            }
             $user = Auth::user();
         }else{
             $user = User::find($user);
@@ -29,9 +29,9 @@ class UserController extends Controller
                 },
                 'review'
             ]
-        )->where('user_id', Auth::user()->id)->get();
-        $gallery = Gallery::where('user_id', Auth::user()->id)->get();
-        $review = Review::where('user_id', Auth::user()->id)->get();
+        )->where('user_id', $user->id)->get();
+        $gallery = Gallery::where('user_id', $user->id)->get();
+        $review = Review::where('user_id', $user->id)->get();
         return view(
             'user/profile',
             [

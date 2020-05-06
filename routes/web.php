@@ -24,14 +24,13 @@ Route::group(['middleware' => ['guest']], function () {
     Route::get('/login/google/callback', 'Auth\GoogleAuthController@handleProviderCallback');
 });
 
+Route::get('/', 'User\PartnerController@view');
+Route::get('/profile/{user?}', 'User\UserController@profile')->where('user', '[0-9]+');
+Route::get('/partner', 'User\PartnerController@overview');
+Route::get('/partner/{id}', 'User\PartnerController@partner');
+
 Route::group(['middleware' => ['isSignIn']], function () {
     Route::group(['middleware' => ['verified']], function () {
-        Route::get('/', 'User\PartnerController@view');
-        // Route::get('/profile', 'User\UserController@profile');
-        Route::get('/profile/{user?}', 'User\UserController@profile');
-        // Route::get('/profile/{user}', 'User\UserController@profilex');
-        Route::get('/partner', 'User\PartnerController@overview');
-        Route::get('/partner/{id}', 'User\PartnerController@partner');
     });
 });
 
@@ -41,7 +40,7 @@ Route::group(['middleware' => ['isSignIn']], function () {
     Route::post('/email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 });
 Route::get('/email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
-Route::get('/verified', function(){
+Route::get('/verified', function () {
     return view('auth/verified');
 })->middleware('guest');
 
