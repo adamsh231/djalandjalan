@@ -21,32 +21,32 @@ class PartnerController extends Controller
         $partner = (new Partner)->newQuery();
         $partner->with(['user', 'join']);
         if (!is_null($request->get('filter_tempat'))) {
-            $partner->where('dest_name','LIKE', '%'.$request->get('filter_tempat').'%');
+            $partner->where('dest_name', 'LIKE', '%' . $request->get('filter_tempat') . '%');
             $arr_old->put('filter_tempat', $request->get('filter_tempat'));
         }
         if (!is_null($request->get('filter_kategori'))) {
-            $partner->where('categories','LIKE', '%'.$request->get('filter_kategori').'%');
+            $partner->where('categories', 'LIKE', '%' . $request->get('filter_kategori') . '%');
             $arr_old->put('filter_kategori', $request->get('filter_kategori'));
         }
         if (!is_null($request->get('start_date'))) {
             $partner->where([
-                ['start_date','>=', $request->get('start_date')],
-                ['end_date','<=', $request->get('end_date')]
+                ['start_date', '>=', $request->get('start_date')],
+                ['end_date', '<=', $request->get('end_date')]
             ]);
-            $arr_old->put('tanggal', date('d M Y', strtotime($request->start_date)). ' - ' .date('d M Y', strtotime($request->end_date)));
+            $arr_old->put('tanggal', date('d M Y', strtotime($request->start_date)) . ' - ' . date('d M Y', strtotime($request->end_date)));
         }
         if (!is_null($request->get('filter_jumlah'))) {
-            switch($request->get('filter_jumlah')){
+            switch ($request->get('filter_jumlah')) {
                 case 1:
-                    $partner->where('required_person','<', '3');
+                    $partner->where('required_person', '<', '3');
                     $arr_old->put('filter_jumlah', 'Kurang dari 3 orang');
                     break;
                 case 2:
-                    $partner->whereBetween('required_person',['3','6']);
+                    $partner->whereBetween('required_person', ['3', '6']);
                     $arr_old->put('filter_jumlah', '3 sampai 6 orang');
                     break;
                 case 3:
-                    $partner->where('required_person','>', '6');
+                    $partner->where('required_person', '>', '6');
                     $arr_old->put('filter_jumlah', 'Lebih dari 6 orang');
                     break;
             }
@@ -55,13 +55,15 @@ class PartnerController extends Controller
             $partner->orderBy($request->get('filter_urutan'), $request->get('filter_urutan_jenis'));
             $based_on = ($request->get('filter_urutan') == "start_date" ? "Tanggal" : "Jumlah Orang");
             $jenis = ($request->get('filter_urutan_jenis') == "ASC" ? "(A - Z)" : "(Z - A)");
-            $arr_old->put('filter_urutan', 'Berdasarkan '.$based_on.' '. $jenis);
+            $arr_old->put('filter_urutan', 'Berdasarkan ' . $based_on . ' ' . $jenis);
         }
-        return view('user/partner',
-        [
-            'partner' => $partner->get(),
-            'old_key' => $arr_old
-        ]);
+        return view(
+            'user/partner',
+            [
+                'partner' => $partner->get(),
+                'old_key' => $arr_old
+            ]
+        );
     }
 
     public function partner($id)
@@ -74,6 +76,12 @@ class PartnerController extends Controller
                 },
             ]
         )->find($id);
+
+        //! Redirect if null -> should be change to try catch !//
+        if(is_null($partner)){
+            return redirect('/partner');
+        }
+
         $comment = Comment::with(
             [
                 'reply' => function ($query) {
@@ -89,5 +97,42 @@ class PartnerController extends Controller
                 'comment' => $comment,
             ]
         );
+    }
+
+    public function addPartner(Request $request)
+    {
+        $request->validate(
+            [
+                'dest_picture' => ['required', 'mimes:jpg,png,jpeg'],
+                'categories' => ['required'],
+                'dest_name' => ['required'],
+                'dest_location' => ['required'],
+                'start_date' => ['required'],
+                'end_date' => ['required'],
+                'gather_point' => ['required'],
+                'required_person' => ['required', 'numeric'],
+                'description' => ['required'],
+                'agreement' => ['accepted'],
+            ]
+        );
+        $file = $request->file('dest_picture');
+        $file_name = $request->user()->id . "_" . $request->start_date ."_" . time() . "." . strtolower($file->getClientOriginalExtension());
+
+        $partner = new Partner;
+        $partner->user_id = $request->user()->id;
+        $partner->dest_name = $request->dest_name;
+        $partner->dest_picture = url('').'/storage/file/partner/'.$file_name;
+        $partner->dest_location = $request->dest_location;
+        $partner->start_date = $request->start_date;
+        $partner->end_date = $request->end_date;
+        $partner->gather_point = $request->gather_point;
+        $partner->categories = $request->categories;
+        $partner->required_person = $request->required_person;
+        $partner->description = $request->description;
+
+        $file->storeAs('file/partner/', $file_name, 'public');
+        $partner->save();
+
+        return redirect('/partner/'.$partner->id);
     }
 }

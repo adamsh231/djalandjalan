@@ -16,7 +16,7 @@
 Route::get('/', 'User\PartnerController@view');
 Route::get('/profile/{user}', 'User\UserController@profile')->where('user', '[0-9]+');
 Route::get('/partner', 'User\PartnerController@overview');
-Route::get('/partner/{id}', 'User\PartnerController@partner');
+Route::get('/partner/{id}', 'User\PartnerController@partner')->where('id', '[0-9]+');
 
 //* --------------------------------------------------------------------------------------- *//
 
@@ -48,6 +48,10 @@ Route::group(['middleware' => ['isSignIn']], function () {
         Route::get('/profile', 'User\UserController@profile');
         Route::post('/partner/{partner}/comment', 'User\CommentController@addComment');
         Route::post('/partner/{partner}/comment/{comment}/reply', 'User\CommentController@addReply');
+        Route::get('/partner/add', function () {
+            return view('user/partner_add');
+        });
+        Route::post('/partner/add', 'User\PartnerController@addPartner');
     });
 
     //* ------------------------------------------------------ *//

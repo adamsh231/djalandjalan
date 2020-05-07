@@ -32,6 +32,12 @@ class UserController extends Controller
         )->where('user_id', $user->id)->get();
         $gallery = Gallery::where('user_id', $user->id)->get();
         $review = Review::where('user_id', $user->id)->get();
+
+        //! Redirect if null -> should be change to try catch !//
+        if(is_null($user)){
+            return redirect('/');
+        }
+
         return view(
             'user/profile',
             [
