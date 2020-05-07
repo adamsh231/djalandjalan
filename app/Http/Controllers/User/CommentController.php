@@ -9,7 +9,7 @@ use App\Reply;
 
 class CommentController extends Controller
 {
-    public function newComment(Request $request, $partner){
+    public function addComment(Request $request, $partner){
         $request->validate([
             'message' => ['required'],
         ]);
@@ -23,7 +23,7 @@ class CommentController extends Controller
         return redirect('/partner/'.$partner.'#tulisDiskusi');
     }
 
-    public function newReply(Request $request, $partner, $comment){
+    public function addReply(Request $request, $partner, $comment){
         $request->validate([
             'message' => ['required'],
         ]);

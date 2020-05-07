@@ -7,6 +7,35 @@ a {
     color: #35405a;
 }
 
+.search input {
+    text-align: center;
+    width: 100%;
+    font-size: 15px;
+    border-width: 0px;
+    border: none;
+    margin-right: 5px;
+}
+
+.search {
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08) !important;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+
+.btn-core {
+    background-color: #2ED1A2;
+    color: white;
+    margin-left: 10px;
+}
+
+.btn-core:hover {
+    background-color: rgb(68, 230, 184);
+    color: white;
+}
+
 .page-content {
     margin-top: 100px;
 }
@@ -71,7 +100,7 @@ a {
 .filter {
     border-radius: 5px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    margin-bottom: 25px;
+    margin-bottom: 5px;
     font-size: 0.8rem;
     padding: 5px;
 }
