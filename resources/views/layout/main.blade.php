@@ -42,7 +42,7 @@
                         <span class="d-none d-sm-inline">Tambah</span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="{{ url('/partner/add') }}">Partners</a></li>
+                        <li><a href="{{ url('/partner/add/info') }}">Partners</a></li>
                         <li><a href="#">Open Trip</a></li>
                     </ul>
 

@@ -5,7 +5,6 @@
 
 @section('add_style')
 <link rel="stylesheet" type="text/css" href="{{asset('template/css/daterangepicker.css')}}" />
-<link rel="stylesheet" type="text/css" media="all" href="{{asset('template/css/animate.css')}}">
 <link type="text/css" href="{{asset('template/vendor/select2/select2.min.css')}}" rel="stylesheet" />
 <link href="{{asset('template/css/buatTrip.css')}}" rel="stylesheet">
 @endsection

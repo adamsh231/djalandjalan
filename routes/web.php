@@ -51,6 +51,9 @@ Route::group(['middleware' => ['isSignIn']], function () {
         Route::get('/partner/add', function () {
             return view('user/partner_add');
         });
+        Route::get('/partner/add/info', function () {
+            return view('user/partner_add_info');
+        });
         Route::post('/partner/add', 'User\PartnerController@addPartner');
     });
 
