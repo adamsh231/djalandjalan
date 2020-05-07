@@ -64,7 +64,7 @@
                 <li class="nav-item dropdown">
                     <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="assets/img/profil.jpg" class="avatar" alt="Avatar"><span> Bambang</span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#" class="dropdown-item"><i class="fa fa-plane"></i> Tripmu</a></li>
+                        <li><a href="tripmu.html" class="dropdown-item"><i class="fa fa-plane"></i> Trip Saya</a></li>
                         <li class="divider dropdown-divider"></li>
                         <li><a href="profil.html" class="dropdown-item"><i class="fa fa-user-o"></i> Profil</a></li>
                         <li><a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Pengaturan Akun</a></li>
@@ -81,6 +81,7 @@
                 <div class="col-3">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link active" id="ubahProfil-tab" data-toggle="pill" href="#ubahProfil" role="tab" aria-controls="ubahProfil" aria-selected="true">Ubah Profil</a>
+                        <a class="nav-link" id="varifikasiAkun-tab" data-toggle="pill" href="#verifikasiAkun" role="tab" aria-controls="verifikasiAkun" aria-selected="false">Verifikasi Akun</a>
                         <a class="nav-link" id="ubahPassword-tab" data-toggle="pill" href="#ubahPassword" role="tab" aria-controls="ubahPassword" aria-selected="false">Ubah Password</a>
                         <a class="nav-link" id="ubahEmail-tab" data-toggle="pill" href="#ubahEmail" role="tab" aria-controls="ubahEmail" aria-selected="false">Ubah Email</a>
                     </div>
@@ -90,11 +91,11 @@
                         <div class="tab-pane fade show active" id="ubahProfil" role="tabpanel" aria-labelledby="ubahProfil-tab">
                             <div class="row" style="padding: 25px;">
                                 <div class="col-4 text-right mb-3">
-                                    <img src="assets/img/profil.jpg" class="avatar avatar-setting" alt="Avatar">
+                                    <img src="assets/img/profil.jpg" class="avatar avatar-setting" alt="Avatar" id="preview-photo-profile">
                                 </div>
                                 <div class="col-8">
                                     <div class="form-group">
-                                        <label for="changePhotoProfile">Ganti Foto Profil</label>
+                                        <h5 for="changePhotoProfile">Ganti Foto Profil</h5>
                                         <input type="file" class="form-control-file" id="changePhotoProfile">
                                     </div>
                                 </div>
@@ -117,15 +118,21 @@
                                     <h5>Domisili</h5>
                                 </div>
                                 <div class="col-8">
-                                    <input type="text" class="form-control" id="editDomisini">
-                                    <small id="smallDomisili" class="form-text text-muted">Masukan sesuai domisili anda sekarang</small>
+                                    <select class="form-control editDomisili" name="state">
+                                        <option value=""></option>
+                                        <option value="">Malang</option>
+                                        <option value="">Jakarta</option>
+                                        <option value="">Bogor</option>
+                                        <option value="">Surabaya</option>
+                                      </select>
+                                    <small id="smallDomisili" class="form-text text-muted" style="margin-top: 0; margin-bottom: 10px;">Masukan sesuai domisili anda sekarang</small>
                                 </div>
 
                                 <div class="col-4 text-right mb-3">
-                                    <h5>Provinsi</h5>
+                                    <h5>Tanggal Lahir</h5>
                                 </div>
                                 <div class="col-8">
-                                    <input type="text" class="form-control" id="editProvinsi">
+                                    <input type="date" class="form-control" id="editTanggalLahir">
                                 </div>
 
                                 <div class="col-4 text-right mb-3">
@@ -161,6 +168,24 @@
                                 <button class="btn btn-primary btn-sm">Kirim</button>
                             </div>
                         </div>
+                        <div class="tab-pane fade" id="verifikasiAkun" role="tabpanel" aria-labelledby="verifikasiAkun-tab">
+                            <div class="uploadKTP text-center">
+                                <form>
+                                    <div class="previewKTP ">
+                                        <img id="previewKTP">
+                                    </div>
+                                    <div class="dropzone-wrapper">
+                                        <div class="dropzone-desc">
+                                            <i class="fa fa-upload fa-2x" aria-hidden="true"></i>
+                                            <p>Pilih foto KTP</p>
+                                        </div>
+                                        <input type="file" id="pilihKTP" class="dropzone">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary" style="margin-top: 25px;">Kirim</button>
+                                </form>
+                            </div>
+                        </div>
+
                         <div class="tab-pane fade" id="ubahPassword" role="tabpanel" aria-labelledby="ubahPassword-tab">
                             <div class="row" style="padding: 25px;">
                                 <div class="col-4 text-right mb-3">
@@ -269,15 +294,35 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js "></script>
     <script src="vendor/select2/select2.min.js "></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js "></script> -->
-    <!-- <script src="js/slick.js "></script> -->
+
 <script>
     $(document).ready(function() {
         $(".inputHobi ").select2({
-    tags: true,
-    tokenSeparators: [',', ' ']
-})
+            tags: true,
+            tokenSeparators: [',', ' ']
+        })
+        $('.editDomisili').select2();
 });
+
+    function readURL(input, loc) {
+             if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                     $(loc).attr('src', e.target.result);
+                }
+            reader.readAsDataURL(input.files[0]); // convert to base64 string
+        }
+        }
+
+        $("#pilihKTP ").change(function() {
+            readURL(this, '#previewKTP');
+        });
+        $("#changePhotoProfile ").change(function() {
+            readURL(this, '#preview-photo-profile');
+        });
+
+
+
 </script>
 </body>
 </html>

@@ -1,5 +1,14 @@
+a {
+    text-decoration: none !important;
+    color: #35405a;
+}
+
 .wrapper1 {
     margin-top: 100px;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .wrapper1 h1 {
@@ -13,7 +22,7 @@
     margin-bottom: 5px;
 }
 
-.wrapper1 button {
+.wrapper1 a {
     background-color: #2ed1a2;
     color: white;
     margin: 10px 0 25px 0;
@@ -26,7 +35,7 @@
 }
 
 .wrapper3 {
-    margin-top: 50px;
+    padding-top: 80px;
     margin-bottom: 50px;
 }
 
