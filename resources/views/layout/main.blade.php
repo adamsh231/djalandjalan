@@ -74,7 +74,7 @@
                         <li><a href="#" class="dropdown-item"><i class="fa fa-check-circle"></i> Verifikasi Akun</a></li>
                         <li class="divider dropdown-divider"></li>
                         <li><a href="{{ url('/profile') }}" class="dropdown-item"><i class="fa fa-user-o"></i> Profil</a></li>
-                        <li><a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Pengaturan Akun</a></li>
+                        <li><a href="{{ url('/profile/setting') }}" class="dropdown-item"><i class="fa fa-sliders"></i> Pengaturan Akun</a></li>
                         <li><a href="{{ url('/logout') }}" class="dropdown-item"><i class="fa fa-power-off"></i> Keluar</a></li>
                     </ul>
                 </li>

@@ -46,6 +46,9 @@ Route::group(['middleware' => ['isSignIn']], function () {
 
     Route::group(['middleware' => ['verified']], function () {
         Route::get('/profile', 'User\UserController@profile');
+        Route::get('/profile/setting', function(){
+            return view('user/profile_setting');
+        });
         Route::post('/partner/{partner}/comment', 'User\CommentController@addComment');
         Route::post('/partner/{partner}/comment/{comment}/reply', 'User\CommentController@addReply');
         Route::get('/partner/add', function () {
