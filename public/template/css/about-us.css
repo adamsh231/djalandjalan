@@ -1,0 +1,114 @@
+a {
+    text-decoration: none !important;
+    color: #35405a;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.wrapper {
+    height: auto;
+}
+
+.banner-top {
+    height: 300px;
+    margin-bottom: 50px;
+}
+
+.overlay-bg {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    color: #fff;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    /* border-radius: 5px; */
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.overlay-bg h4 {
+    font-family: Baloo;
+    font-size: 25px;
+}
+
+.bg {
+    background-image: url('../assets/img/tim.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 0;
+}
+
+.container h4 {
+    margin-bottom: 50px;
+    font-family: Baloo;
+    font-size: 25px;
+}
+
+#keamanan {
+    margin-top: 50px;
+    background-image: url('../assets/img/cctv.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 0;
+    height: 300px;
+}
+
+.join-djalandjalan {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.join-djalandjalan-num {
+    /* width: 20%; */
+    line-height: 1.2;
+    font-weight: 700;
+    color: rgba(34, 54, 8, 0.25);
+    text-align: center;
+    font-size: 4rem;
+    margin-right: 20px;
+}
+
+.bg-layanan-partners {
+    background-image: url('../assets/img/partners.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 0;
+}
+
+.sidebar-wrapper {
+    display: block;
+    position: sticky;
+    top: 80px;
+    overflow-y: hidden;
+    max-height: 100vh;
+    height: 100%;
+}
