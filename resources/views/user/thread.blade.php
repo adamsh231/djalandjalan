@@ -37,8 +37,16 @@
                     <i class="fa fa-map-marker fa-fw"></i>&nbsp;<label>Titik Kumpul</label>
                     <span>{{ $partner->gather_point }}</span>
                 </div>
-                @if (Auth::check())
 
+                {{-- ----------------1----------------- --}}
+                @if (Auth::check())
+                {{-- ----------------2----------------- --}}
+                @if ($partner->status != 0)
+                <div class="text-center mt-4">
+                    <button class="btn stylebutton btn-core" disabled>Sedang Berlangsung</button>
+                </div>
+                @else
+                {{-- ----------------3----------------- --}}
                 @if ($isJoin == 1)
                 <div class="text-center mt-4">
                     <button class="btn stylebutton btn-core" disabled>Tergabung</button>
@@ -55,12 +63,16 @@
                     </form>
                 </div>
                 @endif
-
+                {{-- ----------------3----------------- --}}
+                @endif
+                {{-- ----------------2----------------- --}}
                 @else
                 <div class="text-center mt-4">
                     <button onclick="window.location.href='{{ url('/login') }}'" class="btn stylebutton btn-core">Gabung</button>
                 </div>
                 @endif
+                {{-- ----------------1----------------- --}}
+
             </div>
             <div class="memberTrip">
                 <div class="memberTrip-host">

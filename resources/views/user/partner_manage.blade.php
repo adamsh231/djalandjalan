@@ -23,7 +23,7 @@
             @if ($j->partner->user_id == $j->user_id)
             <div class="trip">
                 <div>
-                    <a href="threadEdit.html">
+                    <a href="{{ url('/partner/'.$j->partner->id.'/confirmation') }}">
                         <div class="row row-cols-4 align-items-center" style="margin: 0 auto;height: auto; padding: 10px;">
                             <div class="col">
                                 <img src="{{ $j->partner->dest_picture }}">

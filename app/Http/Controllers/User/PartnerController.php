@@ -84,11 +84,11 @@ class PartnerController extends Controller
         )->findOrFail($id);
 
         $joined = -1;
-        if(Auth::check()){
-            foreach($partner->join as $pj){
-                if($pj->user_id == Auth::user()->id && $pj->status == 1){
+        if (Auth::check()) {
+            foreach ($partner->join as $pj) {
+                if ($pj->user_id == Auth::user()->id && $pj->status == 1) {
                     $joined = 1;
-                }else if($pj->user_id == Auth::user()->id && $pj->status == 0){
+                } else if ($pj->user_id == Auth::user()->id && $pj->status == 0) {
                     $joined = 0;
                 }
             }
@@ -129,12 +129,12 @@ class PartnerController extends Controller
             ]
         );
         $file = $request->file('dest_picture');
-        $file_name = $request->user()->id . "_" . $request->start_date ."_" . time() . "." . strtolower($file->getClientOriginalExtension());
+        $file_name = $request->user()->id . "_" . $request->start_date . "_" . time() . "." . strtolower($file->getClientOriginalExtension());
 
         $partner = new Partner;
         $partner->user_id = $request->user()->id;
         $partner->dest_name = $request->dest_name;
-        $partner->dest_picture = url('').'/storage/file/partner/'.$file_name;
+        $partner->dest_picture = url('') . '/storage/file/partner/' . $file_name;
         $partner->dest_location = $request->dest_location;
         $partner->start_date = $request->start_date;
         $partner->end_date = $request->end_date;
@@ -152,13 +152,29 @@ class PartnerController extends Controller
         $join->status = 1;
         $join->save();
 
-        return redirect('/partner/'.$partner->id);
+        return redirect('/partner/' . $partner->id);
     }
 
-    public function manage(Request $request){
-        $join = Join::with(['partner','user'])->where('user_id', $request->user()->id)->get();
+    public function manage(Request $request)
+    {
+        $join = Join::with(['partner', 'user'])->where('user_id', $request->user()->id)->get();
         return view('user/partner_manage', [
             'join' => $join
         ]);
     }
+
+    public function confirmation(Request $request, Partner $partner)
+    {
+        //! Better with Authorization !//
+        if ($partner->user_id != $request->user()->id) {
+            return redirect('/partner/manage');
+        }
+
+        $join = Join::with(['partner', 'user'])->where('partner_id', $partner->id)->get();
+        return view('user/partner_manage_confirmation', [
+            'join' => $join,
+            'partner' => $partner
+        ]);
+    }
+
 }

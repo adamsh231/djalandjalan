@@ -54,6 +54,9 @@ Route::group(['middleware' => ['isSignIn']], function () {
         Route::post('/partner/{partner}/comment', 'User\CommentController@addComment');
         Route::post('/partner/{partner}/comment/{comment}/reply', 'User\CommentController@addReply');
         Route::get('/partner/manage', 'User\PartnerController@manage');
+        Route::get('/partner/{partner}/confirmation', 'User\PartnerController@confirmation');
+        Route::post('/partner/{partner}/join/{join}/accept', 'User\JoinController@accept');
+        Route::post('/partner/{partner}/join/{join}/reject', 'User\JoinController@reject');
         Route::get('/partner/add', function () {
             return view('user/partner_add');
         });
