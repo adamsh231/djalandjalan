@@ -52,9 +52,9 @@ class PartnerController extends Controller
             }
         }
         if (!is_null($request->get('filter_urutan'))) {
-            $partner->orderBy($request->get('filter_urutan'), $request->get('filter_urutan_jenis'));
+            $partner->orderBy($request->get('filter_urutan'), $request->get('filter_urutan_jenis') ?? "ASC");
             $based_on = ($request->get('filter_urutan') == "start_date" ? "Tanggal" : "Jumlah Orang");
-            $jenis = ($request->get('filter_urutan_jenis') == "ASC" ? "(A - Z)" : "(Z - A)");
+            $jenis = ($request->get('filter_urutan_jenis') ?? "ASC" == "ASC" ? "(Menaik)" : "(Menurun)");
             $arr_old->put('filter_urutan', 'Berdasarkan ' . $based_on . ' ' . $jenis);
         }
         return view(
