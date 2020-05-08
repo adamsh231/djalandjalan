@@ -13,7 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        Commands\ChangePartnerStatus::class,
+        Commands\testRunServer::class,
     ];
 
     /**
@@ -24,8 +25,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command('test:run')->everyMinute()->runInBackground()->thenPing('https://cronhub.io/ping/5c5e61a0-9115-11ea-8dab-cfde3f6d9647');
+        $schedule->command('partner:status')->daily()->runInBackground()->thenPing('https://cronhub.io/ping/7971d220-9115-11ea-bc3c-d758864e59c3');
     }
 
     /**
@@ -35,7 +36,7 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
-        $this->load(__DIR__.'/Commands');
+        $this->load(__DIR__ . '/Commands');
 
         require base_path('routes/console.php');
     }
