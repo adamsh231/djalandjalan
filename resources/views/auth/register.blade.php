@@ -55,9 +55,9 @@
                             </div>
 
                             <div class="form-label-group">
-								<input type="text" id="inputTTL" class="form-control" placeholder="Tanggal Lahir" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
-								<label for="inputTTL">Tanggal Lahir</label>
-							</div>
+                                <input type="text" id="inputTTL" class="form-control" placeholder="Tanggal Lahir" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
+                                <label for="inputTTL">Tanggal Lahir</label>
+                            </div>
 
                             <div class="form-label-group">
                                 <input type="text" id="inputPhone" name="phone" class="form-control" placeholder="No. Handphone">
@@ -97,52 +97,62 @@
             </div>
         </div>
 
-        <footer id="footer" style="background-color: white; margin-top: 50px;">
-            <div class="container pt-3 border-bottom">
+        <footer id="footer" style="background-color: white">
+            <div class="container pt-5 border-bottom">
                 <div class="row">
                     <div class="col-md-3 col-sm-12 mb-3 text-center">
-                        <img id="home-logo" src="{{asset('template/assets/img/logoV-1.svg')}}" width="100%" height="auto" alt="" style="position: relative">
+                        <img id="home-logo" src="{{ asset('template/assets/img/logoV-1.svg') }}" width="100%" height="auto" alt="" style="position: relative">
                     </div>
                     <div class="col-md-9 col-sm-12">
                         <div class="col-md-3 col-sm-6 col-6 p-0 float-left">
-                            <h5 class="mb-4 font-weight-bold text-uppercase">Tentang</h5>
+                            <h6 class="mb-4 font-weight-bold">Tentang Djalandjalan</h6>
                             <ul class="list-group">
-                                <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#">djalandjalan.com</a></li>
-                                <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#">Partners</a></li>
-                                <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#">Aksesbilitas</a></li>
+                                <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{{ url('/about') }}">Tentang Kami</a></li>
+                                <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{{ url('/about') }}#keamanan">Keamanan</a></li>
+                                <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{{ url('/contact') }}">Hubungi Kami</a></li>
                             </ul>
                         </div>
 
-                        <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
-                            <h5 class="mb-4 font-weight-bold text-uppercase">Keamanan</h5>
-                            <ul class="list-group">
-                                <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Keamanan</a></li>
-                                <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Tips & Trik</a></li>
+                        <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left ">
+                            <h6 class="mb-4 font-weight-bold ">Layanan</h6>
+                            <ul class="list-group ">
+                                <li class="list-group-item bg-transparent border-0 p-0 mb-2 ">
+                                    <a href="{{ url('/partners') }}"></i>Partners</a>
+                                </li>
+                                <li class="list-group-item bg-transparent border-0 p-0 mb-2 ">
+                                    <a href="{{ url('/partners') }}#OpenTrip"></i>Marketplace Open Trip</a>
+                                </li>
                             </ul>
                         </div>
-                        <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
-                            <h5 class="mb-4 font-weight-bold text-uppercase">Dukungan</h5>
-                            <ul class="list-group">
-                                <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Bantuan</a></li>
-                                <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Syarat & Ketentuan</a></li>
-                                <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Kebijakan Privasi</a></li>
+                        <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left ">
+                            <h6 class="mb-4 font-weight-bold ">Ketentuan Pengguna</h6>
+                            <ul class="list-group ">
+                                <li class="list-group-item bg-transparent border-0 p-0 mb-2 ">
+                                    <a href="{{ url('/help') }}"></i>Bantuan</a>
+                                </li>
+                                <li class="list-group-item bg-transparent border-0 p-0 mb-2 ">
+                                    <a href="{{ url('/term') }}"></i>Syarat & Ketentuan</a>
+                                </li>
+                                <li class="list-group-item bg-transparent border-0 p-0 mb-2 ">
+                                    <a href="{{ url('/term') }}#kebijakanPrivasi "></i>Kebijakan Privasi</a>
+                                </li>
                             </ul>
                         </div>
-                        <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
-                            <h5 class="mb-4 font-weight-bold text-uppercase">Temukan Kami</h5>
-                            <ul class="list-group">
-                                <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                                    <a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
-                                    <a href="#" style="margin-left: 10px;"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a>
-                                    <a href="#" style="margin-left: 10px;"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+                        <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left ">
+                            <h6 class="mb-4 font-weight-bold ">Temukan Kami</h6>
+                            <ul class="list-group ">
+                                <li class="list-group-item bg-transparent border-0 p-0 mb-2 ">
+                                    <a href="# "><i class="fa fa-twitter fa-2x " aria-hidden="true "></i></a>
+                                    <a href="# " style="margin-left: 10px; "><i class="fa fa-facebook-official fa-2x " aria-hidden="true "></i></a>
+                                    <a href="# " style="margin-left: 10px; "><i class="fa fa-instagram fa-2x " aria-hidden="true "></i></a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-12">
-                        <div class=" d-flex justify-content-center align-items-center">
-                            <div class="container">
-                                <p class="m-0 text-center">Copyright &copy; djalandjalan.com 2020</p>
+                    <div class="col-md-12 ">
+                        <div class="py-4 d-flex justify-content-center align-items-center ">
+                            <div class="container ">
+                                <p class="m-0 text-center ">Copyright &copy; djalandjalan.com 2020</p>
                             </div>
                         </div>
                     </div>
