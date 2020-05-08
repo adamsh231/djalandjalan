@@ -89,7 +89,7 @@
             <ul class="navbar-nav nav-justified text-center">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/login') }}">Login</a>
+                    <a class="nav-link" href="{{ url('/login') }}">Masuk</a>
                 </li>
                 <li class="nav-item">
                     <button class="btn btn-core" type="button" onclick="window.location.href = '{{ url('/register') }}';">
