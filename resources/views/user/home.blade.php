@@ -124,7 +124,7 @@
                                 <h6 class="card-title">{{ (explode(' ', $p->user->name)[0]) }} / {{ $p->user->city }}</h6>
                                 <p class="card-text">Tgl: <span>{{ date('d M Y', strtotime($p->start_date)) }} - {{ date('d M Y', strtotime($p->end_date)) }}</span></p>
                                 <p class="card-text">Titik Kumpul: <span>{{ substr($p->gather_point,0,20) }}</span></p>
-                                <p class="card-text" style="float: right;">Anggota: <span style="font-weight: bold">{{ $p->join->count() }} / {{ $p->required_person }}</span></p>
+                                <p class="card-text" style="float: right;">Anggota: <span style="font-weight: bold">{{ $p->join->where('status',1)->count() }} / {{ $p->required_person }}</span></p>
                             </div>
                         </div>
                     </a>
