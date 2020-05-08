@@ -154,4 +154,11 @@ class PartnerController extends Controller
 
         return redirect('/partner/'.$partner->id);
     }
+
+    public function manage(Request $request){
+        $join = Join::with(['partner','user'])->where('user_id', $request->user()->id)->get();
+        return view('user/partner_manage', [
+            'join' => $join
+        ]);
+    }
 }
