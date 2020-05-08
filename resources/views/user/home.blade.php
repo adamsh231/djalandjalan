@@ -109,7 +109,7 @@
         <div class="row as2 partners-thread">
 
             @foreach ($partner as $p)
-            <div class="col-lg-3 col-md-6 mb-4">
+            <div class="col-sm">
                 <div class="strat">
                     <a href="{{ url('/partner/'.$p->id) }}">
                         <div class="card card-partners">

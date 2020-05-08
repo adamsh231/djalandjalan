@@ -5,21 +5,25 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Partner;
+use App\Join;
 use App\Comment;
+use Illuminate\Support\Facades\Auth;
 
 class PartnerController extends Controller
 {
     public function view()
     {
-        $partner = Partner::with(['user', 'join'])->get()->take(5);
+        $partner = Partner::with(['user', 'join'])->where('status', '0')->get()->take(10);
         return view('user/home', ['partner' => $partner]);
     }
 
     public function overview(Request $request)
     {
-        $arr_old = collect();
         $partner = (new Partner)->newQuery();
-        $partner->with(['user', 'join']);
+        $partner->with(['user', 'join'])->where('status', '0');
+
+        //* -------------- Filter ------------------*//
+        $arr_old = collect();
         if (!is_null($request->get('filter_tempat'))) {
             $partner->where('dest_name', 'LIKE', '%' . $request->get('filter_tempat') . '%');
             $arr_old->put('filter_tempat', $request->get('filter_tempat'));
@@ -57,6 +61,8 @@ class PartnerController extends Controller
             $jenis = ($request->get('filter_urutan_jenis') ?? "ASC" == "ASC" ? "(Menaik)" : "(Menurun)");
             $arr_old->put('filter_urutan', 'Berdasarkan ' . $based_on . ' ' . $jenis);
         }
+        //* ----------------------------------------*//
+
         return view(
             'user/partner',
             [
@@ -77,6 +83,17 @@ class PartnerController extends Controller
             ]
         )->findOrFail($id);
 
+        $joined = -1;
+        if(Auth::check()){
+            foreach($partner->join as $pj){
+                if($pj->user_id == Auth::user()->id && $pj->status == 1){
+                    $joined = 1;
+                }else if($pj->user_id == Auth::user()->id && $pj->status == 0){
+                    $joined = 0;
+                }
+            }
+        }
+
         $comment = Comment::with(
             [
                 'reply' => function ($query) {
@@ -90,6 +107,7 @@ class PartnerController extends Controller
             [
                 'partner' => $partner,
                 'comment' => $comment,
+                'isJoin' => $joined
             ]
         );
     }
@@ -127,6 +145,12 @@ class PartnerController extends Controller
 
         $file->storeAs('file/partner/', $file_name, 'public');
         $partner->save();
+
+        $join = new Join;
+        $join->user_id = $request->user()->id;
+        $join->partner_id = $partner->id;
+        $join->status = 1;
+        $join->save();
 
         return redirect('/partner/'.$partner->id);
     }

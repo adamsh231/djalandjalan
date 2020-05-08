@@ -30,24 +30,41 @@
                 </div>
 
                 <div class="information-trip">
-                    <i class="fa fa-clock-o fa-fw"></i>&nbsp;<label>Durasi</label>
-                    <span>X Hari Y Malam</span>
-                </div>
-                <div class="information-trip">
                     <i class="fa fa-users fa-fw"></i>&nbsp;<label>Jumlah Anggota</label>
-                    <span>{{ $partner->required_person }} Orang (<b>Butuh X lagi</b>)</span>
+                    <span>{{ $partner->join->count() }} dari {{ $partner->required_person }} Orang</span>
                 </div>
                 <div class="information-trip">
                     <i class="fa fa-map-marker fa-fw"></i>&nbsp;<label>Titik Kumpul</label>
                     <span>{{ $partner->gather_point }}</span>
                 </div>
+                @if (Auth::check())
+
+                @if ($isJoin == 1)
                 <div class="text-center mt-4">
-                    <button class="btn stylebutton btn-core" id="gabungBtn" disabled>Gabung</button>
+                    <button class="btn stylebutton btn-core" disabled>Tergabung</button>
                 </div>
+                @elseif($isJoin == 0)
+                <div class="text-center mt-4">
+                    <button class="btn stylebutton btn-core btn-warning text-white" disabled>Menunggu Konfirmasi</button>
+                </div>
+                @else
+                <div class="text-center mt-4">
+                    <form action="{{ url('/partner/'.$partner->id.'/join') }}" method="POST">
+                        @csrf
+                        <button class="btn stylebutton btn-core">Gabung</button>
+                    </form>
+                </div>
+                @endif
+
+                @else
+                <div class="text-center mt-4">
+                    <button onclick="window.location.href='{{ url('/login') }}'" class="btn stylebutton btn-core">Gabung</button>
+                </div>
+                @endif
             </div>
             <div class="memberTrip">
                 <div class="memberTrip-host">
-                    <a href="{{ url('/profile/'.$partner->user->id) }}">
+                    <a href="{{ url('/profile/'.$partner->user->id) }}" data-toggle="tooltip" data-placement="top" title="{{ $partner->user->name }}">
                         <img src="{{ $partner->user->picture }}" class="avatar">
                     </a>
                     <b>Host</b>
@@ -56,11 +73,13 @@
                     <b>Anggota</b>
                     <ul>
                         @foreach ($partner->join as $pj)
+                        @if ($pj->status == 1)
                         <li>
-                            <a href="{{ url('/profile/'.$pj->user->id) }}">
+                            <a href="{{ url('/profile/'.$pj->user->id) }}" data-toggle="tooltip" data-placement="top" title="{{ $pj->user->name }}">
                                 <img src="{{ $pj->user->picture }}" class="avatar picMember">
                             </a>
                         </li>
+                        @endif
                         @endforeach
                     </ul>
                 </div>
@@ -154,15 +173,4 @@
     @endif
 
 </div>
-@endsection
-
-@section('add_script')
-<script>
-    document.querySelectorAll('.stylebutton').forEach(function(e) {
-        e.addEventListener('click', function() {
-            this.style.backgroundColor = "red ";
-            document.getElementById("gabungBtn ").innerText = "Menunggu Konfirmasi ";
-        })
-    });
-</script>
 @endsection

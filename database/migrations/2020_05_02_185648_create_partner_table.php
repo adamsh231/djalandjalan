@@ -26,7 +26,7 @@ class CreatePartnerTable extends Migration
             $table->integer('required_person');
             $table->string('categories');
             $table->text('description')->nullable();
-            $table->integer('status')->default(0)->comment('-1:cancelled, 0:preparation, 1:success');
+            $table->integer('status')->default(0)->comment('-1:cancelled, 0:preparation, 1:ongoing, 2:success');
             $table->timestamps();
         });
     }
