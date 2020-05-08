@@ -6,31 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+
     <title>Djalandjalan.com</title>
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="icon" href="assets/img/LogoK-1.svg">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" type="text/css" media="all" href="css/animate.css">
-    <link rel="icon" href="assets/img/LogoK-1.svg">
-    <link href="css/navbar.css" rel="stylesheet">
-    <link href="css/tripmu.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="all" href="css/animate.css" />
+    <link href="css/profil.css" rel="stylesheet">
+    <link href="css/navbar.css" rel="stylesheet" />
 </head>
 
 <body>
+    <!-- Navigation -->
     <nav class="navbar navbar-expand navbar-light justify-content-center fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html"> <img id="home-logo" src="assets/img/LogoH-1.svg" width="150" height="auto" alt="" style="position: relative"></a>
+            <a class="navbar-brand" href="index.html"> <img id="home-logo" src="assets/img/LogoH-1.svg" width="160" height="auto" alt="" style="position: relative"></a>
 
             <ul class="navbar-nav nav-justified text-center">
-                <li class="nav-item">
-                    <a href="buatTrip.html" id="tambahTrip" class="nav-link d-flex flex-column">
+                <li class="nav-item dropdown">
+                    <a href="#" data-toggle="dropdown" class="nav-link d-flex flex-column">
                         <i class="fa fa-plus-circle fa-lg"></i>
                         <span class="d-none d-sm-inline">Tambah</span>
                     </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="openingBuatTrip.html">Partners</a></li>
+                        <li><a href="#">Open Trip</a></li>
+                    </ul>
+
                 </li>
                 <li class="nav-item dropdown">
                     <a href="#" data-toggle="dropdown" class="nav-link d-flex flex-column">
@@ -55,9 +59,9 @@
                 <li class="nav-item dropdown">
                     <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="assets/img/profil.jpg" class="avatar" alt="Avatar"><span> Bambang</span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#" class="dropdown-item"><i class="fa fa-plane"></i> Trip Saya</a></li>
+                        <li><a href="tripmu.html" class="dropdown-item"><i class="fa fa-plane"></i> Trip Saya</a></li>
                         <li class="divider dropdown-divider"></li>
-                        <li><a href="profil.html" class="dropdown-item"><i class="fa fa-user-o"></i> Akun</a></li>
+                        <li><a href="profil.html" class="dropdown-item"><i class="fa fa-user-o"></i> Profil</a></li>
                         <li><a href="settingAccount.html" class="dropdown-item"><i class="fa fa-sliders"></i> Pengaturan Akun</a></li>
                         <li><a href="index.html" class="dropdown-item"><i class="fa fa-power-off"></i> Keluar</a></li>
                     </ul>
@@ -65,60 +69,66 @@
             </ul>
         </div>
     </nav>
+    <div class="mt-65"></div>
+    <div class="container" style="margin-top: 5%;">
+        <h4 class="text-center" style="margin-top: 5%;">Konfirmasi</h4>
+        <div class="row " style="margin-top: 4%;">
+            <div class="col-md-10 mx-auto">
 
-    <div class="container wrapper">
-        <nav>
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <a class="nav-item nav-link active" id="asHost-tab" data-toggle="tab" href="#asHost" role="tab" aria-controls="nav-home" aria-selected="true">Sebagai Host</a>
-                <a class="nav-item nav-link" id="asMember-tab" data-toggle="tab" href="#asMember" role="tab" aria-controls="nav-profile" aria-selected="false">Sebagai Anggota</a>
-            </div>
-        </nav>
-        <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active text-center" id="asHost" role="tabpanel" aria-labelledby="asHost-tab">
-                <div class="trip">
-                    <div>
-                        <a href="kelolaPartner.html">
-                            <div class="row row-cols-4 align-items-center" style="margin: 0 auto;height: auto; padding: 10px;">
+                <div class="konfirmasiGabung ">
+                    <div class="isi-riwayatPerjalanan text-center">
+                        <div class="row align-items-center" style="margin: 0 auto;height: auto; padding: 10px;">
+                            <a href="profil.html">
                                 <div class="col">
-                                    <img src="assets/img/bromo.jpg ">
+                                    <img src="assets/img/profil2.jpg ">
                                 </div>
-                                <div class="col">
-                                    <h5>Gunung Bromo Jawa Timur</h5>
-                                    <p>25 April 2019 - 26 April 2019</p>
-                                </div>
-                                <div class="col-md-auto">
-                                    <button class="btn btn-primary btn-sm ">Lagi Jalan</button>
-                                </div>
-                                <div class="col">
-                                    <p>Dibuat tanggal : 16 April 2020</p>
-                                </div>
-
+                            </a>
+                            <div class="col">
+                                <h5>Maudy Ayunda</h5>
                             </div>
-                        </a>
+                            <div class="col">
+                                <button class="btn btn-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i> Tolak</button>
+                                <button class="btn btn-primary btn-sm"><i class="fa fa-check" aria-hidden="true"></i> Terima</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="tab-pane fade" id="asMember" role="tabpanel" aria-labelledby="asMember-tab">
-                <div class="trip">
-                    <div class=" text-center">
-                        <a href="history.html">
-                            <div class="row row-cols-4 align-items-center" style="margin: 0 auto;height: auto; padding: 10px;">
-                                <div class="col">
-                                    <img src="assets/img/bromo.jpg ">
-                                </div>
-                                <div class="col">
-                                    <h5>Gunung Bromo Jawa Timur</h5>
-                                    <p>25 April 2019 - 26 April 2019</p>
-                                </div>
-                                <div class="col-md-auto">
-                                    <button class="btn btn-success btn-sm ">Selesai</button>
-                                </div>
-                                <div class="col">
-                                    <p>Bersama dengan 6 orang lainnya</p>
-                                </div>
 
+                <div class="konfirmasiGabung ">
+                    <div class="isi-riwayatPerjalanan text-center">
+                        <div class="row align-items-center" style="margin: 0 auto;height: auto; padding: 10px;">
+                            <a href="profil.html">
+                                <div class="col">
+                                    <img src="assets/img/profil2.jpg ">
+                                </div>
+                            </a>
+                            <div class="col">
+                                <h5>Maudy Ayunda</h5>
                             </div>
-                        </a>
+                            <div class="col">
+                                <button class="btn btn-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i> Tolak</button>
+                                <button class="btn btn-primary btn-sm"><i class="fa fa-check" aria-hidden="true"></i> Terima</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="konfirmasiGabung ">
+                    <div class="isi-riwayatPerjalanan text-center">
+                        <div class="row align-items-center" style="margin: 0 auto;height: auto; padding: 10px;">
+                            <a href="profil.html">
+                                <div class="col">
+                                    <img src="assets/img/profil2.jpg ">
+                                </div>
+                            </a>
+                            <div class="col">
+                                <h5>Maudy Ayunda</h5>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i> Tolak</button>
+                                <button class="btn btn-primary btn-sm"><i class="fa fa-check" aria-hidden="true"></i> Terima</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -127,7 +137,7 @@
 
 
 
-
+    <!-- Footer -->
     <footer id="footer" style="background-color: white">
         <div class="container pt-5 border-bottom">
             <div class="row">
@@ -194,13 +204,12 @@
         </div>
     </footer>
 
-
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js "></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js "></script>
-
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js "></script> -->
+    <script src="js/slick.js "></script>
 
 </body>
 

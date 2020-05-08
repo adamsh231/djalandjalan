@@ -169,14 +169,14 @@ a {
     margin: 20px;
 }
 
+.konfirmasiGabung {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+}
 
-/* .uploadKTP {
-    border: 2px dashed #91b0b3;
-    margin: 50px;
-    color: #92b0b3;
-    position: relative;
-    height: 150px;
-} */
+.konfirmasiGabung img {
+    width: 50px;
+    border-radius: 50%;
+}
 
 .dropzone-wrapper {
     border: 2px dashed #91b0b3;
