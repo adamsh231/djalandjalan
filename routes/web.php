@@ -18,6 +18,22 @@ Route::get('/profile/{user}', 'User\UserController@profile')->where('user', '[0-
 Route::get('/partner', 'User\PartnerController@overview');
 Route::get('/partner/{id}', 'User\PartnerController@partner')->where('id', '[0-9]+');
 
+Route::get('/about', function () {
+    return view('about/about');
+});
+Route::get('/contact', function () {
+    return view('about/contact');
+});
+Route::get('/partners', function () {
+    return view('about/partners');
+});
+Route::get('/help', function () {
+    return view('about/help');
+});
+Route::get('/term', function () {
+    return view('about/term');
+});
+
 //* --------------------------------------------------------------------------------------- *//
 
 //* --------------------------------- Guest Access --------------------------------------- *//
