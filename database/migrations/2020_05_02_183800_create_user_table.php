@@ -16,6 +16,7 @@ class CreateUserTable extends Migration
         Schema::create('user', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('nick_name')->nullable();
             $table->string('email')->unique();
             $table->string('password')->nullable(); //* Sign in with Goole doesn't need it
             $table->string('phone')->nullable()->unique(); //* Sign in with Goole doesn't need it
@@ -24,6 +25,7 @@ class CreateUserTable extends Migration
             $table->string('nik')->nullable()->unique();
             $table->string('occupation')->nullable();
             $table->string('city')->nullable();
+            $table->string('hobby')->nullable();
             $table->string('instagram')->nullable();
             $table->string('facebook')->nullable();
             $table->string('twitter')->nullable();
