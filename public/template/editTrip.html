@@ -8,16 +8,16 @@
     <meta name="author" content="">
     <title>Djalandjalan.com</title>
     <!-- Bootstrap core CSS -->
+    <link rel="icon" href="assets/img/LogoK-1.svg">
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="css/daterangepicker.css" />
     <link rel="stylesheet" type="text/css" media="all" href="css/animate.css">
-    <link rel="icon" href="assets/img/LogoK-1.svg">
+    <link type="text/css" href="vendor/select2/select2.min.css" rel="stylesheet" />
+    <link href="css/buatTrip.css" rel="stylesheet">
     <link href="css/navbar.css" rel="stylesheet">
-    <link href="css/tripmu.css" rel="stylesheet">
 </head>
 
 <body>
@@ -66,66 +66,92 @@
         </div>
     </nav>
 
-    <div class="container wrapper">
-        <nav>
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <a class="nav-item nav-link active" id="asHost-tab" data-toggle="tab" href="#asHost" role="tab" aria-controls="nav-home" aria-selected="true">Sebagai Host</a>
-                <a class="nav-item nav-link" id="asMember-tab" data-toggle="tab" href="#asMember" role="tab" aria-controls="nav-profile" aria-selected="false">Sebagai Anggota</a>
-            </div>
-        </nav>
-        <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active text-center" id="asHost" role="tabpanel" aria-labelledby="asHost-tab">
-                <div class="trip">
-                    <div>
-                        <a href="threadEdit.html">
-                            <div class="row row-cols-4 align-items-center" style="margin: 0 auto;height: auto; padding: 10px;">
-                                <div class="col">
-                                    <img src="assets/img/bromo.jpg ">
+    <div class="container">
+        <form class="formBuatTrip ">
+            <h2 style="margin-bottom: 25px;">Buat Trip</h2>
+            <div class="row">
+                <div class="col">
+                    <h5>Upload Foto</h5>
+                    <div class="uploadFotoTrip shadowBox">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <input type="file" class="form-control-file" id="fotoTrip">
                                 </div>
-                                <div class="col">
-                                    <h5>Gunung Bromo Jawa Timur</h5>
-                                    <p>25 April 2019 - 26 April 2019</p>
-                                </div>
-                                <div class="col-md-auto">
-                                    <button class="btn btn-primary btn-sm ">Lagi Jalan</button>
-                                </div>
-                                <div class="col">
-                                    <p>Dibuat tanggal : 16 April 2020</p>
-                                </div>
-
                             </div>
-                        </a>
+                            <div class="col">
+                                <div class="viewPic">
+                                    <img id="reviewPic">
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <h5 style="margin-top: 25px;">Kategori Trip</h5>
+                    <select class="form-control inputHobi shadowBox" multiple="multiple">
+                            <option>Gunung</option>
+                            <option>Pantai</option>
+                            <option>Road Trip</option>
+                            <option>Air Terjun</option>
+                     </select>
                 </div>
-            </div>
-            <div class="tab-pane fade" id="asMember" role="tabpanel" aria-labelledby="asMember-tab">
-                <div class="trip">
-                    <div class=" text-center">
-                        <a href="history.html">
-                            <div class="row row-cols-4 align-items-center" style="margin: 0 auto;height: auto; padding: 10px;">
-                                <div class="col">
-                                    <img src="assets/img/bromo.jpg ">
-                                </div>
-                                <div class="col">
-                                    <h5>Gunung Bromo Jawa Timur</h5>
-                                    <p>25 April 2019 - 26 April 2019</p>
-                                </div>
-                                <div class="col-md-auto">
-                                    <button class="btn btn-success btn-sm ">Selesai</button>
-                                </div>
-                                <div class="col">
-                                    <p>Bersama dengan 6 orang lainnya</p>
-                                </div>
-
+                <div class="col">
+                    <div class="inputTrip">
+                        <h5>Tujuan Destinasi</h5>
+                        <input type="text" class="form-control shadowBox" placeholder="Tulis Tujuan Destinasi">
+                        <h5>Lokasi Destinasi</h5>
+                        <input type="text" class="form-control shadowBox" placeholder="Tulis Deskripsi Destinasi">
+                        <div class="row">
+                            <div class="col">
+                                <h5>Tanggal Trip</h5>
+                                <input type="text" name="datefilter " class="form-control shadowBox" placeholder="Pilih Tanggal" value="">
                             </div>
-                        </a>
+                            <div class="col">
+                                <h5>Durasi</h5>
+                                <input type="text" class="form-control shadowBox" id="durasiTrip" disabled value="">
+                            </div>
+                        </div>
+
+
+                        <h5>Titik Kumpul</h5>
+                        <input type="text" class="form-control shadowBox" placeholder="Tulis Titik Temu">
+                        <h5>Jumlah Anggota</h5>
+                        <input type="number" class="form-control shadowBox" placeholder="Tulis Jumlah Anggota">
+
+                        <h5>Deskripsi Trip</h5>
+                        <textarea class="form-control shadowBox" placeholder="Tulis Tujuan Destinasi"></textarea>
                     </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                          Saya Menyetujui Syarat & Ketentuan
+                        </label>
+                    </div>
+                    <button class="btn btn-core" type="button" data-toggle="modal" data-target="#konfirmasiBuatTrip">Ubah Trip</button>
+        </form>
+        </div>
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="konfirmasiBuatTrip" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5> -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body text-center">
+                    <h5>Apakah kamu sudah yakin dengan informasi tripmu?</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-primary" onclick="window.location.href = 'thread.html';">Yakin</button>
                 </div>
             </div>
         </div>
     </div>
-
-
 
 
     <footer id="footer" style="background-color: white">
@@ -194,14 +220,64 @@
         </div>
     </footer>
 
-
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js "></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js "></script>
+    <script type="text/javascript " src="js/moment.min.js "></script>
+    <script type="text/javascript " src="js/daterangepicker.min.js "></script>
+    <script src="vendor/select2/select2.min.js "></script>
+    <script>
+        $(function() {
+            $('input[name="datefilter "]').daterangepicker({
+                autoUpdateInput: false,
+                locale: {
+                    cancelLabel: 'Clear'
+                }
+            });
 
+            $('input[name="datefilter "]').on('apply.daterangepicker', function(ev, picker) {
+                $(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
+                hasil = parseInt((picker.endDate - picker.startDate) / (24 * 3600 * 1000));
+                if (hasil == 0) {
+                    $('#durasiTrip').val('Sehari');
+                }
+                if (hasil == 1) {
+                    $('#durasiTrip').val('Semalam');
+                }
+                if (hasil > 1) {
+                    $('#durasiTrip').val(String(hasil) + ' Hari ' + String(hasil - 1) + ' Malam');
+                }
+            });
 
+            $('input[name="datefilter "]').on('cancel.daterangepicker', function(ev, picker) {
+                $(this).val('');
+            });
+
+        });
+
+        $(document).ready(function() {
+            $(".inputHobi ").select2({
+                tags: true,
+                tokenSeparators: [',', ' ']
+            })
+        });
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#reviewPic').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]); // convert to base64 string
+            }
+        }
+
+        $("#fotoTrip ").change(function() {
+            readURL(this);
+        });
+    </script>
 </body>
 
 </html>

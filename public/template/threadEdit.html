@@ -111,7 +111,7 @@
                         <span>Stasiun Malang</span>
                     </div>
                     <div class="text-center">
-                        <button class="btn stylebutton btn-core" id="gabungBtn">Gabung</button>
+                        <button class="btn stylebutton btn-core" id="gabungBtn" onclick="window.location.href = 'editTrip.html';">Ubah</button>
                     </div>
                 </div>
                 <div class="memberTrip">
@@ -543,14 +543,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js "></script>
     <script src="js/slick.js "></script>
 
-    <script>
-        document.querySelectorAll('.stylebutton').forEach(function(e) {
-            e.addEventListener('click', function() {
-                this.style.backgroundColor = "red ";
-                document.getElementById("gabungBtn ").innerText = "Menunggu Konfirmasi ";
-            })
-        });
-    </script>
 </body>
 
 </html>
