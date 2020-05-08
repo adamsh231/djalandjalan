@@ -21,7 +21,7 @@
         <div class="col">
             <div class="row justify-content-md-center text-profil">
                 <div class="col col-lg-2 ">
-                    <span>???</span>
+                    <span>0</span>
                     <p>Trip</p>
                 </div>
                 <div class="col-md-auto">
@@ -68,15 +68,12 @@
     </div>
     <div class="minat-profil">
         <h5>Minat & Hobi :</h5>
-        <span class="badge badge-light">Fotografi</span>
-        <span class="badge badge-light">Videografi</span>
-        <span class="badge badge-light">Traveling Murah</span>
-        <span class="badge badge-light">Backpacker</span>
-        <span class="badge badge-light">Camping</span>
-        <span class="badge badge-light">Gunung</span>
-        <span class="badge badge-light">Pantai</span>
-        <span class="badge badge-light">Diving</span>
-        <span class="badge badge-light">Penikmat senja</span>
+        <span class="badge badge-light">Sorry</span>
+        <span class="badge badge-light">Feature</span>
+        <span class="badge badge-light">Not</span>
+        <span class="badge badge-light">Available</span>
+        <span class="badge badge-light">Right</span>
+        <span class="badge badge-light">Now</span>
     </div>
 </div>
 

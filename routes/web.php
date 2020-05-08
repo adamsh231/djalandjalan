@@ -49,6 +49,7 @@ Route::group(['middleware' => ['isSignIn']], function () {
         Route::get('/profile/setting', function(){
             return view('user/profile_setting');
         });
+        Route::put('/profile/setting/edit', 'User\UserController@editProfile');
         Route::post('/partner/{partner}/comment', 'User\CommentController@addComment');
         Route::post('/partner/{partner}/comment/{comment}/reply', 'User\CommentController@addReply');
         Route::get('/partner/add', function () {

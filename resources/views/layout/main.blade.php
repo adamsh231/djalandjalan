@@ -71,7 +71,6 @@
                     <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="{{ Auth::user()->picture }}" class="avatar" alt="Avatar"><span> {{ Auth::user()->name }}</span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#" class="dropdown-item"><i class="fa fa-plane"></i> Tripmu</a></li>
-                        <li><a href="#" class="dropdown-item"><i class="fa fa-check-circle"></i> Verifikasi Akun</a></li>
                         <li class="divider dropdown-divider"></li>
                         <li><a href="{{ url('/profile') }}" class="dropdown-item"><i class="fa fa-user-o"></i> Profil</a></li>
                         <li><a href="{{ url('/profile/setting') }}" class="dropdown-item"><i class="fa fa-sliders"></i> Pengaturan Akun</a></li>
