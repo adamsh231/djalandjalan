@@ -31,7 +31,7 @@
 
                 <div class="information-trip">
                     <i class="fa fa-users fa-fw"></i>&nbsp;<label>Jumlah Anggota</label>
-                    <span>{{ $partner->join->count() }} dari {{ $partner->required_person }} Orang</span>
+                    <span>{{ $partner->join->where('status',1)->count() }} dari {{ $partner->required_person }} Orang</span>
                 </div>
                 <div class="information-trip">
                     <i class="fa fa-map-marker fa-fw"></i>&nbsp;<label>Titik Kumpul</label>
