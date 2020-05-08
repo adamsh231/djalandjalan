@@ -107,7 +107,7 @@
         <div class="container pt-5 border-bottom">
             <div class="row">
                 <div class="col-md-3 col-sm-12 mb-3 text-center">
-                    <img id="home-logo" src="{{ asset('template/assets/img/LogoV-1.svg') }}" width="100%" height="auto" alt="" style="position: relative">
+                    <img id="home-logo" src="{{ asset('template/assets/img/logoV-1.svg') }}" width="100%" height="auto" alt="" style="position: relative">
                 </div>
                 <div class="col-md-9 col-sm-12">
                     <div class="col-md-3 col-sm-6 col-6 p-0 float-left">
