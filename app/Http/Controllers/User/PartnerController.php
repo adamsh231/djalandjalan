@@ -75,12 +75,7 @@ class PartnerController extends Controller
                     $query->with(['user'])->get();
                 },
             ]
-        )->find($id);
-
-        //! Redirect if null -> should be change to try catch !//
-        if(is_null($partner)){
-            return redirect('/partner');
-        }
+        )->findOrFail($id);
 
         $comment = Comment::with(
             [
