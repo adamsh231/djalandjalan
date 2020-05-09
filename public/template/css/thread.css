@@ -198,9 +198,11 @@ html {
 .thread-img {
     height: 350px;
     overflow: hidden;
+    border-radius: 5px;
 }
 
 .thread-img img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    border-radius: 5px;
 }
