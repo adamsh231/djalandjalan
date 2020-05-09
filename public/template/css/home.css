@@ -108,15 +108,25 @@ html {
     font-size: 12px;
 }
 
+.thread-partner {
+    margin-left: 25px;
+}
+
 .img-hover-zoom {
-    height: auto;
+    height: 160px;
     /* [1.1] Set it as per your need */
     overflow: hidden;
     /* [1.2] Hide the overflowing of child elements */
 }
 
+.img-adver {
+    height: 100%;
+}
+
 .img-hover-zoom img {
     transition: transform .5s ease;
+    width: 100%;
+    height: auto;
 }
 
 .card-partners:hover .img-hover-zoom img {
