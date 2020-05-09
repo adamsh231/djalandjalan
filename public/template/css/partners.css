@@ -61,21 +61,6 @@ a {
     font-size: 11px;
 }
 
-.img-hover-zoom {
-    height: auto;
-    /* [1.1] Set it as per your need */
-    overflow: hidden;
-    /* [1.2] Hide the overflowing of child elements */
-}
-
-.img-hover-zoom img {
-    transition: transform 0.5s ease;
-}
-
-.card-partners:hover .img-hover-zoom img {
-    transform: scale(1.5);
-}
-
 .display-profil {
     right: 0;
     margin-top: -35px;

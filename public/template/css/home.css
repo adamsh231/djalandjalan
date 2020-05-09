@@ -126,7 +126,7 @@ html {
 .img-hover-zoom img {
     transition: transform .5s ease;
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 .card-partners:hover .img-hover-zoom img {
