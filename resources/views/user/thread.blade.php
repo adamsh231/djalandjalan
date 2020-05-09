@@ -15,7 +15,7 @@
         <h2><span>Trip ke {{ $partner->dest_name }}</span></h2>
     </div>
     <div class="row">
-        <div class="col-sm">
+        <div class="col-sm thread-img">
             <img class="img-fluid" src="{{ $partner->dest_picture }}" style="width:100%; border-radius:5px">
         </div>
         <div class="col-sm">

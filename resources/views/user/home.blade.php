@@ -106,29 +106,27 @@
             </div>
         </div>
 
-        <div class="row as2 partners-thread">
+        <div class="row as2">
 
             @foreach ($partner as $p)
-            <div class="col-sm">
-                <div class="strat">
-                    <a href="{{ url('/partner/'.$p->id) }}">
-                        <div class="card card-partners">
-                            <div class="img-hover-zoom">
-                                <img src="{{ $p->dest_picture }}" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <a href="{{ url('/profile/'.$p->user->id) }}">
-                                    <img src="{{ $p->user->picture }}" class="display-profil" alt="Avatar">
-                                </a>
-                                <h5 class="card-title">{{ (explode(' ', $p->dest_name)[0]) }}</h5>
-                                <h6 class="card-title">{{ (explode(' ', $p->user->name)[0]) }} / {{ $p->user->city }}</h6>
-                                <p class="card-text">Tgl: <span>{{ date('d M Y', strtotime($p->start_date)) }} - {{ date('d M Y', strtotime($p->end_date)) }}</span></p>
-                                <p class="card-text">Titik Kumpul: <span>{{ substr($p->gather_point,0,20) }}</span></p>
-                                <p class="card-text" style="float: right;">Anggota: <span style="font-weight: bold">{{ $p->join->where('status',1)->count() }} / {{ $p->required_person }}</span></p>
-                            </div>
+            <div class="strat thread-partner">
+                <a href="{{ url('/partner/'.$p->id) }}">
+                    <div class="card card-partners">
+                        <div class="img-hover-zoom">
+                            <img src="{{ $p->dest_picture }}" class="card-img-top" alt="...">
                         </div>
-                    </a>
-                </div>
+                        <div class="card-body">
+                            <a href="{{ url('/profile/'.$p->user->id) }}">
+                                <img src="{{ $p->user->picture }}" class="display-profil" alt="Avatar">
+                            </a>
+                            <h5 class="card-title">{{ (explode(' ', $p->dest_name)[0]) }}</h5>
+                            <h6 class="card-title">{{ (explode(' ', $p->user->name)[0]) }} / {{ $p->user->city }}</h6>
+                            <p class="card-text">Tgl: <span>{{ date('d M Y', strtotime($p->start_date)) }} - {{ date('d M Y', strtotime($p->end_date)) }}</span></p>
+                            <p class="card-text">Titik Kumpul: <span>{{ substr($p->gather_point,0,20) }}</span></p>
+                            <p class="card-text" style="float: right;">Anggota: <span style="font-weight: bold">{{ $p->join->where('status',1)->count() }} / {{ $p->required_person }}</span></p>
+                        </div>
+                    </div>
+                </a>
             </div>
             @endforeach
 
@@ -141,7 +139,7 @@
         <div class="row text-center">
             <div class="col-md-4 grid-explore">
                 <a href="#">
-                    <div class="img-hover-zoom">
+                    <div class="img-hover-zoom img-adver">
                         <img src="{{asset('template/assets/img/grid1.png')}}" style="width:100%">
                     </div>
                     <div class="overlay-bg">
@@ -151,7 +149,7 @@
             </div>
             <div class="col-md-4 grid-explore">
                 <a href="#">
-                    <div class="img-hover-zoom">
+                    <div class="img-hover-zoom img-adver">
                         <img src="{{asset('template/assets/img/grid2.png')}}" style="width:100%">
                     </div>
                     <div class="overlay-bg">
@@ -161,7 +159,7 @@
             </div>
             <div class="col-md-4 grid-explore">
                 <a href="#">
-                    <div class="img-hover-zoom">
+                    <div class="img-hover-zoom img-adver">
                         <img src="{{asset('template/assets/img/grid3.png')}}" style="width:100%">
                     </div>
                     <div class="overlay-bg">
@@ -171,7 +169,7 @@
             </div>
             <div class="col-md-4 grid-explore">
                 <a href="#">
-                    <div class="img-hover-zoom">
+                    <div class="img-hover-zoom img-adver">
                         <img src="{{asset('template/assets/img/grid4.png')}}" style="width:100%">
                     </div>
                     <div class="overlay-bg">
@@ -181,7 +179,7 @@
             </div>
             <div class="col-md-4 grid-explore">
                 <a href="#">
-                    <div class="img-hover-zoom">
+                    <div class="img-hover-zoom img-adver">
                         <img src="{{asset('template/assets/img/grid5.png')}}" style="width:100%">
                     </div>
                     <div class="overlay-bg">
@@ -191,7 +189,7 @@
             </div>
             <div class="col-md-4 grid-explore">
                 <a href="#">
-                    <div class="img-hover-zoom">
+                    <div class="img-hover-zoom img-adver">
                         <img src="{{asset('template/assets/img/grid6.png')}}" style="width:100%">
                     </div>
                     <div class="overlay-bg">
