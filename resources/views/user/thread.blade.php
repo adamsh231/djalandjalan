@@ -16,7 +16,7 @@
     </div>
     <div class="row">
         <div class="col-sm thread-img">
-            <img class="img-fluid" src="{{ $partner->dest_picture }}" style="width:100%; border-radius:5px">
+            <img class="img-fluid" src="{{ $partner->dest_picture }}">
         </div>
         <div class="col-sm">
             <div class="informasi">
