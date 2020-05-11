@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
         $users = User::pluck('id')->toArray();
         $category = Category::pluck('name')->toArray();
 
-        for ($i = 1; $i <= 100; $i++) {
+        for ($i = 1; $i <= 500; $i++) {
             $count_category = $faker->numberBetween(1, 3);
             $categories = "";
             for ($j = 0; $j < $count_category; $j++) {
