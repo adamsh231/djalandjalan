@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/partner/api', function(){
+    return view('user/partner_api');
+});
+
 //* --------------------------------- Public Access --------------------------------------- *//
 
 Route::get('/', 'User\PartnerController@view');
