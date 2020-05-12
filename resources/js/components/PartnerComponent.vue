@@ -13,7 +13,7 @@
 					/>
 				</div>
 				<div class="col-auto text-right">
-					<button class="btn btn-core" @click="fetchPartner(url+'/api/partner?search='+search, true)">
+					<button class="btn btn-core" @click="fetchPartner(url+'/api/partner?'+filter, true)">
 						<i class="fa fa-search"></i> Cari
 					</button>
 				</div>
@@ -22,12 +22,9 @@
 
 		<div class="row">
 			<div class="col-2">
-				<input type="text" id="start_date"/>
-				<input type="hidden" id="end_date"/>
-
 				<div class="filter mt-4">
 					<div class="kategori-filter">
-						<b>{{ start_date }}</b>
+						<b>Tanggal</b>
 						<input
 							autocomplete="off"
 							id="filter_tanggal"
@@ -41,7 +38,11 @@
 				<div class="filter">
 					<div class="kategori-filter">
 						<b>Anggota</b>
-						<select class="form-control" name="filter_jumlah">
+						<select
+							class="form-control"
+							v-model="person"
+							@change="fetchPartner(url+'/api/partner?'+filter, true)"
+						>
 							<option></option>
 							<option value="1">Kurang dari 3</option>
 							<option value="2">3 sampai 6</option>
@@ -53,7 +54,11 @@
 				<div class="filter">
 					<div class="kategori-filter">
 						<b>Kategori</b>
-						<select class="form-control" name="filter_kategori">
+						<select
+							class="form-control"
+							v-model="category"
+							@change="fetchPartner(url+'/api/partner?'+filter, true)"
+						>
 							<option></option>
 							<option value="gunung">Gunung</option>
 							<option value="pantai">Pantai</option>
@@ -66,21 +71,16 @@
 				<div class="filter">
 					<div class="kategori-filter">
 						<b>Urutkan Berdasarkan</b>
-						<select class="form-control" name="filter_urutan">
+						<select
+							class="form-control"
+							v-model="orderby"
+							@change="fetchPartner(url+'/api/partner?'+filter, true)"
+						>
 							<option></option>
 							<option value="start_date">Tanggal</option>
 							<option value="required_person">Jumlah Anggota</option>
 						</select>
-						<select class="form-control" name="filter_urutan_jenis">
-							<option></option>
-							<option value="ASC">Menaik</option>
-							<option value="DESC">Menurun</option>
-						</select>
 					</div>
-				</div>
-
-				<div class="text-center reset">
-					<button type="submit" class="btn btn-outline-success btn-sm">Filter</button>
 				</div>
 			</div>
 
@@ -141,6 +141,10 @@ export default {
 			url: window.location.origin,
 			search: "",
 			start_date: "",
+			end_date: "",
+			person: "",
+			category: "",
+			orderby: "",
 			isLoad: false,
 			isFetch: false,
 			isError: false,
@@ -152,14 +156,14 @@ export default {
 		this.scrolling();
 	},
 	methods: {
-		fetchPartner(url, search = false) {
+		fetchPartner(url, clear = false) {
 			this.isFetch = this.isLoad = true;
 			axios
 				.get(url)
 				.then(response => {
 					this.isFetch = this.isLoad = false;
 					this.partners_data = response.data;
-					if (search) {
+					if (clear) {
 						this.partners = response.data.data;
 					} else {
 						var arr_concat = this.partners.concat(this.partners_data.data);
@@ -184,10 +188,57 @@ export default {
 					!this.isFetch
 				) {
 					this.fetchPartner(
-						this.partners_data.next_page_url + "&search=" + this.search
+						this.partners_data.next_page_url + "&" + this.filter
 					);
 				}
 			});
+		}
+	},
+	mounted() {
+		const vm = this;
+		$(function() {
+			$("#filter_tanggal").daterangepicker({
+				autoUpdateInput: false,
+				locale: {
+					cancelLabel: "Clear"
+				}
+			});
+
+			$("#filter_tanggal").on("apply.daterangepicker", function(ev, picker) {
+				vm.start_date = picker.startDate.format("YYYY-MM-DD");
+				vm.end_date = picker.endDate.format("YYYY-MM-DD");
+				$(this).val(
+					picker.startDate.format("DD/MM/YYYY") +
+						" - " +
+						picker.endDate.format("DD/MM/YYYY")
+				);
+				vm.fetchPartner(vm.url + "/api/partner?" + vm.filter, true);
+			});
+
+			$("#filter_tanggal").on("cancel.daterangepicker", function(ev, picker) {
+				vm.start_date = "";
+				vm.end_date = "";
+                $(this).val("");
+                vm.fetchPartner(vm.url + "/api/partner?" + vm.filter, true);
+			});
+		});
+	},
+	computed: {
+		filter() {
+			let filtered =
+				"search=" +
+				this.search +
+				"&start_date=" +
+				this.start_date +
+				"&end_date=" +
+				this.end_date +
+				"&person=" +
+				this.person +
+				"&category=" +
+				this.category +
+				"&orderby=" +
+				this.orderby;
+			return filtered;
 		}
 	}
 };
