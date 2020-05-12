@@ -1951,12 +1951,105 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       partners: [],
       partners_data: [],
       url: window.location.origin,
+      search: "",
+      start_date: "",
       isLoad: false,
       isFetch: false,
       isError: false,
@@ -1971,14 +2064,19 @@ __webpack_require__.r(__webpack_exports__);
     fetchPartner: function fetchPartner(url) {
       var _this = this;
 
+      var search = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
       this.isFetch = this.isLoad = true;
       axios.get(url).then(function (response) {
         _this.isFetch = _this.isLoad = false;
         _this.partners_data = response.data;
 
-        var arr_concat = _this.partners.concat(_this.partners_data.data);
+        if (search) {
+          _this.partners = response.data.data;
+        } else {
+          var arr_concat = _this.partners.concat(_this.partners_data.data);
 
-        _this.partners = arr_concat;
+          _this.partners = arr_concat;
+        }
       })["catch"](function (error) {
         _this.isError = true;
         _this.isLoad = false;
@@ -1994,7 +2092,7 @@ __webpack_require__.r(__webpack_exports__);
         var fetch_position = document.documentElement.scrollHeight * 0.8;
 
         if (position >= fetch_position && _this2.partners_data.next_page_url && !_this2.isFetch) {
-          _this2.fetchPartner(_this2.partners_data.next_page_url);
+          _this2.fetchPartner(_this2.partners_data.next_page_url + "&search=" + _this2.search);
         }
       });
     }
@@ -19602,142 +19700,370 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "row partners-thread" },
-    [
-      _vm._l(_vm.partners, function(partner) {
-        return _c(
+  return _c("div", { staticClass: "container page-content" }, [
+    _c("div", { staticClass: "search mb-2" }, [
+      _c("div", { staticClass: "row align-items-center" }, [
+        _c("div", { staticClass: "col" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.search,
+                expression: "search"
+              }
+            ],
+            staticClass: "form-control pull-left",
+            attrs: {
+              autocomplete: "off",
+              name: "filter_tempat",
+              type: "search",
+              placeholder: "Cari Destinasi Keinginanmu"
+            },
+            domProps: { value: _vm.search },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.search = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-auto text-right" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-core",
+              on: {
+                click: function($event) {
+                  return _vm.fetchPartner(
+                    _vm.url + "/api/partner?search=" + _vm.search,
+                    true
+                  )
+                }
+              }
+            },
+            [
+              _c("i", { staticClass: "fa fa-search" }),
+              _vm._v(" Cari\n\t\t\t\t")
+            ]
+          )
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-2" }, [
+        _c("input", { attrs: { type: "text", id: "start_date" } }),
+        _vm._v(" "),
+        _c("input", { attrs: { type: "hidden", id: "end_date" } }),
+        _vm._v(" "),
+        _c("div", { staticClass: "filter mt-4" }, [
+          _c("div", { staticClass: "kategori-filter" }, [
+            _c("b", [_vm._v(_vm._s(_vm.start_date))]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                autocomplete: "off",
+                id: "filter_tanggal",
+                type: "text",
+                placeholder: "Pilih Tanggal"
+              }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._m(1),
+        _vm._v(" "),
+        _vm._m(2),
+        _vm._v(" "),
+        _vm._m(3)
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-10" }, [
+        _c("div", { staticClass: "mt-4" }),
+        _vm._v(" "),
+        _c(
           "div",
-          {
-            key: partner.id,
-            staticClass: "col-6 col-md-3 partners-thread-card"
-          },
+          { staticClass: "row partners-thread" },
           [
-            _c("a", { attrs: { href: _vm.url + "/partner/" + partner.id } }, [
-              _c("div", { staticClass: "card card-partners" }, [
-                _c("div", { staticClass: "img-hover-zoom" }, [
-                  _c("img", {
-                    staticClass: "card-img-top",
-                    attrs: { src: partner.dest_picture, alt: "..." }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
+            _vm._l(_vm.partners, function(partner) {
+              return _c(
+                "div",
+                {
+                  key: partner.id,
+                  staticClass: "col-6 col-md-3 partners-thread-card"
+                },
+                [
                   _c(
                     "a",
-                    {
-                      attrs: { href: _vm.url + "/profile/" + partner.user.id }
-                    },
+                    { attrs: { href: _vm.url + "/partner/" + partner.id } },
                     [
-                      _c("img", {
-                        staticClass: "display-profil",
-                        attrs: { src: partner.user.picture, alt: "Avatar" }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("h5", { staticClass: "card-title" }, [
-                    _vm._v(_vm._s(partner.dest_name))
-                  ]),
-                  _vm._v(" "),
-                  _c("h6", { staticClass: "card-title" }, [
-                    _vm._v(
-                      _vm._s(partner.user.name.split(" ")[0]) +
-                        " / " +
-                        _vm._s(partner.user.city)
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "card-text" }, [
-                    _vm._v("\n\t\t\t\t\t\tTgl:\n\t\t\t\t\t\t"),
-                    _c("span", [
-                      _vm._v(
-                        _vm._s(partner.start_date) +
-                          " - " +
-                          _vm._s(partner.end_date)
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "card-text" }, [
-                    _vm._v("\n\t\t\t\t\t\tTitik Kumpul:\n\t\t\t\t\t\t"),
-                    _c("span", [
-                      _vm._v(_vm._s(partner.gather_point.substring(0, 20)))
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "p",
-                    {
-                      staticClass: "card-text",
-                      staticStyle: { float: "right" }
-                    },
-                    [
-                      _vm._v("\n\t\t\t\t\t\tAnggota:\n\t\t\t\t\t\t"),
-                      _c("span", { staticStyle: { "font-weight": "bold" } }, [
-                        _vm._v(
-                          _vm._s(partner.joined) +
-                            "/" +
-                            _vm._s(partner.required_person)
-                        )
+                      _c("div", { staticClass: "card card-partners" }, [
+                        _c("div", { staticClass: "img-hover-zoom" }, [
+                          _c("img", {
+                            staticClass: "card-img-top",
+                            attrs: { src: partner.dest_picture, alt: "..." }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "card-body" }, [
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                href: _vm.url + "/profile/" + partner.user.id
+                              }
+                            },
+                            [
+                              _c("img", {
+                                staticClass: "display-profil",
+                                attrs: {
+                                  src: partner.user.picture,
+                                  alt: "Avatar"
+                                }
+                              })
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("h5", { staticClass: "card-title" }, [
+                            _vm._v(_vm._s(partner.dest_name))
+                          ]),
+                          _vm._v(" "),
+                          _c("h6", { staticClass: "card-title" }, [
+                            _vm._v(
+                              _vm._s(partner.user.name.split(" ")[0]) +
+                                " / " +
+                                _vm._s(partner.user.city)
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "card-text" }, [
+                            _vm._v(
+                              "\n\t\t\t\t\t\t\t\t\tTgl:\n\t\t\t\t\t\t\t\t\t"
+                            ),
+                            _c("span", [
+                              _vm._v(
+                                _vm._s(partner.start_date) +
+                                  " - " +
+                                  _vm._s(partner.end_date)
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "card-text" }, [
+                            _vm._v(
+                              "\n\t\t\t\t\t\t\t\t\tTitik Kumpul:\n\t\t\t\t\t\t\t\t\t"
+                            ),
+                            _c("span", [
+                              _vm._v(
+                                _vm._s(partner.gather_point.substring(0, 20))
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "p",
+                            {
+                              staticClass: "card-text",
+                              staticStyle: { float: "right" }
+                            },
+                            [
+                              _vm._v(
+                                "\n\t\t\t\t\t\t\t\t\tAnggota:\n\t\t\t\t\t\t\t\t\t"
+                              ),
+                              _c(
+                                "span",
+                                { staticStyle: { "font-weight": "bold" } },
+                                [
+                                  _vm._v(
+                                    _vm._s(partner.joined) +
+                                      "/" +
+                                      _vm._s(partner.required_person)
+                                  )
+                                ]
+                              )
+                            ]
+                          )
+                        ])
                       ])
                     ]
                   )
-                ])
-              ])
+                ]
+              )
+            }),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "d-flex justify-content-center col-6 col-md-12 partners-thread-card"
+              },
+              [
+                _c(
+                  "div",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.isLoad,
+                        expression: "isLoad"
+                      }
+                    ],
+                    staticClass: "spinner-border",
+                    attrs: { role: "status" }
+                  },
+                  [
+                    _c("span", { staticClass: "sr-only" }, [
+                      _vm._v("Loading...")
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.isError,
+                        expression: "isError"
+                      }
+                    ],
+                    staticClass: "alert alert-warning",
+                    attrs: { role: "alert" }
+                  },
+                  [_vm._v(_vm._s(_vm.errorMessage))]
+                )
+              ]
+            )
+          ],
+          2
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "filter" }, [
+      _c("div", { staticClass: "kategori-filter" }, [
+        _c("b", [_vm._v("Anggota")]),
+        _vm._v(" "),
+        _c(
+          "select",
+          { staticClass: "form-control", attrs: { name: "filter_jumlah" } },
+          [
+            _c("option"),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "1" } }, [_vm._v("Kurang dari 3")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "2" } }, [_vm._v("3 sampai 6")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "3" } }, [_vm._v("Lebih dari 6")])
+          ]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "filter" }, [
+      _c("div", { staticClass: "kategori-filter" }, [
+        _c("b", [_vm._v("Kategori")]),
+        _vm._v(" "),
+        _c(
+          "select",
+          { staticClass: "form-control", attrs: { name: "filter_kategori" } },
+          [
+            _c("option"),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "gunung" } }, [_vm._v("Gunung")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "pantai" } }, [_vm._v("Pantai")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "air terjun" } }, [
+              _vm._v("Air Terjun")
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "road trip" } }, [
+              _vm._v("Road Trip")
             ])
           ]
         )
-      }),
-      _vm._v(" "),
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "filter" }, [
+      _c("div", { staticClass: "kategori-filter" }, [
+        _c("b", [_vm._v("Urutkan Berdasarkan")]),
+        _vm._v(" "),
+        _c(
+          "select",
+          { staticClass: "form-control", attrs: { name: "filter_urutan" } },
+          [
+            _c("option"),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "start_date" } }, [
+              _vm._v("Tanggal")
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "required_person" } }, [
+              _vm._v("Jumlah Anggota")
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "select",
+          {
+            staticClass: "form-control",
+            attrs: { name: "filter_urutan_jenis" }
+          },
+          [
+            _c("option"),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "ASC" } }, [_vm._v("Menaik")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "DESC" } }, [_vm._v("Menurun")])
+          ]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center reset" }, [
       _c(
-        "div",
+        "button",
         {
-          staticClass:
-            "d-flex justify-content-center col-6 col-md-12 partners-thread-card"
+          staticClass: "btn btn-outline-success btn-sm",
+          attrs: { type: "submit" }
         },
-        [
-          _c(
-            "div",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.isLoad,
-                  expression: "isLoad"
-                }
-              ],
-              staticClass: "spinner-border",
-              attrs: { role: "status" }
-            },
-            [_c("span", { staticClass: "sr-only" }, [_vm._v("Loading...")])]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.isError,
-                  expression: "isError"
-                }
-              ],
-              staticClass: "alert alert-warning",
-              attrs: { role: "alert" }
-            },
-            [_vm._v(_vm._s(_vm.errorMessage))]
-          )
-        ]
+        [_vm._v("Filter")]
       )
-    ],
-    2
-  )
-}
-var staticRenderFns = []
+    ])
+  }
+]
 render._withStripped = true
 
 
