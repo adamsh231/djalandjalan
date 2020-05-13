@@ -2102,6 +2102,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
+    $('#beforeCreate').hide();
     var vm = this;
     $(function () {
       $("#filter_tanggal").daterangepicker({

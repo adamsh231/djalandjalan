@@ -16,6 +16,7 @@
 
 
 @section('content')
+<div id="beforeCreate" style="margin-top: 50%"></div>
 <div id="app">
     <partner-component></partner-component>
 </div>

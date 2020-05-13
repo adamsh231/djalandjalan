@@ -195,6 +195,7 @@ export default {
 		}
 	},
 	mounted() {
+        $('#beforeCreate').hide();
 		const vm = this;
 		$(function() {
 			$("#filter_tanggal").daterangepicker({
