@@ -13,7 +13,7 @@ class PartnerController extends Controller
 {
     public function view()
     {
-        $partner = Partner::with(['user', 'join'])->where('status', '0')->get()->take(10);
+        $partner = Partner::with(['user', 'join'])->where('status', '0')->orderBy('start_date', 'ASC')->get()->take(10);
         return view('user/home', ['partner' => $partner]);
     }
 

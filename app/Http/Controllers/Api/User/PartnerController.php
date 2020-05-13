@@ -39,6 +39,8 @@ class PartnerController extends Controller
         }
         if (!is_null($request->get('orderby'))) {
             $partner->orderBy($request->get('orderby'), "ASC");
+        }else{
+            $partner->inRandomOrder();
         }
 
         $partner->with(['user', 'join'])->where('status', '0');
