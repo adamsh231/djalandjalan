@@ -43,7 +43,7 @@
                 bingung dengan<span style="color: #2ED1A2"> siapa?</span><br>
             </div>
             <div class="sub-landing-text">
-                Yuk cari teman travelling yang cocok dengan kamu dengan disini !
+                Yuk cari teman travelling yang cocok dengan kamu dengan disini!
             </div>
         </div>
     </div>
