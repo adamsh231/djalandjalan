@@ -23,7 +23,10 @@
 @endsection
 
 @section('add_script')
-    <script>
-        var search = '{{ $search }}';
-    </script>
+<script>
+    var search = '{{ $search }}';
+    window.onbeforeunload = function () {
+        search = '';
+    }
+</script>
 @endsection

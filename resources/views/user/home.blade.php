@@ -14,8 +14,7 @@
 @section('content')
 <div class="container">
 
-    <form action="{{ url('/partner') }}" method="POST">
-        @csrf
+    <form action="{{ url('/partner') }}" method="GET">
         <div class="search mb-2">
             <div class="row align-items-center">
                 <div class="col">
@@ -296,28 +295,6 @@
         }
         });
     });
-    });
-
-    $(function() {
-        $('#filter_tanggal').daterangepicker({
-            autoUpdateInput: false,
-            locale: {
-                cancelLabel: 'Clear'
-            }
-        });
-
-        $('#filter_tanggal').on('apply.daterangepicker', function(ev, picker) {
-            $('input[name="start_date"]').val(picker.startDate.format('YYYY-MM-DD'));
-            $('input[name="end_date"]').val(picker.endDate.format('YYYY-MM-DD'));
-            $(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
-        });
-
-        $('#filter_tanggal').on('cancel.daterangepicker', function(ev, picker) {
-            $('input[name="start_date"]').val('');
-            $('input[name="end_date"]').val('');
-            $(this).val('');
-        });
-
     });
 
 </script>

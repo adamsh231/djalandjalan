@@ -151,11 +151,12 @@ export default {
 		};
 	},
 	created() {
-		this.fetchPartner("/api/partner?search="+search);
+		this.fetchPartner("/api/partner?search="+this.search);
         this.scrolling();
 	},
 	methods: {
 		fetchPartner(url, clear = false) {
+            window.history.replaceState('', '', window.location.origin+'/partner?search='+this.search); // or using push state
 			this.isFetch = this.isLoad = true;
 			axios
 				.get(url)
