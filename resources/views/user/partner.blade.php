@@ -21,3 +21,9 @@
     <partner-component></partner-component>
 </div>
 @endsection
+
+@section('add_script')
+    <script>
+        var search = '{{ $search }}';
+    </script>
+@endsection

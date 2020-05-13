@@ -8,27 +8,24 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" rel="stylesheet" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" rel="stylesheet" />
 <link href="{{asset('template/css/home.css')}}" rel="stylesheet">
+<link href="{{asset('template/css/partners.css')}}" rel="stylesheet">
 @endsection
 
 @section('content')
 <div class="container">
 
-    <form action="{{ url('/partner') }}">
-        <div class="search">
-            <div class="pencarian ">
-                <input type="hidden" name="start_date">
-                <input type="hidden" name="end_date">
-                <input type="search" autocomplete="off" name="filter_tempat" class="form-control pull-left" placeholder="Cari Destinasi Keinginanmu">
-                <input type="text" autocomplete="off" id="filter_tanggal" class="form-control pull-left" placeholder="Pilih Tanggal" value="">
-                <select class="form-control pull-left" name="filter_jumlah">
-                    <option selected>Pilih Jumlah Anggota</option>
-                    <option value="1">Kurang dari 3</option>
-                    <option value="2">3 sampai 6</option>
-                    <option value="3">Lebih dari 6</option>
-                </select>
-            </div>
-            <div class="pencarian-btn">
-                <button class="btn btn-core" type="submit"><i class="fa fa-search"></i> Cari</button>
+    <form action="{{ url('/partner') }}" method="POST">
+        @csrf
+        <div class="search mb-2">
+            <div class="row align-items-center">
+                <div class="col">
+                    <input autocomplete="off" type="search" name="search" class="form-control pull-left" placeholder="Cari Destinasi Keinginanmu"/>
+                </div>
+                <div class="col-auto text-right">
+                    <button class="btn btn-core">
+                        <i class="fa fa-search"></i> Cari
+                    </button>
+                </div>
             </div>
         </div>
     </form>

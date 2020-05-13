@@ -5,7 +5,6 @@
 				<div class="col">
 					<input
 						autocomplete="off"
-						name="filter_tempat"
 						type="search"
 						class="form-control pull-left"
 						placeholder="Cari Destinasi Keinginanmu"
@@ -139,7 +138,7 @@ export default {
 			partners: [],
 			partners_data: [],
 			url: window.location.origin,
-			search: "",
+			search: window.search,
 			start_date: "",
 			end_date: "",
 			person: "",
@@ -152,8 +151,8 @@ export default {
 		};
 	},
 	created() {
-		this.fetchPartner("/api/partner");
-		this.scrolling();
+		this.fetchPartner("/api/partner?search="+search);
+        this.scrolling();
 	},
 	methods: {
 		fetchPartner(url, clear = false) {

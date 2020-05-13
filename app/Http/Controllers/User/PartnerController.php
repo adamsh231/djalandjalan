@@ -17,6 +17,11 @@ class PartnerController extends Controller
         return view('user/home', ['partner' => $partner]);
     }
 
+    public function overview(Request $request){
+        $search = (is_null($request->search) ? "" : $request->search);
+        return view('user/partner', ['search' => $search]);
+    }
+
     public function partner($id)
     {
         $partner = Partner::with(

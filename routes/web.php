@@ -11,14 +11,11 @@
 |
 */
 
-
 //* --------------------------------- Public Access --------------------------------------- *//
 
 Route::get('/', 'User\PartnerController@view');
 Route::get('/profile/{user}', 'User\UserController@profile')->where('user', '[0-9]+');
-Route::get('/partner', function () {
-    return view('user/partner');
-});
+Route::match(['get', 'post'],'/partner', 'User\PartnerController@overview');
 Route::get('/partner/{id}', 'User\PartnerController@partner')->where('id', '[0-9]+');
 
 Route::get('/about', function () {
