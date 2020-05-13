@@ -11,11 +11,14 @@
 |
 */
 
+
 //* --------------------------------- Public Access --------------------------------------- *//
 
 Route::get('/', 'User\PartnerController@view');
 Route::get('/profile/{user}', 'User\UserController@profile')->where('user', '[0-9]+');
-Route::get('/partner', 'User\PartnerController@overview');
+Route::get('/partner', function () {
+    return view('user/partner');
+});
 Route::get('/partner/{id}', 'User\PartnerController@partner')->where('id', '[0-9]+');
 
 Route::get('/about', function () {
@@ -62,7 +65,7 @@ Route::group(['middleware' => ['isSignIn']], function () {
 
     Route::group(['middleware' => ['verified']], function () {
         Route::get('/profile', 'User\UserController@profile');
-        Route::get('/profile/setting', function(){
+        Route::get('/profile/setting', function () {
             return view('user/profile_setting');
         });
         Route::put('/profile/setting/edit', 'User\UserController@editProfile');
