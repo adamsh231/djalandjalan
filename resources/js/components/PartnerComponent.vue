@@ -30,6 +30,7 @@
 							type="text"
 							class="form-control"
 							placeholder="Pilih Tanggal"
+							:value="date_filter"
 						/>
 					</div>
 				</div>
@@ -42,7 +43,6 @@
 							v-model="person"
 							@change="fetchPartner(url+'/api/partner?'+filter, true)"
 						>
-							<option></option>
 							<option value="1">Kurang dari 3</option>
 							<option value="2">3 sampai 6</option>
 							<option value="3">Lebih dari 6</option>
@@ -58,7 +58,6 @@
 							v-model="category"
 							@change="fetchPartner(url+'/api/partner?'+filter, true)"
 						>
-							<option></option>
 							<option value="gunung">Gunung</option>
 							<option value="pantai">Pantai</option>
 							<option value="air terjun">Air Terjun</option>
@@ -75,7 +74,6 @@
 							v-model="orderby"
 							@change="fetchPartner(url+'/api/partner?'+filter, true)"
 						>
-							<option></option>
 							<option value="start_date">Tanggal</option>
 							<option value="required_person">Jumlah Anggota</option>
 						</select>
@@ -139,10 +137,11 @@ export default {
 			partners_data: [],
 			url: window.location.origin,
 			search: window.search,
-			start_date: "",
-			end_date: "",
+			start_date: window.start_date,
+			end_date: window.end_date,
+			date_filter: window.date_filter,
 			person: "",
-			category: "",
+			category: window.category,
 			orderby: "",
 			isLoad: false,
 			isFetch: false,
@@ -151,12 +150,16 @@ export default {
 		};
 	},
 	created() {
-		this.fetchPartner("/api/partner?search="+this.search);
-        this.scrolling();
+		this.fetchPartner("/api/partner?" + this.filter);
+		this.scrolling();
 	},
 	methods: {
 		fetchPartner(url, clear = false) {
-            window.history.replaceState('', '', window.location.origin+'/partner?search='+this.search); // or using push state
+			window.history.replaceState(
+				"",
+				"",
+				window.location.origin + "/partner?" + this.filter
+			); // or using push state
 			this.isFetch = this.isLoad = true;
 			axios
 				.get(url)
@@ -195,7 +198,7 @@ export default {
 		}
 	},
 	mounted() {
-        $('#beforeCreate').hide();
+		$("#beforeCreate").hide();
 		const vm = this;
 		$(function() {
 			$("#filter_tanggal").daterangepicker({
@@ -208,19 +211,18 @@ export default {
 			$("#filter_tanggal").on("apply.daterangepicker", function(ev, picker) {
 				vm.start_date = picker.startDate.format("YYYY-MM-DD");
 				vm.end_date = picker.endDate.format("YYYY-MM-DD");
-				$(this).val(
+				vm.date_filter =
 					picker.startDate.format("DD/MM/YYYY") +
-						" - " +
-						picker.endDate.format("DD/MM/YYYY")
-				);
+					" - " +
+					picker.endDate.format("DD/MM/YYYY");
 				vm.fetchPartner(vm.url + "/api/partner?" + vm.filter, true);
 			});
 
 			$("#filter_tanggal").on("cancel.daterangepicker", function(ev, picker) {
 				vm.start_date = "";
 				vm.end_date = "";
-                $(this).val("");
-                vm.fetchPartner(vm.url + "/api/partner?" + vm.filter, true);
+				vm.date_filter = "";
+				vm.fetchPartner(vm.url + "/api/partner?" + vm.filter, true);
 			});
 		});
 	},

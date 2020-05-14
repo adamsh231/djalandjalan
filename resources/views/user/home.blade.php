@@ -8,22 +8,31 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" rel="stylesheet" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" rel="stylesheet" />
 <link href="{{asset('template/css/home.css')}}" rel="stylesheet">
-<link href="{{asset('template/css/partners.css')}}" rel="stylesheet">
+<style>
+    /* *{
+        border: 1px solid red
+    } */
+</style>
 @endsection
 
 @section('content')
 <div class="container">
 
-    <form action="{{ url('/partner') }}" method="GET">
-        <div class="search mb-2">
-            <div class="row align-items-center">
-                <div class="col">
-                    <input autocomplete="off" type="search" name="search" class="form-control pull-left" placeholder="Cari Destinasi Keinginanmu"/>
-                </div>
-                <div class="col-auto text-right">
-                    <button class="btn btn-core">
-                        <i class="fa fa-search"></i> Cari
-                    </button>
+    <form id="form_filter" action="{{ url('/partner') }}" method="GET">
+        <div class="search">
+            <div class="pencarian ">
+                <input type="hidden" name="start_date">
+                <input type="hidden" name="end_date">
+                <div class="row">
+                    <div class="col-6">
+                        <input autocomplete="off" style="width: 100%" type="search" name="search" class="form-control pull-left" placeholder="Cari Destinasi Keinginanmu">
+                    </div>
+                    <div class="col-4">
+                        <input autocomplete="off" style="width: 100%" type="text" id="datefilter" class="form-control pull-left" placeholder="Pilih Tanggal" value="">
+                    </div>
+                    <div class="col-2 text-right">
+                        <button class="btn btn-core" type="submit"><i class="fa fa-search"></i> Cari</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -51,35 +60,35 @@
         <div class="row as">
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="strat">
-                    <a href="{{ url('/partner?filter_kategori=gunung') }}">
+                    <a href="{{ url('/partner?category=gunung') }}">
                         <img src="{{asset('template/assets/img/gunung.png')}}" class="img-fluid">
                     </a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="strat">
-                    <a href="{{ url('/partner?filter_kategori=pantai') }}">
+                    <a href="{{ url('/partner?category=pantai') }}">
                         <img src="{{asset('template/assets/img/pantai.png')}}" class="img-fluid">
                     </a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="strat">
-                    <a href="{{ url('/partner?filter_kategori=air terjun') }}">
+                    <a href="{{ url('/partner?category=air terjun') }}">
                         <img src="{{asset('template/assets/img/airterjun.png')}}" class="img-fluid">
                     </a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="strat">
-                    <a href="{{ url('/partner?filter_kategori=road trip') }}">
+                    <a href="{{ url('/partner?category=road trip') }}">
                         <img src="{{asset('template/assets/img/roadtrip.png')}}" class="img-fluid">
                     </a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="strat">
-                    <a href="{{ url('/partner?filter_kategori=air terjun') }}">
+                    <a href="{{ url('/partner?category=air terjun') }}">
                         <img src="{{asset('template/assets/img/airterjun.png')}}" class="img-fluid">
                     </a>
                 </div>
@@ -117,7 +126,7 @@
                             <a href="{{ url('/profile/'.$p->user->id) }}">
                                 <img src="{{ $p->user->picture }}" class="display-profil" alt="Avatar">
                             </a>
-                            <h5 class="card-title">{{ (explode(' ', $p->dest_name)[0]) }}</h5>
+                            <h5 class="card-title">{{ $p->dest_name }}</h5>
                             <h6 class="card-title">{{ (explode(' ', $p->user->name)[0]) }} / {{ $p->user->city }}</h6>
                             <p class="card-text">Tgl: <span>{{ date('d M Y', strtotime($p->start_date)) }} - {{ date('d M Y', strtotime($p->end_date)) }}</span></p>
                             <p class="card-text">Titik Kumpul: <span>{{ substr($p->gather_point,0,20) }}</span></p>
@@ -283,18 +292,40 @@
     // If element is scrolled into view, fade it in
     $(window).scroll(function() {
         $('.scroll-animations .elemenKiri ').each(function() {
-        if (isScrolledIntoView(this) === true) {
-            $(this).addClass('animated');
-            $(this).addClass('slideInLeft');
-        }
-        });
-        $('.scroll-animations .elemenKanan ').each(function() {
-        if (isScrolledIntoView(this) === true) {
-            $(this).addClass('animated');
-            $(this).addClass('slideInRight');
-        }
+            if (isScrolledIntoView(this) === true) {
+                $(this).addClass('animated');
+                $(this).addClass('slideInLeft');
+            }
+            });
+            $('.scroll-animations .elemenKanan ').each(function() {
+            if (isScrolledIntoView(this) === true) {
+                $(this).addClass('animated');
+                $(this).addClass('slideInRight');
+            }
+            });
         });
     });
+
+    $(function() {
+        $('#datefilter').daterangepicker({
+            autoUpdateInput: false,
+            locale: {
+                cancelLabel: 'Clear'
+            }
+        });
+
+        $('#datefilter').on('apply.daterangepicker', function(ev, picker) {
+            $('#form_filter input[name=start_date]').val(picker.startDate.format('YYYY-MM-DD'));
+            $('#form_filter input[name=end_date]').val(picker.endDate.format('YYYY-MM-DD'));
+            $(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
+        });
+
+        $('#datefilter').on('cancel.daterangepicker', function(ev, picker) {
+            $('#form_filter input[name=start_date]').val('');
+            $('#form_filter input[name=end_date]').val('');
+            $(this).val('');
+        });
+
     });
 
 </script>

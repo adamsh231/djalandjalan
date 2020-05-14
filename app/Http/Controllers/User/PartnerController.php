@@ -17,9 +17,20 @@ class PartnerController extends Controller
         return view('user/home', ['partner' => $partner]);
     }
 
-    public function overview(Request $request){
+    public function overview(Request $request)
+    {
+        $date_filter = "";
+        if(!is_null($request->start_date)){
+           $date_filter = date('d/m/Y', strtotime($request->start_date))." - ".date('d/m/Y', strtotime($request->end_date));
+        }
         $search = (is_null($request->search) ? "" : $request->search);
-        return view('user/partner', ['search' => $search]);
+        return view('user/partner', [
+            'search' => $search,
+            'start_date' => $request->start_date,
+            'end_date' => $request->end_date,
+            'date_filter' => $date_filter,
+            'category' => $request->category,
+        ]);
     }
 
     public function partner($id)
@@ -126,5 +137,4 @@ class PartnerController extends Controller
             'partner' => $partner
         ]);
     }
-
 }

@@ -25,8 +25,9 @@
 @section('add_script')
 <script>
     var search = '{{ $search }}';
-    window.onbeforeunload = function () {
-        search = '';
-    }
+    var start_date = '{{ $start_date }}';
+    var end_date = '{{ $end_date }}';
+    var date_filter = '{{ $date_filter }}';
+    var category = '{{ $category }}';
 </script>
 @endsection
