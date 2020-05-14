@@ -208,6 +208,12 @@ export default {
 				}
 			});
 
+			if (vm.date_filter != "") {
+				var data = $("#filter_tanggal").data("daterangepicker");
+				data.startDate = moment(vm.start_date, "YYYY-MM-DD");
+				data.endDate = moment(vm.end_date, "YYYY-MM-DD");
+			}
+
 			$("#filter_tanggal").on("apply.daterangepicker", function(ev, picker) {
 				vm.start_date = picker.startDate.format("YYYY-MM-DD");
 				vm.end_date = picker.endDate.format("YYYY-MM-DD");
