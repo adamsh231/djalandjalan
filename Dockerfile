@@ -1,9 +1,9 @@
 FROM php:7.3.1
 
-RUN apt-get update -y && apt-get install -y openssl
-RUN apt-get update -y && apt-get install -y zip
-RUN apt-get update -y && apt-get install -y unzip
-RUN apt-get update -y && apt-get install -y git
+# RUN apt-get update -y && apt-get install -y openssl
+# RUN apt-get update -y && apt-get install -y zip
+# RUN apt-get update -y && apt-get install -y unzip
+# RUN apt-get update -y && apt-get install -y git
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN docker-php-ext-install pdo
 
