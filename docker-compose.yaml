@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+
+  ibusehat:
+    container_name: ibusehat
+    build: .
+    ports:
+      - "3002:3002"
