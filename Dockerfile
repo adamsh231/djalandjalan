@@ -1,9 +1,10 @@
 FROM php:7.3.1
 
-# RUN apt-get update -y && apt-get install -y openssl
-# RUN apt-get update -y && apt-get install -y zip
-# RUN apt-get update -y && apt-get install -y unzip
-# RUN apt-get update -y && apt-get install -y git
+RUN sed -i -e 's/deb.debian.org/archive.debian.org/g' \
+           -e 's|security.debian.org|archive.debian.org/|g' \
+           -e '/stretch-updates/d' /etc/apt/sources.list
+
+RUN apt-get update -y && apt-get install -y openssl zip unzip git
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN docker-php-ext-install pdo
 
